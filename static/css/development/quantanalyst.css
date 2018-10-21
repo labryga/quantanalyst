@@ -1,0 +1,92 @@
+@font-face {
+  font-family: Nunito-Regular;
+  src: url(Nunito-Regular.ttf); }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #651bc8;
+  color: mintcream;
+  font-family: Nunito-Regular;
+  transform: translate();
+  margin: 0px; }
+
+#container {
+  width: 1500px;
+  height: 100%;
+  background-color: rgba(0, 255, 0, 0.2);
+  margin: 0px auto;
+  position: relative; }
+
+#section-title {
+  box-sizing: border-box;
+  background-color: rgba(0, 85, 255, 0.2);
+  width: 100%;
+  height: 200px;
+  position: relative; }
+
+#container-logo {
+  background-color: rgba(255, 85, 0, 0.2);
+  text-align: right;
+  width: 300px;
+  position: absolute;
+  top: 60px;
+  right: 50px; }
+
+#logo-titel {
+  font-family: Arial;
+  color: lightyellow;
+  font-weight: normal;
+  margin: 0px;
+  display: inline-block; }
+
+#logo-untertitel {
+  color: #00ffff;
+  margin: 5px 0px 0px 0px;
+  display: inline-block; }
+
+#section-content {
+  box-sizing: content-box;
+  background-color: rgba(170, 255, 0, 0.2);
+  width: 1200px;
+  height: 65%;
+  margin: 0px auto; }
+
+#container-navigation {
+  width: 200px;
+  height: 100%;
+  display: inline-block; }
+  #container-navigation #container-menu {
+    width: 150px;
+    height: 700px;
+    margin: 50px auto; }
+    #container-navigation #container-menu .container-menu-items {
+      position: relative;
+      width: 110px;
+      height: 25px;
+      margin: 3px auto 0px; }
+    #container-navigation #container-menu .items-text {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      color: mintcream;
+      transform: translate(0%, -50%);
+      cursor: pointer;
+      font-size: 0.8em; }
+      #container-navigation #container-menu .items-text:hover {
+        color: #00ffff; }
+
+#container-content {
+  background-color: brown;
+  width: 800px;
+  height: 100%;
+  margin: 0px auto;
+  display: inline-block; }
+  #container-content .content-text {
+    background-color: seagreen;
+    width: 80%;
+    height: 80%; }
