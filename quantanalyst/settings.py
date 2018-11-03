@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.81', 'affe']
+ALLOWED_HOSTS = ['192.168.1.81', '192.168.56.81', 'affe']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
