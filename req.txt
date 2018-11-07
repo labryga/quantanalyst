@@ -4,10 +4,10 @@ certifi==2018.10.15
 chardet==3.0.4
 curtsies==0.3.0
 Django==1.11.16
+django-markup==1.3
 greenlet==0.4.15
 gunicorn==19.9.0
 idna==2.7
-pkg-resources==0.0.0
 psycopg2==2.7.5
 Pygments==2.2.0
 pypugjs==5.7.2

@@ -4,4 +4,4 @@ class Home(TemplateView):
     template_name = "home.html"
 
 class Grid(TemplateView):
-    template_name = "grid.pug"
+    template_name = "grid.html"
