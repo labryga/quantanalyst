@@ -4,7 +4,8 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
 	postcss = require('gulp-postcss'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+	babel = require('gulp-babel');
 
 
 gulp.task('sass', function() {
@@ -27,8 +28,18 @@ gulp.task('gulppug', function() {
 	.pipe(gulp.dest('../../templates/'));
 });
 
+gulp.task('babel', function() {
+	return gulp.src('../js/es6/*.js')
+	.pipe(babel({
+		presets: ['@babel/env'],
+		retainLines: true
+	}))
+	.pipe(gulp.dest('../js/'));
+} );
+
 gulp.task('watch', function() {
 	gulp.watch('../../templates/pug/*.pug', gulp.series('gulppug'));
 	gulp.watch('../css/sass/*.sass', gulp.series('sass'));
 	gulp.watch('../css/development/*.css', gulp.series('postcss'));
+	gulp.watch('../js/es6/*.js', gulp.series('babel'));
 });
