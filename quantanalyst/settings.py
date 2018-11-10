@@ -61,9 +61,11 @@ WSGI_APPLICATION = 'quantanalyst.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
+        # 'NAME': 'quantanalyst_database',
+        'NAME': config('DB_NAME'),
+        # 'USER': 'quantanalyst_user',
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
     }
 }
 
