@@ -2,27 +2,14 @@ doctype
 
 head
 	meta(name="viewport", content="width=device-width, initial-scale=1")
-	title= "quantanalyst"
+	title= "quantanalyst.ch"
 	link(href="normalize.css", rel="stylesheet")
 	link(href="quantanalyst.css", rel="stylesheet")
 
 body
 	div(id="container")
-		div(id="section-title")
-			p(id="resolution")
-			div(id="container-logo")
-				h1(id="logo-titel")= "Quantanalyst.ch"
-				h5(id="logo-untertitel")= "Modern stock rest api."
-
-		- var arr = ["start", "complience", "docs", "contact", "contribute"]
-		div(id="section-content")
-			div(id="container-navigation")
-				div(id="container-menu")
-					each item in arr
-						div(class="container-menu-items")
-							div(class="items-text")= item
-
-			div(id="container-content")
-				div(class="content-text")
+		div(id="container-logo")
+			h1(id="logo-titel")= "Quantanalyst.ch"
+			h5(id="logo-untertitel")= "New generation rest api."
 
 	script(src="quantanalyst.js")

@@ -32,7 +32,6 @@ gulp.task('babel', function() {
 	return gulp.src('../js/es6/*.js')
 	.pipe(babel({
 		presets: ['@babel/env'],
-		retainLines: true
 	}))
 	.pipe(gulp.dest('../js/'));
 } );
