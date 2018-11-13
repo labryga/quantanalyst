@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
-	lost = require('lost'),
 	pug = require('gulp-pug'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('gulp-autoprefixer'),
 	babel = require('gulp-babel');
+	
 
 
 gulp.task('sass', function() {
@@ -30,6 +30,7 @@ gulp.task('gulppug', function() {
 
 gulp.task('babel', function() {
 	return gulp.src('../js/es6/*.js')
+	.pipe(sourcemaps.init())
 	.pipe(babel({
 		presets: ['@babel/env'],
 	}))

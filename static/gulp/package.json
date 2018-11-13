@@ -19,10 +19,8 @@
     "gulp-postcss": "^7.0.1",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.1",
-    "gulp-slim": "^0.3.0",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-watch": "^5.0.0",
-    "lost": "^8.3.0"
+    "gulp-watch": "^5.0.0"
   },
   "dependencies": {
     "gulp-autoprefixer": "^5.0.0",
