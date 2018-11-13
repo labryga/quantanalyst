@@ -29,7 +29,10 @@ body {
   right: 50%;
   transform: translate(50%, -50%); }
   #container-logo h1 {
-    display: block; }
+    display: block;
+    cursor: pointer; }
+  #container-logo h5 {
+    cursor: pointer; }
 
 #logo-titel {
   font-family: Arial;
