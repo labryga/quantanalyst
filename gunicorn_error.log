@@ -1,0 +1,249 @@
+[2018-11-14 02:03:23 +0100] [3721] [INFO] Starting gunicorn 19.9.0
+[2018-11-14 02:03:23 +0100] [3721] [INFO] Listening at: unix:/home/affe/quantanalyst/quantanalyst/gunicorn_socket/quantanalyst.sock (3721)
+[2018-11-14 02:03:23 +0100] [3721] [INFO] Using worker: sync
+[2018-11-14 02:03:23 +0100] [3724] [INFO] Booting worker with pid: 3724
+[2018-11-14 02:03:24 +0100] [3726] [INFO] Booting worker with pid: 3726
+[2018-11-14 02:03:24 +0100] [3728] [INFO] Booting worker with pid: 3728
+[2018-11-14 01:06:14 +0000] [3724] [INFO] Worker exiting (pid: 3724)
+[2018-11-14 02:06:14 +0100] [3721] [INFO] Handling signal: term
+[2018-11-14 01:06:14 +0000] [3728] [INFO] Worker exiting (pid: 3728)
+[2018-11-14 01:06:14 +0000] [3726] [INFO] Worker exiting (pid: 3726)
+[2018-11-14 02:06:14 +0100] [3721] [INFO] Shutting down: Master
+[2018-11-14 02:06:15 +0100] [3774] [INFO] Starting gunicorn 19.9.0
+[2018-11-14 02:06:15 +0100] [3774] [INFO] Listening at: unix:/home/affe/quantanalyst/quantanalyst/gunicorn_socket/quantanalyst.sock (3774)
+[2018-11-14 02:06:15 +0100] [3774] [INFO] Using worker: sync
+[2018-11-14 02:06:15 +0100] [3777] [INFO] Booting worker with pid: 3777
+[2018-11-14 02:06:15 +0100] [3778] [INFO] Booting worker with pid: 3778
+[2018-11-14 02:06:15 +0100] [3780] [INFO] Booting worker with pid: 3780
+[2018-11-14 02:11:47 +0100] [3774] [INFO] Handling signal: term
+[2018-11-14 01:11:47 +0000] [3777] [INFO] Worker exiting (pid: 3777)
+[2018-11-14 01:11:47 +0000] [3778] [INFO] Worker exiting (pid: 3778)
+[2018-11-14 01:11:47 +0000] [3780] [INFO] Worker exiting (pid: 3780)
+[2018-11-14 02:11:47 +0100] [3774] [INFO] Shutting down: Master
+[2018-11-14 02:11:55 +0100] [4084] [INFO] Starting gunicorn 19.9.0
+[2018-11-14 02:11:55 +0100] [4084] [INFO] Listening at: unix:/home/affe/quantanalyst/quantanalyst/gunicorn_socket/quantanalyst.sock (4084)
+[2018-11-14 02:11:55 +0100] [4084] [INFO] Using worker: sync
+[2018-11-14 02:11:55 +0100] [4087] [INFO] Booting worker with pid: 4087
+[2018-11-14 02:11:55 +0100] [4089] [INFO] Booting worker with pid: 4089
+[2018-11-14 02:11:55 +0100] [4090] [INFO] Booting worker with pid: 4090
+[2018-11-14 02:20:12 +0100] [4084] [INFO] Handling signal: term
+[2018-11-14 01:20:12 +0000] [4089] [INFO] Worker exiting (pid: 4089)
+[2018-11-14 01:20:12 +0000] [4090] [INFO] Worker exiting (pid: 4090)
+[2018-11-14 01:20:12 +0000] [4087] [INFO] Worker exiting (pid: 4087)
+[2018-11-14 02:20:12 +0100] [4084] [INFO] Shutting down: Master
+[2018-11-14 02:20:12 +0100] [4266] [INFO] Starting gunicorn 19.9.0
+[2018-11-14 02:20:12 +0100] [4266] [INFO] Listening at: unix:/home/affe/quantanalyst/quantanalyst/gunicorn_socket/quantanalyst.sock (4266)
+[2018-11-14 02:20:12 +0100] [4266] [INFO] Using worker: sync
+[2018-11-14 02:20:12 +0100] [4269] [INFO] Booting worker with pid: 4269
+[2018-11-14 02:20:12 +0100] [4271] [INFO] Booting worker with pid: 4271
+[2018-11-14 02:20:12 +0100] [4272] [INFO] Booting worker with pid: 4272
+[2018-11-14 02:20:13 +0100] [4269] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:13 +0100] [4269] [INFO] Worker exiting (pid: 4269)
+[2018-11-14 02:20:13 +0100] [4271] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:13 +0100] [4271] [INFO] Worker exiting (pid: 4271)
+[2018-11-14 02:20:13 +0100] [4272] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:13 +0100] [4272] [INFO] Worker exiting (pid: 4272)
+[2018-11-14 02:20:49 +0100] [4298] [INFO] Starting gunicorn 19.9.0
+[2018-11-14 02:20:49 +0100] [4298] [INFO] Listening at: unix:/home/affe/quantanalyst/quantanalyst/gunicorn_socket/quantanalyst.sock (4298)
+[2018-11-14 02:20:49 +0100] [4298] [INFO] Using worker: sync
+[2018-11-14 02:20:49 +0100] [4301] [INFO] Booting worker with pid: 4301
+[2018-11-14 02:20:49 +0100] [4303] [INFO] Booting worker with pid: 4303
+[2018-11-14 02:20:49 +0100] [4304] [INFO] Booting worker with pid: 4304
+[2018-11-14 02:20:49 +0100] [4301] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:49 +0100] [4301] [INFO] Worker exiting (pid: 4301)
+[2018-11-14 02:20:49 +0100] [4303] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:49 +0100] [4303] [INFO] Worker exiting (pid: 4303)
+[2018-11-14 02:20:49 +0100] [4304] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/__init__.py", line 22, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 41, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/affe/quantanalyst/lib/python3.5/site-packages/django/conf/__init__.py", line 110, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/affe/quantanalyst/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/affe/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py", line 7, in <module>
+    DEBUG = Tue
+NameError: name 'Tue' is not defined
+[2018-11-14 02:20:49 +0100] [4304] [INFO] Worker exiting (pid: 4304)

@@ -6,8 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.81', '192.168.56.81', 'affe', 'quantanalyst.ch',
-                 'www.quantanalyst.ch']
+ALLOWED_HOSTS = ['192.168.1.81', '192.168.56.81', 'affe']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,7 +32,7 @@ ROOT_URLCONF = 'quantanalyst.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'templates')],
         # 'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
