@@ -3,5 +3,5 @@ from .views import *
 
 urlpatterns = [
     url(r'^home', Home.as_view()),
-    url(r'^zahl', zahl),
+    url(r'^grid', Grid.as_view()),
 ]
