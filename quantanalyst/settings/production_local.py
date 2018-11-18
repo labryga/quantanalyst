@@ -4,5 +4,5 @@ from . base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS_PRODUCTION_LOCAL')
+ALLOWED_HOSTS = ['affe', '192.168.1.81', '192.168.56.81']
 
