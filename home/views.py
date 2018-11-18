@@ -6,3 +6,4 @@ class Home(TemplateView):
 
 class Grid(TemplateView):
     template_name = "grid.pug"
+    # new gird
