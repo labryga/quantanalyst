@@ -11,7 +11,12 @@ var gulp = require('gulp'),
 	
 
 gulp.task('css', () => {
-	return gulp.src('../css/sass/*')
+	return gulp.src([
+			'../css/sass/normalize.css',
+			'../css/sass/html.sass',
+			'../css/sass/header.sass',
+			'../css/sass/main.sass',
+			'../css/sass/footer.sass'])
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('quantanalyst.css'))
@@ -38,6 +43,6 @@ gulp.task('javascript', () => {
 
 
 gulp.task('watch', () => {
-	gulp.watch('../css/sass/sass_modules/*.sass', gulp.series('css'));
+	gulp.watch('../css/sass/*', gulp.series('css'));
 	gulp.watch('../js/es6/modules/*.js', gulp.series('javascript'));
 });
