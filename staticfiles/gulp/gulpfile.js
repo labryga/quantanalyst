@@ -10,9 +10,8 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename');
 	
 
-
 gulp.task('css', () => {
-	return gulp.src(['../css/sass/css_modules/*','../css/sass/*.sass' ])
+	return gulp.src(['../css/sass/css_modules/*','../css/sass/*.sass'])
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('quantanalyst.css'))

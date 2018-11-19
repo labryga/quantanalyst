@@ -1,22 +1,67 @@
-// settings
-@font-face
-	font-family: Nunito-Regular
-	src: url(Nunito-Regular.ttf)
 
-$color-background: #400080
+@mixin grid($devicetype, $gridvalue)
 
-*
-	box-sizing: border-box
+	@if $devicetype == "phone"
+		@for $x from 1 through $gridvalue
+			@if $x <= 6
+				.col-#{$x}
+					width: 50%
+			@else
+				.col-#{$x}
+					width: 100%
 
-html
+	@if $devicetype == "tablet-portrait"
+		@for $x from 1 through $gridvalue
+			@if $x <= 4
+				.col-#{$x}
+					width: 33.333%
+			@if ($x > 4) and ($x < 9)
+				.col-#{$x}
+					width: 50%
+			@if ($x > 8) and ($x <= $gridvalue)
+				.col-#{$x}
+					width: 100%
+
+	@if $devicetype == "tablet-landscape"
+		@for $x from 1 through $gridvalue
+			@if $x <= 2
+				.col-#{$x}
+					width: 25%
+			@if ($x > 2) and ($x < 5)
+				.col-#{$x}
+					width: 33.333%
+			@if ($x > 4) and ($x < 9)
+				.col-#{$x}
+					width: 50%
+			@if ($x > 8) and ($x <= $gridvalue)
+				.col-#{$x}
+					width: 100%
+
+	@if $devicetype == "desktop"
+		@for $x from 1 through $gridvalue
+			.col-#{$x}
+				width: 100% * ($x / $gridvalue)
+
+
+.container
 	width: 100%
-	height: 100%
-	
-body
-	background-color: $color-background
-	color: mintcream
-	font-family: Nunito-Regular
-	width: 100%
-	height: 100%
-	padding: 0px 0px 30px
-	margin: 0px
+	max-width: 1200px
+
+.row
+	background-color: rgba(45, 82, 21, 0.2)
+	&:before,
+	&:after
+		content: ""
+
+$phone: (max-width, 599px, "phone")
+$tablet-portrait: (min-width, 600px, "tablet-portrait")
+$tablet-landscape: (min-width, 900px, "tablet-landscape")
+$desktop: (min-width, 1200px, "desktop")
+$devices: ($phone, $tablet-portrait, $tablet-landscape, $desktop)
+
+
+@each $w, $v, $g in $devices
+	@media screen and (#{$w}: $v)
+		@include grid($g, 12)
+		
+
