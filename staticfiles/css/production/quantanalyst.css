@@ -329,7 +329,7 @@ header {
   height: 100px; }
   header .row:before, header .row:after {
     content: ""; }
-  header .row div {
+  header .row div, header .row article, header .row nav {
     height: 15px;
     background-color: rgba(101, 201, 211, 0.5);
     border: 1px dashed mintcream; }
@@ -342,25 +342,47 @@ main {
   height: 200px; }
   main .row:before, main .row:after {
     content: ""; }
-  main .row div {
+  main .row div, main .row article, main .row nav {
     height: 15px;
     background-color: rgba(101, 201, 211, 0.5);
     border: 1px dashed mintcream; }
+  main nav {
+    float: left; }
+    @media (max-width: 599px) {
+      main nav {
+        width: 100%; } }
+    @media (min-width: 600px) {
+      main nav {
+        width: 25%; } }
+    @media (min-width: 900px) {
+      main nav {
+        width: 16.66667%; } }
+    @media (min-width: 1200px) {
+      main nav {
+        width: 16.66667%; } }
+  main article {
+    float: right; }
+    @media (max-width: 599px) {
+      main article {
+        width: 100%; } }
+    @media (min-width: 600px) {
+      main article {
+        width: 75%; } }
+    @media (min-width: 900px) {
+      main article {
+        width: 75%;
+        float: left; } }
+    @media (min-width: 1200px) {
+      main article {
+        width: 75%;
+        float: left; } }
 
-.navigation {
-  float: left; }
-  @media (max-width: 599px) {
-    .navigation {
-      width: 100%; } }
-  @media (min-width: 900px) {
-    .navigation {
-      width: 25%; } }
-
-.article {
-  float: right; }
-  @media (max-width: 599px) {
-    .article {
-      width: 100%; } }
-  @media (min-width: 900px) {
-    .article {
-      width: 75%; } }
+footer {
+  background-color: rgba(199, 20, 30, 0.1);
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
+  footer .row:before, footer .row:after {
+    content: ""; }

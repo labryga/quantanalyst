@@ -22,32 +22,59 @@ body
 	height: 100%
 	margin: 0px
 
+
 header
 	@include container
 	background-color: rgba(77, 88, 21, 0.5)
 	height: 100px
+
 
 main
 	@include container
 	background-color: rgba(177, 88, 21, 0.5)
 	height: 200px
 
-.navigation
-	float: left
+	nav
+		float: left
 
-	@media (max-width: 599px)
-		width: percentage(12/12)
+		@media (max-width: 599px)
+			width: percentage(12/12)
 
-	@media (min-width: 900px)
-		width: percentage(3/12)
+		@media (min-width: 600px)
+			width: percentage(3/12)
+
+		@media (min-width: 900px)
+			width: percentage(2/12)
+
+		@media (min-width: 1200px)
+			width: percentage(2/12)
 
 
-.article
-	float: right
+	article
+		float: right
 
-	@media (max-width: 599px)
-		width: percentage(12/12)
+		@media (max-width: 599px)
+			width: percentage(12/12)
 
-	@media (min-width: 900px)
-		width: percentage(9/12)
+		@media (min-width: 600px)
+			width: percentage(9/12)
 
+		@media (min-width: 900px)
+			width: percentage(9/12)
+			float: left
+
+		@media (min-width: 1200px)
+			width: percentage(9/12)
+			float: left
+
+footer
+	background-color: rgba(199, 20, 30, .1)
+	height: 50px
+	position: fixed
+	bottom: 0px
+	left: 0px
+	right: 0px
+	& .row
+		&:before,
+		&:after
+			content: ""
