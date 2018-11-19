@@ -1,3 +1,4 @@
+@import 'sass_modules/grid.sass'
 
 // settings
 @font-face
@@ -19,12 +20,34 @@ body
 	font-family: Nunito-Regular
 	width: 100%
 	height: 100%
-	padding: 0px 0px 30px
 	margin: 0px
 
-
 header
-	width: 500px
-	height: 300px
-	margin: 0px auto
+	@include container
+	background-color: rgba(77, 88, 21, 0.5)
+	height: 100px
+
+main
+	@include container
+	background-color: rgba(177, 88, 21, 0.5)
+	height: 200px
+
+.navigation
+	float: left
+
+	@media (max-width: 599px)
+		width: percentage(12/12)
+
+	@media (min-width: 900px)
+		width: percentage(3/12)
+
+
+.article
+	float: right
+
+	@media (max-width: 599px)
+		width: percentage(12/12)
+
+	@media (min-width: 900px)
+		width: percentage(9/12)
 

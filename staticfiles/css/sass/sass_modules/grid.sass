@@ -1,57 +1,22 @@
 
-@mixin grid($devicetype, $gridvalue)
-
-	@if $devicetype == "phone"
-		@for $x from 1 through $gridvalue
-			@if $x <= 6
-				.col-#{$x}
-					width: 50%
-			@else
-				.col-#{$x}
-					width: 100%
-
-	@if $devicetype == "tablet-portrait"
-		@for $x from 1 through $gridvalue
-			@if $x <= 4
-				.col-#{$x}
-					width: 33.333%
-			@if ($x > 4) and ($x < 9)
-				.col-#{$x}
-					width: 50%
-			@if ($x > 8) and ($x <= $gridvalue)
-				.col-#{$x}
-					width: 100%
-
-	@if $devicetype == "tablet-landscape"
-		@for $x from 1 through $gridvalue
-			@if $x <= 2
-				.col-#{$x}
-					width: 25%
-			@if ($x > 2) and ($x < 5)
-				.col-#{$x}
-					width: 33.333%
-			@if ($x > 4) and ($x < 9)
-				.col-#{$x}
-					width: 50%
-			@if ($x > 8) and ($x <= $gridvalue)
-				.col-#{$x}
-					width: 100%
-
-	@if $devicetype == "desktop"
-		@for $x from 1 through $gridvalue
-			.col-#{$x}
-				width: 100% * ($x / $gridvalue)
-
-
-.container
+@mixin container
 	width: 100%
 	max-width: 1200px
+	margin: 0px auto
+	& .row
+		&:before,
+		&:after
+			content: ""
+		& div 
+			height: 15px
+			background-color: rgba(101,201,211,0.5)
+			border: 1px dashed mintcream
 
-.row
-	background-color: rgba(45, 82, 21, 0.2)
-	&:before,
-	&:after
-		content: ""
+
+.navigation
+
+
+
 
 $phone: (max-width, 599px, "phone")
 $tablet-portrait: (min-width, 600px, "tablet-portrait")
@@ -60,8 +25,5 @@ $desktop: (min-width, 1200px, "desktop")
 $devices: ($phone, $tablet-portrait, $tablet-landscape, $desktop)
 
 
-@each $w, $v, $g in $devices
-	@media screen and (#{$w}: $v)
-		@include grid($g, 12)
 		
 
