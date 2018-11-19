@@ -1,12 +1,15 @@
+@mixin clearfix
+	&:after
+		display: table
+		content: ""
+		clear: both
 
-@mixin container
+@mixin grid_container
 	width: 100%
 	max-width: 1200px
 	margin: 0px auto
 	& .row
-		&:before,
-		&:after
-			content: ""
+		@include clearfix
 		& div, article, nav
 			height: 15px
 			background-color: rgba(101,201,211,0.5)

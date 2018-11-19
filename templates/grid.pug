@@ -20,3 +20,7 @@ body
 
 	
 	footer
+		div(class="row")
+			footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
+			each footer_entry in footer_entries
+				div(class="entry")= footer_entry
