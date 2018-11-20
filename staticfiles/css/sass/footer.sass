@@ -1,20 +1,19 @@
 @import 'mixins.sass'
 
 footer
+	@include grid_container
 	background-color: rgba(199, 20, 30, .1)
 	height: 35px
-	position: fixed
-	bottom: 0px
-	left: 0px
-	right: 0px
-	& .row
+
+	& .grid_row
 		@include clearfix
 		background-color: rgba(19, 20, 30, .4)
 		margin: 0px auto
 		max-width: 1200px
 		height: 100%
 		text-align: center
-		& .entry
+
+		& .footer_entry
 			background-color: rgba(9, 120, 30, .4)
 			margin: 0px
 			width: 60px

@@ -321,38 +321,56 @@ body {
   height: 100%;
   margin: 0px; }
 
+a {
+  text-decoration: none;
+  color: mintcream; }
+
 header {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
   background-color: rgba(77, 88, 21, 0.5);
   height: 100px; }
-  header .row:after {
+  header .grid_row:after {
     display: table;
     content: "";
     clear: both; }
-  header .row div, header .row article, header .row nav {
-    height: 15px;
-    background-color: rgba(101, 201, 211, 0.5);
-    border: 1px dashed mintcream; }
 
 main {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
   background-color: rgba(177, 88, 21, 0.5);
-  height: 2800px;
-  margin-bottom: 35px; }
-  main .row:after {
+  height: 2800px; }
+  main .grid_row:after {
     display: table;
     content: "";
     clear: both; }
-  main .row div, main .row article, main .row nav {
-    height: 15px;
-    background-color: rgba(101, 201, 211, 0.5);
-    border: 1px dashed mintcream; }
   main nav {
+    background-color: rgba(77, 88, 21, 0.5);
+    height: 100px;
+    padding: 0px 20px 0px 0px;
     float: left; }
+    main nav ul {
+      list-style-type: none;
+      text-align: right;
+      line-height: 1.4em;
+      -webkit-transition: 0.9s;
+      -o-transition: 0.9s;
+      transition: 0.9s; }
+    main nav .menu_item, main nav #blog, main nav #data, main nav #finance {
+      -webkit-transition: 0.9s;
+      -o-transition: 0.9s;
+      transition: 0.9s;
+      display: none; }
+      main nav .menu_item li a, main nav #blog li a, main nav #data li a, main nav #finance li a {
+        color: inherit; }
+      main nav .menu_item li:first-child, main nav #blog li:first-child, main nav #data li:first-child, main nav #finance li:first-child {
+        color: cyan; }
+    main nav #navigation {
+      -webkit-transition: 0.9s;
+      -o-transition: 0.9s;
+      transition: 0.9s; }
     @media (max-width: 599px) {
       main nav {
         width: 100%; } }
@@ -366,6 +384,8 @@ main {
       main nav {
         width: 16.66667%; } }
   main article {
+    background-color: rgba(37, 18, 221, 0.5);
+    height: 100px;
     float: right; }
     @media (max-width: 599px) {
       main article {
@@ -383,23 +403,26 @@ main {
         float: left; } }
 
 footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
   background-color: rgba(199, 20, 30, 0.1);
-  height: 35px;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px; }
-  footer .row {
+  height: 35px; }
+  footer .grid_row:after {
+    display: table;
+    content: "";
+    clear: both; }
+  footer .grid_row {
     background-color: rgba(19, 20, 30, 0.4);
     margin: 0px auto;
     max-width: 1200px;
     height: 100%;
     text-align: center; }
-    footer .row:after {
+    footer .grid_row:after {
       display: table;
       content: "";
       clear: both; }
-    footer .row .entry {
+    footer .grid_row .footer_entry {
       background-color: rgba(9, 120, 30, 0.4);
       margin: 0px;
       width: 60px;

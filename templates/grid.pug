@@ -7,20 +7,49 @@ head
 
 body
 
-	header(class="container")
-		div(class="row")	
+	header
+		div(class="grid_row")	
 			div(class="title")
 			div(class="subtitle")
 	
-	main(class="container")
-		div(class="row")	
-			nav(class="navigation")
-			article(class="article")
-		
+	main
+		div(class="grid_row")	
 
-	
+			nav(id="navigation")
+
+				ul(id="menu")
+					li
+						a(href="#" data-navigation-type="blog")= "Blog"
+					li
+						a(href="#" data-navigation-type="data")= "Data"
+					li
+						a(href="#" data-navigation-type="finance")= "Finance"
+
+				ul(id="blog")
+					li
+						a(href="#" data-navigation-type="menu")= "back to menu"
+					li
+						a(href="#")= "Blog 02"
+
+				ul(id="data")
+					li
+						a(href="#" data-navigation-type="menu")= "back to menu"
+					li
+						a(href="#")= "Data 02"
+
+				ul(id="finance")
+					li
+						a(href="#" data-navigation-type="menu")= "back to menu"
+					li
+						a(href="#")= "finanzen"
+
+
+			article(class="article")
+
 	footer
-		div(class="row")
+		div(class="grid_row")
 			footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
 			each footer_entry in footer_entries
-				div(class="entry")= footer_entry
+				div(class="footer_entry")= footer_entry
+
+	script(src="quantanalyst.js")

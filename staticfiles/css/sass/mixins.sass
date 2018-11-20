@@ -1,3 +1,4 @@
+
 @mixin clearfix
 	&:after
 		display: table
@@ -8,9 +9,6 @@
 	width: 100%
 	max-width: 1200px
 	margin: 0px auto
-	& .row
+
+	& .grid_row
 		@include clearfix
-		& div, article, nav
-			height: 15px
-			background-color: rgba(101,201,211,0.5)
-			border: 1px dashed mintcream
