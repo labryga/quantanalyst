@@ -4,43 +4,37 @@
 main
 	@include grid_container
 	background-color: rgba(177, 88, 21, 0.5)
-	height: 2800px
+	height: 800px
 
-	nav
+	#navigation
 		background-color: rgba(77, 88, 21, 0.5)
 		height: 100px
-		padding: 0px 20px 0px 0px
+		padding: 0px 50px 0px 0px
 		float: left
 
 		ul
 			list-style-type: none
 			text-align: right
-			line-height: 1.4em
-			transition: 0.9s
+			line-height: 1.5em
 		
 		.menu_item
-			transition: 0.9s
 			display: none
-			li
-				a 
-					color: inherit
-				&:first-child
+			li:first-child
+				a
 					color: cyan
 
-		#navigation
-			transition: 0.9s
-
-		#blog
+		ul#blog
 			@extend .menu_item
 
-		#data
+		ul#data
 			@extend .menu_item
 
-		#finance
+		ul#finance
 			@extend .menu_item
 
 		@media (max-width: 599px)
 			width: percentage(12/12)
+			display: none
 
 		@media (min-width: 600px)
 			width: percentage(3/12)
@@ -51,6 +45,16 @@ main
 		@media (min-width: 1200px)
 			width: percentage(2/12)
 
+	#navigation_mobile
+		display: none
+		@media (max-width: 599px)
+			width: percentage(12/12)
+			display: block
+
+			ul#blog_mobile
+				li:first-child
+					a
+						color: cyan
 
 	article
 		background-color: rgba(37, 18, 221, 0.5)
@@ -73,4 +77,6 @@ main
 
 
 
+
+	
 

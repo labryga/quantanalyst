@@ -15,7 +15,7 @@ body
 	main
 		div(class="grid_row")	
 
-			nav(id="navigation")
+			div(id="navigation")
 
 				ul(id="menu")
 					li
@@ -27,22 +27,49 @@ body
 
 				ul(id="blog")
 					li
-						a(href="#" data-navigation-type="menu")= "back to menu"
+						a(href="#" data-navigation-type="menu")= "menu"
 					li
 						a(href="#")= "Blog 02"
 
 				ul(id="data")
 					li
-						a(href="#" data-navigation-type="menu")= "back to menu"
+						a(href="#" data-navigation-type="menu")= "menu"
 					li
 						a(href="#")= "Data 02"
 
 				ul(id="finance")
 					li
-						a(href="#" data-navigation-type="menu")= "back to menu"
+						a(href="#" data-navigation-type="menu")= "menu"
 					li
 						a(href="#")= "finanzen"
 
+			div(id="navigation_mobile")
+
+				ul(id="menu_mobile")
+					li
+						a(href="#" data-navigation-type="blog")= "Blog"
+					li
+						a(href="#" data-navigation-type="data")= "Data"
+					li
+						a(href="#" data-navigation-type="finance")= "Finance"
+
+				ul(id="blog_mobile")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "Blog 02"
+
+				ul(id="data_mobile")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "Data 02"
+
+				ul(id="finance_mobile")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "finanzen"
 
 			article(class="article")
 

@@ -341,48 +341,45 @@ main {
   max-width: 1200px;
   margin: 0px auto;
   background-color: rgba(177, 88, 21, 0.5);
-  height: 2800px; }
+  height: 800px; }
   main .grid_row:after {
     display: table;
     content: "";
     clear: both; }
-  main nav {
+  main #navigation {
     background-color: rgba(77, 88, 21, 0.5);
     height: 100px;
-    padding: 0px 20px 0px 0px;
+    padding: 0px 50px 0px 0px;
     float: left; }
-    main nav ul {
+    main #navigation ul {
       list-style-type: none;
       text-align: right;
-      line-height: 1.4em;
-      -webkit-transition: 0.9s;
-      -o-transition: 0.9s;
-      transition: 0.9s; }
-    main nav .menu_item, main nav #blog, main nav #data, main nav #finance {
-      -webkit-transition: 0.9s;
-      -o-transition: 0.9s;
-      transition: 0.9s;
+      line-height: 1.5em; }
+    main #navigation .menu_item, main #navigation ul#blog, main #navigation ul#data, main #navigation ul#finance {
       display: none; }
-      main nav .menu_item li a, main nav #blog li a, main nav #data li a, main nav #finance li a {
-        color: inherit; }
-      main nav .menu_item li:first-child, main nav #blog li:first-child, main nav #data li:first-child, main nav #finance li:first-child {
+      main #navigation .menu_item li:first-child a, main #navigation ul#blog li:first-child a, main #navigation ul#data li:first-child a, main #navigation ul#finance li:first-child a {
         color: cyan; }
-    main nav #navigation {
-      -webkit-transition: 0.9s;
-      -o-transition: 0.9s;
-      transition: 0.9s; }
     @media (max-width: 599px) {
-      main nav {
-        width: 100%; } }
+      main #navigation {
+        width: 100%;
+        display: none; } }
     @media (min-width: 600px) {
-      main nav {
+      main #navigation {
         width: 25%; } }
     @media (min-width: 900px) {
-      main nav {
+      main #navigation {
         width: 16.66667%; } }
     @media (min-width: 1200px) {
-      main nav {
+      main #navigation {
         width: 16.66667%; } }
+  main #navigation_mobile {
+    display: none; }
+    @media (max-width: 599px) {
+      main #navigation_mobile {
+        width: 100%;
+        display: block; }
+        main #navigation_mobile ul#blog_mobile li:first-child a {
+          color: cyan; } }
   main article {
     background-color: rgba(37, 18, 221, 0.5);
     height: 100px;
