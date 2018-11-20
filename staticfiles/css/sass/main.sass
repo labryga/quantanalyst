@@ -1,4 +1,3 @@
-
 @import 'mixins.sass'
 
 main
@@ -17,20 +16,21 @@ main
 			text-align: right
 			line-height: 1.5em
 		
-		.menu_item
+		.menu_sub_list
 			display: none
-			li:first-child
-				a
-					color: cyan
+			li
+				&:first-child
+					a
+						color: salmon
 
 		ul#blog
-			@extend .menu_item
+			@extend .menu_sub_list
 
 		ul#data
-			@extend .menu_item
+			@extend .menu_sub_list
 
 		ul#finance
-			@extend .menu_item
+			@extend .menu_sub_list
 
 		@media (max-width: 599px)
 			width: percentage(12/12)
@@ -50,11 +50,35 @@ main
 		@media (max-width: 599px)
 			width: percentage(12/12)
 			display: block
+			ul
+				list-style-type: none
+
+			.menu_sub_list_mobile
+				background-color: rgba(crimson, 0.9)
+				margin: 0px
+				padding: 30px
+				line-height: 1.6em
+				position: fixed
+				width: 100%
+				height: 100%
+				top: 0px
+				display: none
+
+				li
+					&:first-child
+						line-height: 2.9em
+						a
+							color: cyan
 
 			ul#blog_mobile
-				li:first-child
-					a
-						color: cyan
+				@extend .menu_sub_list_mobile
+				display: block
+
+			ul#data_mobile
+				@extend .menu_sub_list_mobile
+
+			ul#finance_mobile
+				@extend .menu_sub_list_mobile
 
 	article
 		background-color: rgba(37, 18, 221, 0.5)

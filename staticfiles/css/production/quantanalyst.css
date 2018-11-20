@@ -355,10 +355,10 @@ main {
       list-style-type: none;
       text-align: right;
       line-height: 1.5em; }
-    main #navigation .menu_item, main #navigation ul#blog, main #navigation ul#data, main #navigation ul#finance {
+    main #navigation .menu_sub_list, main #navigation ul#blog, main #navigation ul#data, main #navigation ul#finance {
       display: none; }
-      main #navigation .menu_item li:first-child a, main #navigation ul#blog li:first-child a, main #navigation ul#data li:first-child a, main #navigation ul#finance li:first-child a {
-        color: cyan; }
+      main #navigation .menu_sub_list li:first-child a, main #navigation ul#blog li:first-child a, main #navigation ul#data li:first-child a, main #navigation ul#finance li:first-child a {
+        color: salmon; }
     @media (max-width: 599px) {
       main #navigation {
         width: 100%;
@@ -378,8 +378,24 @@ main {
       main #navigation_mobile {
         width: 100%;
         display: block; }
-        main #navigation_mobile ul#blog_mobile li:first-child a {
-          color: cyan; } }
+        main #navigation_mobile ul {
+          list-style-type: none; }
+        main #navigation_mobile .menu_sub_list_mobile, main #navigation_mobile ul#blog_mobile, main #navigation_mobile ul#data_mobile, main #navigation_mobile ul#finance_mobile {
+          background-color: rgba(220, 20, 60, 0.9);
+          margin: 0px;
+          padding: 30px;
+          line-height: 1.6em;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          display: none; }
+          main #navigation_mobile .menu_sub_list_mobile li:first-child, main #navigation_mobile ul#blog_mobile li:first-child, main #navigation_mobile ul#data_mobile li:first-child, main #navigation_mobile ul#finance_mobile li:first-child {
+            line-height: 2.9em; }
+            main #navigation_mobile .menu_sub_list_mobile li:first-child a, main #navigation_mobile ul#blog_mobile li:first-child a, main #navigation_mobile ul#data_mobile li:first-child a, main #navigation_mobile ul#finance_mobile li:first-child a {
+              color: cyan; }
+        main #navigation_mobile ul#blog_mobile {
+          display: block; } }
   main article {
     background-color: rgba(37, 18, 221, 0.5);
     height: 100px;
