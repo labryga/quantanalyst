@@ -12,37 +12,37 @@ var gulp = require('gulp'),
 
 gulp.task('css', () => {
 	return gulp.src([
-			'../css/sass/normalize.css',
-			'../css/sass/html.sass',
-			'../css/sass/header.sass',
-			'../css/sass/main.sass',
-			'../css/sass/footer.sass'])
+			'../staticfiles/css/sass/normalize.css',
+			'../staticfiles/css/sass/html.sass',
+			'../staticfiles/css/sass/header.sass',
+			'../staticfiles/css/sass/main.sass',
+			'../staticfiles/css/sass/footer.sass'])
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('quantanalyst.css'))
-			.pipe(gulp.dest('../css/production/'))
+			.pipe(gulp.dest('../staticfiles/css/production/'))
 			.pipe(uglifycss())
 			.pipe(rename('quantanalyst.min.css'))
-		.pipe(gulp.dest('../css/production/'));
+		.pipe(gulp.dest('../staticfiles/css/production/'));
 });
 
 
 gulp.task('javascript', () => {
-	return gulp.src('../js/es6/modules/*.js')
+	return gulp.src('../staticfiles/js/es6/modules/*.js')
 			.pipe(concat('quantanalyst_es6_build.js'))
-			.pipe(gulp.dest('../js/es6/'))
+			.pipe(gulp.dest('../staticfiles/js/es6/'))
 			.pipe(babel({
 				presets: ['@babel/env']
 			}))
 			.pipe(rename('quantanalyst.js'))
-			.pipe(gulp.dest('../js/production/'))
+			.pipe(gulp.dest('../staticfiles/js/production/'))
 			.pipe(uglifyjs())
 			.pipe(rename('quantanalyst.min.js'))
-		.pipe(gulp.dest('../js/production/'));
+		.pipe(gulp.dest('../staticfiles/js/production/'));
 });
 
 
 gulp.task('watch', () => {
-	gulp.watch('../css/sass/*', gulp.series('css'));
-	gulp.watch('../js/es6/modules/*.js', gulp.series('javascript'));
+	gulp.watch('../staticfiles/css/sass/*', gulp.series('css'));
+	gulp.watch('../staticfiles/js/es6/modules/*.js', gulp.series('javascript'));
 });
