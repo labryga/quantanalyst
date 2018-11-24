@@ -1,3 +1,4 @@
+{% load staticfiles %}
 !!! 5
 
 head
@@ -15,6 +16,7 @@ body
 	main
 		div(class="grid_row")	
 
+			// navigation desktop/tablet => 600px
 			div(id="navigation")
 
 				ul(id="menu")
@@ -41,8 +43,9 @@ body
 					li
 						a(href="#")= "finanzen"
 
-			div(id="navigation_mobile")
 
+			// navigation mobile < 600px
+			div(id="navigation_mobile")
 
 				ul(id="menu_mobile")
 
@@ -73,6 +76,9 @@ body
 						a(href="#")= "finanzen"
 
 			article(class="article")
+
+				{% block main %}
+				{% endblock main %}
 
 	footer
 		div(class="grid_row")
