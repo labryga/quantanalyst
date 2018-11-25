@@ -5,4 +5,4 @@ from . models import BlogEintrag
 class BlogEintragAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(BlogEintrag, BlogEintragAdmin)
+# admin.site.register(BlogEintrag, BlogEintragAdmin)
