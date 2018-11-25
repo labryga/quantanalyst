@@ -1,14 +1,91 @@
+{% load staticfiles %}
 !!! 5
 
 head
 	meta(name="viewport", content="width=device-width, initial-scale=1")
 	title= "quantanalyst.ch"
-	link(href="quantanalyst.min.css", rel="stylesheet")
+	link(href="quantanalyst.css", rel="stylesheet")
 
 body
-	div(id="container")
-		div(id="container-logo")
-			h1(id="logo-titel", onclick="MyFunction(event)")= "Quantanalyst.ch"
-			h5(id="logo-untertitel")= "New generation rest api."
 
-	script(src="quantanalyst.min.js")
+	header
+		div(class="grid_row")	
+			div(class="title")
+			div(class="subtitle")
+	
+	main
+		div(class="grid_row")	
+
+			// navigation desktop/tablet => 600px
+			div(id="navigation")
+
+				ul(id="menu")
+					menu_items = ['blog', 'data', 'finance', 'code']
+					each menu_item in menu_items
+						li
+							a(href="#" data-navigation-type=menu_item)= menu_item
+
+				ul(id="blog")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "blog 02"
+
+				ul(id="data")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "data 02"
+
+				ul(id="finance")
+					li
+						a(href="#" data-navigation-type="menu")= "menu"
+					li
+						a(href="#")= "finanzen"
+
+
+			// navigation mobile < 600px
+			div(id="navigation_mobile")
+
+				ul(id="menu_mobile")
+
+					menu_items_mobile = ['blog_mobile', 'data_mobile', 'finance_mobile', 'code_mobile']
+					each menu_item_mobile in menu_items
+						li
+							a(href="#" data-navigation-type=menu_item_mobile)= menu_item_mobile
+
+				ul(id="blog_mobile")
+					li
+						a(href="#" data-navigation-type="menu_mobile")= "menu"
+					li
+						a(href="#")= "blogeintrag Thema 01"
+					li
+						a(href="#")= "blogeintrag Thema 02 "
+
+
+				ul(id="data_mobile")
+					li
+						a(href="#" data-navigation-type="menu_mobile")= "menu"
+					li
+						a(href="#")= "data 02"
+
+				ul(id="finance_mobile")
+					li
+						a(href="#" data-navigation-type="menu_mobile")= "menu"
+					li
+						a(href="#")= "finanzen"
+
+			article(class="article")
+
+				{% block main %}
+				{% endblock main %}
+
+	footer
+		div(class="grid_row")
+			footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
+			each footer_entry in footer_entries
+				div(class="footer_entry")
+					a(href="https://github.com/labryga", target="_blank")= footer_entry
+
+	script(src="quantanalyst.js")
+
