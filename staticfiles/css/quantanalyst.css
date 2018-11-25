@@ -384,7 +384,7 @@ main {
           padding: 0px;
           text-align: center; }
           main #navigation_mobile ul#menu_mobile li {
-            width: 80px;
+            width: 70px;
             display: inline-block; }
         main #navigation_mobile .menu_sub_list_mobile, main #navigation_mobile ul#blog_mobile, main #navigation_mobile ul#data_mobile, main #navigation_mobile ul#finance_mobile {
           background-color: rgba(64, 0, 128, 0.7);

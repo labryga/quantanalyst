@@ -7,4 +7,4 @@ xx*
 package-lock.json
 /home/migrations/
 /staticfiles/django_tinymce/
-/staticfiles/tiny_mce/
+/staticfiles/ckeditor/
