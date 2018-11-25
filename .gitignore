@@ -6,3 +6,5 @@ xx*
 *test*
 package-lock.json
 /home/migrations/
+/staticfiles/django_tinymce/
+/staticfiles/tiny_mce/
