@@ -7,34 +7,32 @@ CKEDITOR_CONFIGS = {
 
         'toolbar_BlogContent': [
 
-            {'name': 'style',
-                'items': ['Styles', 'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight']},
+            {'name': 'basicstyles', 
+                'items': [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 
+                'Superscript', '-', 'CopyFormatting', 'RemoveFormat', 
+                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'TextColor', 'BGColor',
+                ] },
 
             {'name': 'colors',
-                'items': ['TextColor', 'BGColor']},
+                'items': ['Preview', 'Indent', 'Outdent', 'Blockquote', 'Table']},
 
             {'name': 'links',
-                'items': ['Link', 'Unlink', 'Anchor']},
+                'items': ['Link', 'Unlink', 'Anchor', 'CodeSnippet', 'Mathjax']},
 
-            {'name': 'coding',
-                'items': ['CodeSnippet']},
-
-            {'name': 'math',
-                'items': ['Mathjax']},
-
-            {'name': 'font',
-                'items': ['Font']},
 
             ],
 
-        'width': 900,
+        'width': 1000,
         'height': 500,
 
         'mathJaxLib': '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML',
 
-        'extraPlugins': ','.join(['codesnippet', 'mathjax', 'font']),
+        'extraPlugins': ','.join(['codesnippet', 'mathjax']),
 
         'font_names': ';'.join(['Nunito-Regular', 'Arial', 'Tahoma', 'Times']),
+
+        'language': 'de',
 
         },
 
@@ -45,18 +43,16 @@ CKEDITOR_CONFIGS = {
 
         'toolbar_BlogTitle': [
 
-            {'name': 'style',
-                'items': ['Styles', 'Format', 'Font', 'FontSize']},
-
-            {'name': 'colors',
-                'items': ['TextColor', 'BGColor']},
-
-            {'name': 'links',
-                'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'basicstyles', 
+                'items': [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 
+                'Superscript', '-', 'CopyFormatting', 'RemoveFormat', 
+                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'TextColor', 'BGColor',
+                ] },
 
             ],
 
-        'width': 900,
+        'width': 1000,
         'height': 50,
 
         }
