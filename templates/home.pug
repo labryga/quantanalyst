@@ -1,72 +1,10 @@
 {% extends "base.pug" %}
 
 	
-{% block main %}
-main
-		div(class="grid_row")	
+{% block article %}
 
-			// navigation desktop/tablet => 600px
-			div(id="navigation")
+article(class="article")
+	p= "Data Science in Finance."
 
-				ul(id="menu")
-					menu_items = ['blog', 'data', 'finance', 'code']
-					each menu_item in menu_items
-						li
-							a(href="#" data-navigation-type=menu_item)= menu_item
-
-				ul(id="blog")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "blog 02"
-
-				ul(id="data")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "data 02"
-
-				ul(id="finance")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "finanzen"
-
-
-			// navigation mobile < 600px
-			div(id="navigation_mobile")
-
-				ul(id="menu_mobile")
-
-					menu_items_mobile = ['blog_mobile', 'data_mobile', 'finance_mobile', 'code_mobile']
-					each menu_item_mobile in menu_items
-						li
-							a(href="#" data-navigation-type=menu_item_mobile)= menu_item_mobile
-
-				ul(id="blog_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "blogeintrag Thema 01"
-					li
-						a(href="#")= "blogeintrag Thema 02 "
-
-
-				ul(id="data_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "data 02"
-
-				ul(id="finance_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "finanzen"
-
-			article(class="article")
-				svg(width=200, height=200)
-					rect(width=100, height=50, style="fill: salmon; stroke-width: 8; stroke: skyblue;")
-
-{% endblock main %}
+{% endblock article %}
 

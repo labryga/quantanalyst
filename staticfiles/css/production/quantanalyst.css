@@ -403,21 +403,22 @@ main {
             main #navigation_mobile .menu_sub_list_mobile li:first-child a, main #navigation_mobile ul#blog_mobile li:first-child a, main #navigation_mobile ul#data_mobile li:first-child a, main #navigation_mobile ul#finance_mobile li:first-child a {
               color: cyan; } }
   main article {
+    background-color: rgba(220, 20, 60, 0.2);
     height: 100px;
     float: right; }
     @media (max-width: 599px) {
       main article {
-        width: 100%; } }
+        width: 66.66667%; } }
     @media (min-width: 600px) {
       main article {
-        width: 79.16667%; } }
+        width: 75%; } }
     @media (min-width: 900px) {
       main article {
         width: 75%;
         float: left; } }
     @media (min-width: 1200px) {
       main article {
-        width: 75%;
+        width: 66.66667%;
         float: left; } }
 
 footer {
