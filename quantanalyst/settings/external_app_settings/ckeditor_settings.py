@@ -1,5 +1,4 @@
 
-
 CKEDITOR_CONFIGS = {
 
     'blogentrycontent': {
@@ -9,7 +8,7 @@ CKEDITOR_CONFIGS = {
         'toolbar_BlogContent': [
 
             {'name': 'style',
-                'items': ['Styles', 'Format', 'Font', 'FontSize']},
+                'items': ['Styles', 'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight']},
 
             {'name': 'colors',
                 'items': ['TextColor', 'BGColor']},
@@ -23,6 +22,9 @@ CKEDITOR_CONFIGS = {
             {'name': 'math',
                 'items': ['Mathjax']},
 
+            {'name': 'font',
+                'items': ['Font']},
+
             ],
 
         'width': 900,
@@ -30,7 +32,9 @@ CKEDITOR_CONFIGS = {
 
         'mathJaxLib': '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML',
 
-        'extraPlugins': ','.join(['codesnippet', 'mathjax']),
+        'extraPlugins': ','.join(['codesnippet', 'mathjax', 'font']),
+
+        'font_names': ';'.join(['Nunito-Regular', 'Arial', 'Tahoma', 'Times']),
 
         },
 

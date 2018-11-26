@@ -33,8 +33,3 @@ navigation_mobile.onclick = function (event) {
     document.getElementById(list_navigation_type).style.display = "block";
   }
 };
-
-tinymc.init({
-  selector: 'textarea',
-  toolbar: ['undo redo | stylesheet | bold italic | link image', 'alignleft aligncenter alignright']
-});
