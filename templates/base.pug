@@ -1,0 +1,27 @@
+{% load staticfiles %}
+!!! 5
+
+head
+	meta(name="viewport", content="width=device-width, initial-scale=1")
+	title= "quantanalyst.ch"
+	link(href="quantanalyst.css", rel="stylesheet")
+
+body
+
+	header
+		div(class="grid_row")	
+			div(class="title")
+			div(class="subtitle")
+	
+	{% block main %}
+	{% endblock main %}
+
+	footer
+		div(class="grid_row")
+			footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
+			each footer_entry in footer_entries
+				div(class="footer_entry")
+					a(href="https://github.com/labryga", target="_blank")= footer_entry
+
+	script(src="quantanalyst.js")
+
