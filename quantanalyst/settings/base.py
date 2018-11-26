@@ -1,5 +1,6 @@
 import os
 from decouple import config
+from . external_app_settings.ckeditor_settings import CKEDITOR_CONFIGS
 
 BASE_DIR = os.path.dirname(
     os.path.dirname(
@@ -104,5 +105,4 @@ STATICFILES_DIRS = [
     ('js', os.path.join(BASE_DIR, 'staticfiles', 'js', 'production')),
     ('css', os.path.join(BASE_DIR, 'staticfiles', 'css', 'production'))
 ]
-
 
