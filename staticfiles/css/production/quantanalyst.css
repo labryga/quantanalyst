@@ -348,17 +348,10 @@ main {
     content: "";
     clear: both; }
   main #navigation {
-    height: 100px;
-    padding: 15px 30px 0px 0px;
+    background-color: rgba(135, 206, 235, 0.05);
+    height: 500px;
+    padding: 20px 30px 0px 0px;
     float: left; }
-    main #navigation ul {
-      list-style-type: none;
-      text-align: right;
-      line-height: 1.5em; }
-    main #navigation .menu_sub_list, main #navigation ul#blog, main #navigation ul#data, main #navigation ul#finance {
-      display: none; }
-      main #navigation .menu_sub_list li:first-child a, main #navigation ul#blog li:first-child a, main #navigation ul#data li:first-child a, main #navigation ul#finance li:first-child a {
-        color: cyan; }
     @media (max-width: 599px) {
       main #navigation {
         width: 100%;
@@ -372,6 +365,14 @@ main {
     @media (min-width: 1200px) {
       main #navigation {
         width: 16.66667%; } }
+    main #navigation ul {
+      list-style-type: none;
+      text-align: right;
+      line-height: 1.5em; }
+    main #navigation .menu_sub_list, main #navigation ul#blog, main #navigation ul#data, main #navigation ul#finance {
+      display: none; }
+      main #navigation .menu_sub_list li:first-child a, main #navigation ul#blog li:first-child a, main #navigation ul#data li:first-child a, main #navigation ul#finance li:first-child a {
+        color: cyan; }
   main #navigation_mobile {
     display: none; }
     @media (max-width: 599px) {
@@ -403,12 +404,14 @@ main {
             main #navigation_mobile .menu_sub_list_mobile li:first-child a, main #navigation_mobile ul#blog_mobile li:first-child a, main #navigation_mobile ul#data_mobile li:first-child a, main #navigation_mobile ul#finance_mobile li:first-child a {
               color: cyan; } }
   main article {
-    background-color: rgba(220, 20, 60, 0.2);
-    height: 100px;
+    background-color: rgba(220, 20, 60, 0.05);
+    height: 500px;
+    padding: 20px 30px;
     float: right; }
     @media (max-width: 599px) {
       main article {
-        width: 66.66667%; } }
+        background-color: rgba(240, 230, 140, 0.1);
+        width: 100%; } }
     @media (min-width: 600px) {
       main article {
         width: 75%; } }
@@ -418,8 +421,15 @@ main {
         float: left; } }
     @media (min-width: 1200px) {
       main article {
-        width: 66.66667%;
+        width: 75%;
         float: left; } }
+
+.chart {
+  background-color: rgba(245, 255, 250, 0.1); }
+  .chart rect {
+    fill: steelblue; }
+  .chart text {
+    color: mintcream; }
 
 footer {
   width: 100%;

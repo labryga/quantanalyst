@@ -16,6 +16,7 @@ gulp.task('css', () => {
 			'../staticfiles/css/sass/html.sass',
 			'../staticfiles/css/sass/header.sass',
 			'../staticfiles/css/sass/main.sass',
+			'../staticfiles/css/sass/home.sass',
 			'../staticfiles/css/sass/footer.sass'])
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))

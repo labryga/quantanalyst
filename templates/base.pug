@@ -5,8 +5,10 @@ head
 	meta(name="viewport", content="width=device-width, initial-scale=1")
 	title= "quantanalyst.ch"
 	link(href="quantanalyst.css", rel="stylesheet")
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML')
+	script(src='https://d3js.org/d3.v5.min.js')
+	script(src='https://d3js.org/d3-selection-multi.v1.min.js')
 
-body
 
 	header
 		div(class="grid_row")	
@@ -43,7 +45,6 @@ body
 					li
 						a(href="#")= "finanzen"
 
-
 			// navigation mobile < 600px
 			div(id="navigation_mobile")
 
@@ -75,8 +76,10 @@ body
 					li
 						a(href="#")= "finanzen"
 
-			{% block article %}
-			{% endblock article %}
+			article
+
+				{% block article %}
+				{% endblock article %}
 
 	footer
 		div(class="grid_row")

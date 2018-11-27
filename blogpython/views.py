@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
+from . import models
 
-# Create your views here.
+
+class BlogEintrag(DetailView):
+    model = models.TestBlogEntry
+    template_name = 'BlogEintrag.pug' 
+

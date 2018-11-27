@@ -5,8 +5,22 @@ main
 	height: 800px
 
 	#navigation
-		height: 100px
-		padding: 15px 30px 0px 0px
+		@media (max-width: 599px)
+			width: percentage(12/12)
+			display: none
+
+		@media (min-width: 600px)
+			width: percentage(2.5/12)
+
+		@media (min-width: 900px)
+			width: percentage(2/12)
+
+		@media (min-width: 1200px)
+			width: percentage(2/12)
+
+		background-color: rgba(skyblue, 0.05)
+		height: 500px
+		padding: 20px 30px 0px 0px
 		float: left
 
 		ul
@@ -30,18 +44,6 @@ main
 		ul#finance
 			@extend .menu_sub_list
 
-		@media (max-width: 599px)
-			width: percentage(12/12)
-			display: none
-
-		@media (min-width: 600px)
-			width: percentage(2.5/12)
-
-		@media (min-width: 900px)
-			width: percentage(2/12)
-
-		@media (min-width: 1200px)
-			width: percentage(2/12)
 
 	#navigation_mobile
 		display: none
@@ -57,7 +59,6 @@ main
 				li
 					width: 70px
 					display: inline-block
-
 
 			.menu_sub_list_mobile
 				background-color: rgba(#400080, 0.7)
@@ -88,13 +89,11 @@ main
 			ul#finance_mobile
 				@extend .menu_sub_list_mobile
 
-	article
-		background-color: rgba(crimson, 0.2)
-		height: 100px
-		float: right
 
+	article
 		@media (max-width: 599px)
-			width: percentage(8/12)
+			background-color: rgba(khaki, 0.1)
+			width: percentage(12/12)
 
 		@media (min-width: 600px)
 			width: percentage(9/12)
@@ -104,6 +103,12 @@ main
 			float: left
 
 		@media (min-width: 1200px)
-			width: percentage(8/12)
+			width: percentage(9/12)
 			float: left
+
+		background-color: rgba(crimson, 0.05)
+		height: 500px
+		padding: 20px 30px
+		float: right
+
 

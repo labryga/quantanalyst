@@ -10,7 +10,7 @@ CKEDITOR_CONFIGS = {
             {'name': 'basicstyles', 
                 'items': [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 
                 'Superscript', '-', 'CopyFormatting', 'RemoveFormat', 
-                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
                 'TextColor', 'BGColor',
                 ] },
 
@@ -46,11 +46,13 @@ CKEDITOR_CONFIGS = {
             {'name': 'basicstyles', 
                 'items': [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 
                 'Superscript', '-', 'CopyFormatting', 'RemoveFormat', 
-                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'Format', 'Font', 'FontSize', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
                 'TextColor', 'BGColor',
                 ] },
 
             ],
+
+        'font_names': ';'.join(['Nunito-Regular', 'Arial', 'Tahoma', 'Times']),
 
         'width': 1000,
         'height': 50,

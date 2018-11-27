@@ -4,7 +4,10 @@ from ckeditor.widgets import CKEditorWidget
 
 
 class TestBlogEntry(models.Model):
+    slug = models.SlugField(max_length=100, blank=True)
     datum = models.DateField(blank=True)
     titel = RichTextField(config_name='blogtitle')
     eintrag = RichTextField(config_name='blogentrycontent')
-    wert = models.CharField(max_length=120, blank=True)
+
+    def __str__(self):
+        return "{}".format(self.slug)
