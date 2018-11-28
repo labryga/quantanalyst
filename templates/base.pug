@@ -22,7 +22,8 @@ head
 			div(id="navigation")
 
 				ul(id="menu")
-					menu_items = ['blog', 'data', 'finance', 'code']
+					x = ['Kontakt', 'Information']
+					menu_items = ['Simulation', 'Portofliotheorie', 'Optionen', 'Stochastik', 'Statistik', 'Python', 'JavaScript', '3d.js'] + x
 					each menu_item in menu_items
 						li
 							a(href="#" data-navigation-type=menu_item)= menu_item
@@ -50,8 +51,8 @@ head
 
 				ul(id="menu_mobile")
 
-					menu_items_mobile = ['blog_mobile', 'data_mobile', 'finance_mobile', 'code_mobile']
-					each menu_item_mobile in menu_items
+					menu_items_mobile = ['Stochastik', 'Portofliotheorie', 'Optionen']
+					each menu_item_mobile in menu_items_mobile
 						li
 							a(href="#" data-navigation-type=menu_item_mobile)= menu_item_mobile
 

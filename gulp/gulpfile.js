@@ -18,6 +18,7 @@ gulp.task('css', () => {
 			'../staticfiles/css/sass/main.sass',
 			'../staticfiles/css/sass/home.sass',
 			'../staticfiles/css/sass/footer.sass'])
+
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('quantanalyst.css'))
@@ -47,3 +48,4 @@ gulp.task('watch', () => {
 	gulp.watch('../staticfiles/css/sass/*', gulp.series('css'));
 	gulp.watch('../staticfiles/js/es6/modules/*.js', gulp.series('javascript'));
 });
+
