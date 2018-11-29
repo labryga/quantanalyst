@@ -21,10 +21,12 @@ head
 
 			// navigation desktop/tablet => 600px
 			div(id="navigation")
-
+	
 				ul(id="menu")
-					x = ['Kontakt', 'Information']
-					menu_items = ['Simulation', 'Portofliotheorie', 'Optionen', 'Stochastik', 'Statistik', 'Python', 'JavaScript', '3d.js'] + x
+					menu_items_01 = ['Modellsimulation', 'Portofliotheorie', 'Optionen', 'Stochastik',]
+					menu_items_02 = [ 'Statistik', 'Python', 'JavaScript', '3d.js']
+					menu_items_03 = ['Kontakt', 'Information']
+					menu_items = menu_items_01 + menu_items_02 + menu_items_03
 					each menu_item in menu_items
 						li
 							a(href="#" data-navigation-type=menu_item)= menu_item
