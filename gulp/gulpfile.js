@@ -13,12 +13,12 @@ var gulp = require('gulp'),
 gulp.task('css', () => {
 	let sassPrefix = '../staticfiles/css/sass/'
 	return gulp.src([
-			sassPrefix + 'normalize.css',
-			sassPrefix + 'html.sass',
-			sassPrefix + 'header.sass',
-			sassPrefix + 'main.sass',
-			sassPrefix + 'home.sass',
-			sassPrefix + 'footer.sass'])
+			'../staticfiles/css/sass/normalize.css',
+			'../staticfiles/css/sass/html.sass',
+			'../staticfiles/css/sass/header.sass',
+			'../staticfiles/css/sass/main.sass',
+			'../staticfiles/css/sass/home.sass',
+			'../staticfiles/css/sass/footer.sass'])
 
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
