@@ -1,0 +1,16 @@
+{% extends "base.pug" %}
+
+{% block article %}
+
+//- p=home{{ object.slug | safe }}
+//- p= object.eintrag
+
+p
+	| {{ object.datum | safe }}
+p
+	| {{ object.titel | safe }} 
+
+p
+	| {{ object.eintrag | safe }} 
+
+{% endblock article %}

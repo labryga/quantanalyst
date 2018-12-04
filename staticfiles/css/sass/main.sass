@@ -1,0 +1,122 @@
+@import 'mixins.sass'
+
+main
+	@include grid_container
+	height: 800px
+
+	#navigation
+		@media (max-width: 599px)
+			width: percentage(12/12)
+			display: none
+
+		@media (min-width: 600px)
+			width: percentage(2.5/12)
+
+		@media (min-width: 900px)
+			width: percentage(2/12)
+
+		@media (min-width: 1200px)
+			width: percentage(2/12)
+
+		// background-color: rgba(skyblue, 0.05)
+		height: 500px
+		padding: 25px 5px 0px 0px
+		float: left
+
+		#menu
+			padding: 0px
+
+		ul
+			list-style-type: none
+			text-align: right
+			line-height: 1.9em
+			font-size: 1em
+			color: snow
+			a:hover
+				color: cyan
+		
+		.menu_sub_list
+			display: none
+			li
+				&:first-child
+					a
+						color: cyan
+
+		ul#blog
+			@extend .menu_sub_list
+
+		ul#data
+			@extend .menu_sub_list
+
+		ul#finance
+			@extend .menu_sub_list
+
+
+	#navigation_mobile
+		display: none
+		@media (max-width: 599px)
+			width: percentage(12/12)
+			display: block
+			ul
+				list-style-type: none
+
+			ul#menu_mobile
+				padding: 0px
+				text-align: center
+				font-size: 1.0em
+				li
+					width: 120px
+					display: inline-block
+
+			.menu_sub_list_mobile
+				background-color: rgba(#400080, 0.7)
+				margin: 0px
+				padding: 30px
+				line-height: 1.6em
+				font-size: 0.95em
+				position: fixed
+				width: 100%
+				height: 100%
+				top: 0px
+				display: none
+				z-index: 10
+
+				li
+					&:first-child
+						line-height: 2.9em
+						a
+							color: cyan
+
+			ul#blog_mobile
+				@extend .menu_sub_list_mobile
+				// display: block
+
+			ul#data_mobile
+				@extend .menu_sub_list_mobile
+
+			ul#finance_mobile
+				@extend .menu_sub_list_mobile
+
+
+	article
+		@media (max-width: 599px)
+			background-color: rgba(khaki, 0.1)
+			width: percentage(12/12)
+
+		@media (min-width: 600px)
+			width: percentage(9.5/12)
+
+		@media (min-width: 900px)
+			width: percentage(9.5/12)
+			float: left
+
+		@media (min-width: 1200px)
+			width: percentage(9/12)
+			float: left
+
+		// background-color: rgba(crimson, 0.1)
+		height: 100%
+		padding: 20px 30px
+		float: right
+
+

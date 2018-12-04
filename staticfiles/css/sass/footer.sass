@@ -1,0 +1,25 @@
+@import 'mixins.sass'
+
+footer
+	@include grid_container
+	height: 35px
+
+	& .grid_row
+		@include clearfix
+		margin: 0px auto
+		max-width: 1200px
+		height: 100%
+		text-align: center
+
+		& .footer_entry
+			margin: 0px
+			color: cyan
+			width: 60px
+			max-width: 100px
+			height: 100%
+			line-height: 35px
+			font-size: 0.8em
+			display: inline-block
+			a
+				color: cyan
+

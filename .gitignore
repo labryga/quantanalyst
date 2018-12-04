@@ -5,3 +5,6 @@ node_modules/
 xx*
 *test*
 package-lock.json
+/home/migrations/
+/staticfiles/django_tinymce/
+/staticfiles/ckeditor/

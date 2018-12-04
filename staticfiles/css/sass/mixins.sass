@@ -1,0 +1,14 @@
+
+@mixin clearfix
+	&:after
+		display: table
+		content: ""
+		clear: both
+
+@mixin grid_container
+	width: 100%
+	max-width: 1200px
+	margin: 0px auto
+
+	& .grid_row
+		@include clearfix
