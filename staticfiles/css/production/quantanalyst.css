@@ -342,7 +342,7 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
-  height: 800px; }
+  height: 1500px; }
   main .grid_row:after {
     display: table;
     content: "";
@@ -436,6 +436,11 @@ main {
 
 #diagram {
   background-color: rgba(135, 206, 235, 0.2); }
+
+#schleife {
+  background-color: rgba(240, 230, 140, 0.05);
+  height: 500px;
+  width: 100%; }
 
 footer {
   width: 100%;

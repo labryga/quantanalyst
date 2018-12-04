@@ -100,13 +100,14 @@ bars.transition().duration(6000).delay(300).attrs({
   "y": function y(d, i) {
     return i * 20;
   }
-});
+}); // strich
+
 d3.json('stock.json').then(function (data2) {
+  var width = '100%';
   var diagram_canvas = d3.select('#diagram').append('svg').attrs({
-    'width': width,
+    'width': '100%',
     'height': '500px'
   });
-  var width = '100%';
   var dat2_x_vlaues = data2.map(function (item) {
     return item.x;
   });
@@ -134,5 +135,40 @@ d3.json('stock.json').then(function (data2) {
       return i * 22;
     }
   });
-  balken.append('path');
+  var pathline = d3.line().x(function (d) {
+    return d.x;
+  }).y(function (d) {
+    return d.y;
+  });
+  var strich = diagram_canvas.selectAll('path').data([data2]).enter().append('path').attrs({
+    'd': pathline,
+    'fill': 'none',
+    'stroke': 'cyan',
+    'stroke-width': '1.5px'
+  });
+});
+var schleife_canvas = d3.select('#schleife').append('svg').attrs({
+  'width': '100%',
+  'height': '100%'
+});
+var pfadData = [{
+  source: {
+    y: 10,
+    x: 175
+  },
+  target: {
+    y: 300,
+    x: 10
+  }
+}];
+var pfad = d3.linkHorizontal().x(function (d) {
+  return d.y;
+}).y(function (d) {
+  return d.x;
+});
+schleife_canvas.selectAll('path').data(pfadData).enter().append('path').attrs({
+  'd': pfad,
+  'stroke': 'cyan',
+  'stroke-width': '2px',
+  'fill': 'none'
 });
