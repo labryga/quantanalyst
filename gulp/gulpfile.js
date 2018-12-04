@@ -11,6 +11,7 @@ var gulp = require('gulp'),
 	
 
 gulp.task('css', () => {
+	let sassPrefix = '../staticfiles/css/sass/'
 	return gulp.src([
 			'../staticfiles/css/sass/normalize.css',
 			'../staticfiles/css/sass/html.sass',

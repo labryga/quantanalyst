@@ -87,14 +87,15 @@ bars.transition()
 					  "y": function(d, i) { return i * 20; },
 					  });
 
-
+// strich
 d3.json('stock.json').then(function(data2) {
+
+	let width = '100%';
 
 	let diagram_canvas = d3.select('#diagram')
 		.append('svg')
-		.attrs({'width': width, 'height': '500px'});
+		.attrs({'width': '100%', 'height': '500px'});
 
-	let width = '100%';
 
 	let dat2_x_vlaues = data2.map(item => item.x);
 	let dat2_x_max = Math.max.apply(null, dat2_x_vlaues);
@@ -122,9 +123,44 @@ d3.json('stock.json').then(function(data2) {
 		  .attrs({'width': function(d, i) { return diagram_scale(d.x); }, 
 				  'height': '20px', 
 				  'y': function(d, i) { return i * 22; } });
+
 		
-		balken.append('path')
+	let pathline = d3.line()
+		  .x(function(d) { return (d.x); })
+		  .y(function(d) { return (d.y); });
+
+	let	strich = diagram_canvas.selectAll('path')
+		  .data([data2])
+		  .enter().append('path')
+		  .attrs({'d': pathline,
+				 'fill': 'none',
+				 'stroke': 'cyan',
+				 'stroke-width': '1.5px'});
 
 
 		});
+
+
+let schleife_canvas = d3.select('#schleife')
+	  .append('svg')
+	  .attrs({'width': '100%', 'height': '100%'});
+
+let pfadData = [
+  {source: {y: 10, x: 175},
+	target: {y: 300, x: 10} 
+  },
+]
+
+let pfad = d3.linkHorizontal()
+	  .x(function(d) { return d.y; })
+	  .y(function(d) { return d.x; });
+
+
+	schleife_canvas.selectAll('path')
+	  .data(pfadData)
+	  .enter().append('path')
+	  .attrs({'d': pfad,
+			 'stroke': 'cyan',
+			 'stroke-width': '2px',
+			 'fill': 'none'});
 
