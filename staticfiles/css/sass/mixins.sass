@@ -14,7 +14,6 @@
 		content: ""
 		clear: both
 
-
 // screen resolutions
 $-phone: 599px
 $-tablet: 600px
@@ -23,16 +22,25 @@ $-desktop: 1200px
 
 @mixin phone
 	@media (max-width: #{$-phone})
+		background-color: rgba(orange, 0.7)
+		border: 1px solid cyan
 		@content
 
 @mixin tablet
 	@media (min-width: #{$-tablet})
+		background-color: rgba(red, 0.2)
+		border: 1px solid cyan
 		@content
 
 @mixin tablet-xl
 	@media (min-width: #{$-tablet-xl})
+		background-color: rgba(green, 0.5)
+		border: 1px solid cyan
 		@content
 
 @mixin desktop
 	@media (min-width: #{$-desktop})
+		background-color: rgba(blue, 0.2)
+		border: 1px solid cyan
 		@content
+
