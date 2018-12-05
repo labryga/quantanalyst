@@ -1,96 +1,100 @@
 {% load staticfiles %}
 !!! 5
 
-head
-	meta(name="viewport", content="width=device-width, initial-scale=1")
-	title= "quantanalyst.ch"
-	link(href="quantanalyst.css", rel="stylesheet")
-	script(src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML')
-	script(src='https://d3js.org/d3.v5.min.js')
-	script(src='https://d3js.org/d3-selection-multi.v1.min.js')
-	script(src='https://unpkg.com/axios/dist/axios.min.js')
+html
 
+	head
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title= "quantanalyst.ch"
+		link(href="quantanalyst.css", rel="stylesheet")
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML')
+		script(src='https://d3js.org/d3.v5.min.js')
+		script(src='https://d3js.org/d3-selection-multi.v1.min.js')
+		script(src='https://unpkg.com/axios/dist/axios.min.js')
 
-	header
-		div(class="grid_row")	
-			div(class="title")
-			div(class="subtitle")
-	
-	main
-		div(class="grid_row")	
+	body
+		header
+			div(class="grid_row")	
+				div(id="container-logo-offset")
+				div(id="container-logo")
+					h1(id="logo-title")= "Quantanalyst.ch"
+					h5(id="logo-subtitle")= "Data Science in Finance."
+		
+		main
+			div(class="grid_row")	
 
-			// navigation desktop/tablet => 600px
-			div(id="navigation")
-	
-				ul(id="menu")
-					menu_items_01 = ['Modellsimulation', 'Portofliotheorie', 'Optionen', 'Stochastik',]
-					menu_items_02 = [ 'Statistik', 'Python', 'JavaScript', '3d.js']
-					menu_items_03 = ['Kontakt', 'Information']
-					menu_items = menu_items_01 + menu_items_02 + menu_items_03
-					each menu_item in menu_items
+				// navigation desktop/tablet => 600px
+				div(id="navigation")
+		
+					ul(id="menu")
+						menu_items_01 = ['Modellsimulation', 'Portofliotheorie', 'Optionen', 'Stochastik',]
+						menu_items_02 = [ 'Statistik', 'Python', 'JavaScript', '3d.js']
+						menu_items_03 = ['Kontakt', 'Information']
+						menu_items = menu_items_01 + menu_items_02 + menu_items_03
+						each menu_item in menu_items
+							li
+								a(href="#" data-navigation-type=menu_item)= menu_item
+
+					ul(id="blog")
 						li
-							a(href="#" data-navigation-type=menu_item)= menu_item
-
-				ul(id="blog")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "blog 02"
-
-				ul(id="data")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "data 02"
-
-				ul(id="finance")
-					li
-						a(href="#" data-navigation-type="menu")= "menu"
-					li
-						a(href="#")= "finanzen"
-
-			// navigation mobile < 600px
-			div(id="navigation_mobile")
-
-				ul(id="menu_mobile")
-
-					menu_items_mobile = ['Stochastik', 'Portofliotheorie', 'Optionen']
-					each menu_item_mobile in menu_items_mobile
+							a(href="#" data-navigation-type="menu")= "menu"
 						li
-							a(href="#" data-navigation-type=menu_item_mobile)= menu_item_mobile
+							a(href="#")= "blog 02"
 
-				ul(id="blog_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "blogeintrag Thema 01"
-					li
-						a(href="#")= "blogeintrag Thema 02 "
+					ul(id="data")
+						li
+							a(href="#" data-navigation-type="menu")= "menu"
+						li
+							a(href="#")= "data 02"
+
+					ul(id="finance")
+						li
+							a(href="#" data-navigation-type="menu")= "menu"
+						li
+							a(href="#")= "finanzen"
+
+				// navigation mobile < 600px
+				div(id="navigation_mobile")
+
+					ul(id="menu_mobile")
+
+						menu_items_mobile = ['Stochastik', 'Portofliotheorie', 'Optionen']
+						each menu_item_mobile in menu_items_mobile
+							li
+								a(href="#" data-navigation-type=menu_item_mobile)= menu_item_mobile
+
+					ul(id="blog_mobile")
+						li
+							a(href="#" data-navigation-type="menu_mobile")= "menu"
+						li
+							a(href="#")= "blogeintrag Thema 01"
+						li
+							a(href="#")= "blogeintrag Thema 02 "
 
 
-				ul(id="data_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "data 02"
+					ul(id="data_mobile")
+						li
+							a(href="#" data-navigation-type="menu_mobile")= "menu"
+						li
+							a(href="#")= "data 02"
 
-				ul(id="finance_mobile")
-					li
-						a(href="#" data-navigation-type="menu_mobile")= "menu"
-					li
-						a(href="#")= "finanzen"
+					ul(id="finance_mobile")
+						li
+							a(href="#" data-navigation-type="menu_mobile")= "menu"
+						li
+							a(href="#")= "finanzen"
 
-			article
+				article
 
-				{% block article %}
-				{% endblock article %}
+					{% block article %}
+					{% endblock article %}
 
-	footer
-		div(class="grid_row")
-			footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
-			each footer_entry in footer_entries
-				div(class="footer_entry")
-					a(href="https://github.com/labryga", target="_blank")= footer_entry
+		footer
+			div(class="grid_row")
+				footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
+				each footer_entry in footer_entries
+					div(class="footer_entry")
+						a(href="https://github.com/labryga", target="_blank")= footer_entry
 
-	script(src="quantanalyst.js")
+		script(src="quantanalyst.js")
 
