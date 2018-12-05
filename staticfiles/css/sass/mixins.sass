@@ -13,3 +13,26 @@
 		display: table
 		content: ""
 		clear: both
+
+
+// screen resolutions
+$-phone: 599px
+$-tablet: 600px
+$-tablet-xl: 900px
+$-desktop: 1200px
+
+@mixin phone
+	@media (max-width: #{$-phone})
+		@content
+
+@mixin tablet
+	@media (min-width: #{$-tablet})
+		@content
+
+@mixin tablet-xl
+	@media (min-width: #{$-tablet-xl})
+		@content
+
+@mixin desktop
+	@media (min-width: #{$-desktop})
+		@content

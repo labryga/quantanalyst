@@ -6,7 +6,15 @@ header
 	background-color: rgba(khaki, 0.3)
 	height: 150px
 
-	#container-logo
+	@media (min-width: 1200px)
+		.container-logo
+			width: percentage(8/12)
+
+	@media (min-width: 900px)
+		.container-logo
+			width: percentage(1/12)
+
+	.container-logo
 		background-color: rgba(crimson, 0.3)
 		padding: 30px 30px
 		text-align: right
@@ -19,14 +27,10 @@ header
 			color: cyan
 			margin: 0px
 
-		@media (min-width: 1200px)
-			width: percentage(4/12)
 
-
-	#container-logo-offset
+	.container-logo-offset
 		background-color: red
-		height: 1px
+		height: 10px
 		float: right
 
-		@media (min-width: 1200px)
-			width: percentage(1/12)
+
