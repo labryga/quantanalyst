@@ -6,7 +6,7 @@ html
 	head
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		title= "quantanalyst.ch"
-		link(href="quantanalyst.css", rel="stylesheet")
+		link(href="{% static 'css/production/quantanalyst.css' %}", rel="stylesheet")
 		script(src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML')
 		script(src='https://d3js.org/d3.v5.min.js')
 		script(src='https://d3js.org/d3-selection-multi.v1.min.js')
@@ -41,5 +41,5 @@ html
 					div(class="footer_entry")
 						a(href="https://github.com/labryga", target="_blank")= footer_entry
 
-		script(src="quantanalyst.js")
+		script(src="{% static 'js/production/quantanalyst.js' %}")
 

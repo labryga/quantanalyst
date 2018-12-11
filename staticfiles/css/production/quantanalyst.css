@@ -303,7 +303,7 @@ template {
 
 @font-face {
   font-family: Nunito-Regular;
-  src: url(Nunito-Regular.ttf); }
+  src: url(../../fonts/Nunito-Regular.ttf); }
 
 * {
   -webkit-box-sizing: border-box;
