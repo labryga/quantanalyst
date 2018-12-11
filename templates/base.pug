@@ -25,14 +25,23 @@ html
 
 				// navigation desktop/tablet => 600px
 				div(id="navigation")
+					topics_01 = ['Portfoliotheorie', 'Simulation', 'Optionen', 'Stochastik', 'Statistik', 'Python']
+					topics_02 = ['ECMAScript 6', 'd3.js']
+					topics = topics_01 + topics_02
+					each i in topics
+						ul
+							li
+								a(href="#")= i
+
+
+
+				// navigation phone <= 599px
 				div(id="navigation-phone")
 		
-				div(class="content")
 
+				div(class="content")
 					{% block content %}
 					{% endblock content %}
-
-				div(class="content")
 
 		footer
 			div(class="grid_row")

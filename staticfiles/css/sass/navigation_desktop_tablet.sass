@@ -1,0 +1,21 @@
+@import 'mixins.sass'
+
+
+#navigation
+  background-color: green
+  height: 500px
+  float: left
+
+
+  @include phone
+    display: none
+
+  @include tablet
+    width: percentage(2/12)
+
+  @include tablet-xl
+    width: percentage(2/12)
+
+  @include desktop
+    width: percentage(2/12)
+

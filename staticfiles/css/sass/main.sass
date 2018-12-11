@@ -5,48 +5,27 @@ main
 	@include grid_container
 	height: 1500px
 
-	#navigation
-		background-color: green
-		height: 500px
-		float: left
 
-	#navigation-phone
-		background-color: rgba(salmon, 0.5)
-		width: 50%
-		height: 200px
-		display: none
+@import 'navigation_desktop_tablet.sass'
+
+@import 'navigation_phone.sass'
 
 
-	.content
-		background-color: rgba(yellow, 0.4)
-		padding: 20px
-		height: 500px
-		float: right
-
+.content
+	background-color: rgba(yellow, 0.4)
+	padding: 20px
+	height: 500px
+	float: right
 
 	@include phone
-		#navigation-phone
-			display: block
-		#navigation
-			display: none
-		.content
-			width: percentage(6/12)
+  	width: percentage(12/12)
 
 	@include tablet
-		#navigation
-			width: percentage(2/12)
-		.content
-			width: percentage(6/12)
+  	width: percentage(2/12)
 
 	@include tablet-xl
-		#navigation
-			width: percentage(2/12)
-		.content
-			width: percentage(6/12)
+  	width: percentage(2/12)
 
 	@include desktop
-		#navigation
-			width: percentage(2/12)
-		.content
-			width: percentage(10/12)
+  	width: percentage(6/12)
 
