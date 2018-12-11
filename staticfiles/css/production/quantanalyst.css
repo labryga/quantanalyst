@@ -340,7 +340,7 @@ header {
     clear: both; }
   header #container-logo {
     height: 50px;
-    padding: 0px 30px;
+    padding: 30px 30px 0px 0px;
     text-align: right;
     float: right; }
     header #container-logo #logo-title {
@@ -352,14 +352,20 @@ header {
     background-color: rgba(255, 0, 0, 0.3);
     float: right;
     height: 50px; }
+  @media (max-width: 599px) {
+    header {
+      background-color: rgba(255, 165, 0, 0.7);
+      border: 1px solid cyan; }
+      header #container-logo {
+        width: 100%; } }
   @media (min-width: 600px) {
     header {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan; }
       header #container-logo {
-        width: 40%; }
+        width: 100%; }
       header #container-logo-offset {
-        width: 60%; } }
+        width: 0%; } }
   @media (min-width: 900px) {
     header {
       background-color: rgba(0, 128, 0, 0.5);
@@ -367,7 +373,7 @@ header {
       header #container-logo {
         width: 33.33333%; }
       header #container-logo-offset {
-        width: 10%; } }
+        width: 0%; } }
   @media (min-width: 1200px) {
     header {
       background-color: rgba(0, 0, 255, 0.2);
@@ -375,7 +381,7 @@ header {
       header #container-logo {
         width: 41.66667%; }
       header #container-logo-offset {
-        width: 16.66667%; } }
+        width: 0%; } }
 
 main {
   width: 100%;
@@ -390,14 +396,22 @@ main {
     background-color: green;
     height: 500px;
     float: left; }
+  main #navigation-phone {
+    background-color: rgba(250, 128, 114, 0.5);
+    width: 50%;
+    height: 200px;
+    display: none; }
   main .content {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.4);
+    padding: 20px;
     height: 500px;
     float: right; }
   @media (max-width: 599px) {
     main {
       background-color: rgba(255, 165, 0, 0.7);
       border: 1px solid cyan; }
+      main #navigation-phone {
+        display: block; }
       main #navigation {
         display: none; }
       main .content {
@@ -425,7 +439,7 @@ main {
       main #navigation {
         width: 16.66667%; }
       main .content {
-        width: 50%; } }
+        width: 83.33333%; } }
 
 #chart {
   background-color: rgba(135, 206, 235, 0.1);

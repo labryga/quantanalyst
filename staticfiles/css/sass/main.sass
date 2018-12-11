@@ -10,14 +10,23 @@ main
 		height: 500px
 		float: left
 
+	#navigation-phone
+		background-color: rgba(salmon, 0.5)
+		width: 50%
+		height: 200px
+		display: none
+
 
 	.content
-		background-color: yellow
+		background-color: rgba(yellow, 0.4)
+		padding: 20px
 		height: 500px
 		float: right
 
 
 	@include phone
+		#navigation-phone
+			display: block
 		#navigation
 			display: none
 		.content
@@ -39,5 +48,5 @@ main
 		#navigation
 			width: percentage(2/12)
 		.content
-			width: percentage(6/12)
+			width: percentage(10/12)
 

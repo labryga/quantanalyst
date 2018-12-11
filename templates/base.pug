@@ -25,11 +25,14 @@ html
 
 				// navigation desktop/tablet => 600px
 				div(id="navigation")
+				div(id="navigation-phone")
 		
 				div(class="content")
 
-				{% block content %}
-				{% endblock content %}
+					{% block content %}
+					{% endblock content %}
+
+				div(class="content")
 
 		footer
 			div(class="grid_row")

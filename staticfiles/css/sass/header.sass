@@ -10,7 +10,7 @@ header
 	#container-logo
 		// background-color: rgba(blue, 0.3)
 		height: 50px
-		padding: 0px 30px
+		padding: 30px 30px 0px 0px
 		text-align: right
 		float: right
 
@@ -27,22 +27,25 @@ header
 		float: right
 		height: 50px
 
+	@include phone
+		#container-logo
+			width: percentage(12/12)
 
 	@include tablet
 		#container-logo
-			width: 40%
+			width: percentage(12/12)
 		#container-logo-offset
-			width: 60%
+			width: percentage(0/12)
 
 	@include tablet-xl
 		#container-logo
 			width: percentage(4/12)
 		#container-logo-offset
-			width: 10%
+			width: percentage(0/12)
 
 	@include desktop
 		#container-logo
 			width: percentage(5/12)
 		#container-logo-offset
-			width: percentage(2/12)
+			width: percentage(0/12)
 
