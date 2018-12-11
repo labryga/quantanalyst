@@ -393,27 +393,27 @@ main {
     content: "";
     clear: both; }
 
-#navigation {
+#navigation_desktop_tablet {
   background-color: green;
   height: 500px;
   float: left; }
   @media (max-width: 599px) {
-    #navigation {
+    #navigation_desktop_tablet {
       background-color: rgba(255, 165, 0, 0.7);
       border: 1px solid cyan;
       display: none; } }
   @media (min-width: 600px) {
-    #navigation {
+    #navigation_desktop_tablet {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan;
       width: 16.66667%; } }
   @media (min-width: 900px) {
-    #navigation {
+    #navigation_desktop_tablet {
       background-color: rgba(0, 128, 0, 0.5);
       border: 1px solid cyan;
       width: 16.66667%; } }
   @media (min-width: 1200px) {
-    #navigation {
+    #navigation_desktop_tablet {
       background-color: rgba(0, 0, 255, 0.2);
       border: 1px solid cyan;
       width: 16.66667%; } }
@@ -453,7 +453,7 @@ main {
     .content {
       background-color: rgba(0, 0, 255, 0.2);
       border: 1px solid cyan;
-      width: 50%; } }
+      width: 66.66667%; } }
 
 #chart {
   background-color: rgba(135, 206, 235, 0.1);

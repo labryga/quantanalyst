@@ -18,7 +18,7 @@ class Menu {
 		alert(event.type + ' over ' + event.target.innerText); }
 }
 
-new Menu(navigation);
+new Menu(navigation_desktop_tablet);
 
 const key = 'P3BEBNSP69FH7J4K';
 

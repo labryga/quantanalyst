@@ -42,7 +42,7 @@ function () {
   return Menu;
 }();
 
-new Menu(navigation);
+new Menu(navigation_desktop_tablet);
 var key = 'P3BEBNSP69FH7J4K';
 
 var Item = function Item(width, height) {
