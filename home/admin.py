@@ -1,8 +1,13 @@
+import sys
+sys.path.append("..")
+
+from project_templates.admin import BlogEntryAdmin
 from django.contrib import admin
 from . import models
 
 
-class BlogEntryAdmin(admin.ModelAdmin):
+@admin.register(models.HomeMenuItems)
+class HomeMenuItemsAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(models.HomeBlog, BlogEntryAdmin)
