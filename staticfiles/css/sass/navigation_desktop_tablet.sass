@@ -6,12 +6,21 @@
   height: 500px
   float: left
 
+  ul
+    padding: 20px 20px 20px 0px
+    list-style-type: none
+    li
+        text-align: right
+        a
+          line-height: 1.7em
+          font-size: 1.0em
+
 
   @include phone
     display: none
 
   @include tablet
-    width: percentage(2/12)
+    width: percentage(2.5/12)
 
   @include tablet-xl
     width: percentage(2/12)

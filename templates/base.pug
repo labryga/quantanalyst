@@ -25,13 +25,13 @@ html
 
 				// navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet")
-					topics_01 = ['Portfoliotheorie', 'Simulation', 'Optionen', 'Stochastik', 'Statistik', 'Python']
-					topics_02 = ['ECMAScript 6', 'd3.js']
-					topics = topics_01 + topics_02
-					each i in topics
-						ul
+					ul
+						topics_01 = ['Portfoliotheorie', 'Simulation', 'Optionen', 'Stochastik', 'Statistik', 'Python']
+						topics_02 = ['ECMAScript 6', 'd3.js']
+						topics = topics_01 + topics_02
+						each topic in topics
 							li
-								a(href="#")= i
+								a(href="#")= topic
 
 
 

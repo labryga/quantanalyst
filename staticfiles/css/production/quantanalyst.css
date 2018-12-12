@@ -397,6 +397,14 @@ main {
   background-color: green;
   height: 500px;
   float: left; }
+  #navigation_desktop_tablet ul {
+    padding: 20px 20px 20px 0px;
+    list-style-type: none; }
+    #navigation_desktop_tablet ul li {
+      text-align: right; }
+      #navigation_desktop_tablet ul li a {
+        line-height: 1.7em;
+        font-size: 1.0em; }
   @media (max-width: 599px) {
     #navigation_desktop_tablet {
       background-color: rgba(255, 165, 0, 0.7);
@@ -406,7 +414,7 @@ main {
     #navigation_desktop_tablet {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan;
-      width: 16.66667%; } }
+      width: 20.83333%; } }
   @media (min-width: 900px) {
     #navigation_desktop_tablet {
       background-color: rgba(0, 128, 0, 0.5);
@@ -427,6 +435,7 @@ main {
     #navigation-phone {
       background-color: rgba(255, 165, 0, 0.7);
       border: 1px solid cyan;
+      width: 100%;
       display: block; } }
 
 .content {
@@ -443,17 +452,17 @@ main {
     .content {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan;
-      width: 16.66667%; } }
+      width: 79.16667%; } }
   @media (min-width: 900px) {
     .content {
       background-color: rgba(0, 128, 0, 0.5);
       border: 1px solid cyan;
-      width: 16.66667%; } }
+      width: 83.33333%; } }
   @media (min-width: 1200px) {
     .content {
       background-color: rgba(0, 0, 255, 0.2);
       border: 1px solid cyan;
-      width: 66.66667%; } }
+      width: 83.33333%; } }
 
 #chart {
   background-color: rgba(135, 206, 235, 0.1);
