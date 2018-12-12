@@ -405,6 +405,8 @@ main {
       #navigation_desktop_tablet ul li a {
         line-height: 1.7em;
         font-size: 1.0em; }
+        #navigation_desktop_tablet ul li a:hover {
+          color: cyan; }
   @media (max-width: 599px) {
     #navigation_desktop_tablet {
       background-color: rgba(255, 165, 0, 0.7);
