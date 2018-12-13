@@ -1,6 +1,10 @@
+
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.generic.list import ListView
+from . import models
 
 
-class Home(TemplateView):
-    template_name = "home.pug"
+class Home(ListView):
+    model = models.HomeMenuItems
+    template_name = "base.pug"

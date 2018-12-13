@@ -25,18 +25,14 @@ html
 
 				// navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet")
-					ul
-						topics_01 = ['Quantanalyst', 'Portfoliotheorie', 'Simulation', 'Optionen', 'Stochastik', 'Statistik']
-						topics_02 = ['Python', 'ECMAScript 6', 'd3.js']
-						topics = topics_01 + topics_02
-						each topic in topics
-							li
-								a(href="#")= topic
-
-
+					for mnuitem in object_list
+						li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
+							
 
 				// navigation phone <= 599px
 				div(id="navigation-phone")
+					for mnuitem in object_list
+						li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
 		
 
 				div(class="content")
