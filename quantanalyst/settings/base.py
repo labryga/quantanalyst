@@ -1,4 +1,4 @@
-import os
+import os, sys
 from decouple import config
 from . external_app_settings.ckeditor_settings import CKEDITOR_CONFIGS
 
@@ -7,6 +7,8 @@ BASE_DIR = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__))
         )
 )
+
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
