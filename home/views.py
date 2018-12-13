@@ -7,6 +7,5 @@ from . import models
 
 class Home(ListView):
     template_name = "base.pug"
-    queryset = models.HomeMenuItems.objects.filter(
-                                            active=True)
+    queryset = models.HomeMenuItems.objects.filter(active=True).order_by('order')
     context_object_name = "menu_list"

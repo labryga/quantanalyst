@@ -13,6 +13,7 @@ class HomeBlog(BlogEntry):
 class HomeMenuItems(models.Model):
     menu_title = models.CharField("meütitel", max_length=30, blank=True)
     active = models.BooleanField("active", blank=True)
+    order = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return "{}".format(self.menu_title)
+        return "{} {} {}".format(self.order, self.menu_title, self.active)
