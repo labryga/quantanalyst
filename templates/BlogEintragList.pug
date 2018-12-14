@@ -1,0 +1,9 @@
+{% extends "base.pug" %}
+
+{% block content %}
+
+ul
+	for blogitem in object_list
+		li: a(href="{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
+
+{% endblock content %}
