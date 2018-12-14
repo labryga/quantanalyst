@@ -25,21 +25,19 @@ html
 
 				// navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet") 
-					//- ul
+					ul
 						for mnuitem in menu_list
-							li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
+							li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
 							
 
 				// navigation phone <= 599px
 				div(id="navigation-phone")
-					//- ul
+					ul
 						for mnuitem in menu_list
 							li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
 		
 
-				div(class="content")
-					{% block content %}
-					{% endblock content %}
+				div(id="inhalt", class="content")
 
 		footer
 			div(class="grid_row")
