@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'portfoliotheorie',
     'modellsimulation',
     'optionen',
+    'stochastik',
+    'statistik',
     'home',
 ]
 
