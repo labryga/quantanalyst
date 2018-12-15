@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'optionen',
     'stochastik',
     'statistik',
+    'djangoblog',
     'home',
 ]
 
