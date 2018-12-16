@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from . import models
+from home.models import HomeMenuItems
 
 
 class ModellsimulationBlogEntries(ListView):
@@ -9,6 +10,11 @@ class ModellsimulationBlogEntries(ListView):
 class ModellsimulationBlogPost(DetailView):
     template_name = "BlogEintrag.pug"
     model = models.ModellsimulationBlog
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ModellsimulationBlogPost, self).get_context_data(*args, **kwargs)
+        context["menu_list"] = HomeMenuItems.objects.filter(active=True).order_by('order')
+        return context
 
     def get_template_names(self):
         if self.template_name is None:
