@@ -1,3 +1,9 @@
-from django.contrib import admin
+import sys
+sys.path.append("..")
 
-# Register your models here.
+from . import models
+from django.contrib import admin
+from project_templates.admin import BlogEntryAdmin
+
+admin.site.register(models.PortfoliotheorieBlog, BlogEntryAdmin)
+

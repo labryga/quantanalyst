@@ -416,7 +416,7 @@ main {
     #navigation_desktop_tablet {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan;
-      width: 20.83333%; } }
+      width: 25%; } }
   @media (min-width: 900px) {
     #navigation_desktop_tablet {
       background-color: rgba(0, 128, 0, 0.5);
@@ -446,6 +446,7 @@ main {
   height: 500px;
   float: right; }
   .content ul {
+    padding: 0px 0px 0px 0pX;
     list-style-type: none; }
     .content ul li {
       line-height: 1.5em; }
@@ -458,7 +459,7 @@ main {
     .content {
       background-color: rgba(255, 0, 0, 0.2);
       border: 1px solid cyan;
-      width: 79.16667%; } }
+      width: 75%; } }
   @media (min-width: 900px) {
     .content {
       background-color: rgba(0, 128, 0, 0.5);
