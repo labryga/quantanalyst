@@ -19,8 +19,6 @@ class ModellsimulationBlogPost(DetailView):
     def get_template_names(self):
         if self.template_name is None:
             raise ImproperlyConfigured(
-                "TemplateResponseMixin requires either a definition of "
-                "'template_name' or an implementation of 'get_template_names()'")
         else:
             if self.request.is_ajax():
                 self.template_name = "BlogEintragAjax.pug"
