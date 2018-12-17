@@ -14,13 +14,3 @@ class ModellsimulationBlogEntries(ListView):
 
 class ModellsimulationBlogPost(BlogPost):
     model = models.ModellsimulationBlog
-
-
-
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super(ModellsimulationBlogPost, self).get_context_data(*args, **kwargs)
-    #     if not self.request.is_ajax():
-    #         context["menu_list"] = HomeMenuItems.objects.filter(active=True).order_by('order')
-    #     return context
-
-
