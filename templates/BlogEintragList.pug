@@ -1,5 +1,3 @@
-{% block content %}
-	for blogitem in object_list
-		li: a(href="modellsimulation/{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
-{% endblock content %}
+for blogitem in object_list
+	li: a(href="modellsimulation/{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
 
