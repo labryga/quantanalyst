@@ -1,3 +1,5 @@
+from home.models import HomeMenuItems
+
 from django.views.generic import DetailView
 
 
@@ -7,3 +9,5 @@ class BlogPost(DetailView):
         self.template_name = "BlogEintragAjax.pug" \
                 if self.request.is_ajax() else "BlogEintrag.pug"
         return [self.template_name]
+
+

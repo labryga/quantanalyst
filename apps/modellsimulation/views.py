@@ -15,5 +15,11 @@ class ModellsimulationBlogEntries(ListView):
 
 class ModellsimulationBlogPost(BlogPost):
     model = models.ModellsimulationBlog
+    
+    # def get_context_data(self):
+    #     context = super(BlogPost, self).get_context_data(**kwargs)
+    #     if not self.request.is_ajax():
+    #         context['menu_list'] = HomeMenuItems.objects.all()
+    #     return context
 
 
