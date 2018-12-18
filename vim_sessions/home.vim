@@ -675,8 +675,8 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set background=dark
 set backspace=indent,eol,start
-set comments=b:#,fb:-
-set commentstring=#\ %s
+set comments=://-,://
+set commentstring=//\ %s
 set completefunc=neocomplcache#complete#manual_complete
 set completeopt=preview,menuone
 set fileencodings=ucs-bom,utf-8,default,latin1
@@ -700,343 +700,64 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +43 templates/base.pug
+badd +6 templates/base.pug
 badd +1 staticfiles/css/sass/header.sass
 badd +24 staticfiles/css/sass/main.sass
 badd +46 staticfiles/css/sass/mixins.sass
 badd +11 templates/home.pug
 badd +1 home/urls.py
-badd +6 quantanalyst/urls.py
+badd +9 quantanalyst/urls.py
 badd +43 quantanalyst/settings/base.py
 badd +8 quantanalyst/settings/production_local.py
 badd +5 staticfiles/css/sass/html.sass
 badd +17 staticfiles/css/sass/navigation_desktop_tablet.sass
 badd +14 staticfiles/css/sass/navigation_phone.sass
 badd +21 staticfiles/js/es6/modules/home.js
-badd +0 home/urls.py
-badd +0 apps/home/views.py
+badd +1 apps/home/views.py
 badd +1 apps/home/urls.py
 badd +4 apps/home/xurls.py
-badd +0 apps/modellsimulation/views.py
-badd +0 apps/modellsimulation/urls.py
+badd +1 apps/modellsimulation/views.py
+badd +1 apps/modellsimulation/urls.py
+badd +1 project_templates/views.py
+badd +1 templates/BlogEintragAjax.pug
+badd +1 templates/BlogEintrag.pug
+badd +1 templates/BlogEintragList.pug
+badd +1 staticfiles/js/production/quantanalyst.min.js
+badd +1 staticfiles/js/es6/modules/navigation.js
+badd +0 templates/navigation_desktop_tablet.pug
+badd +1 templates/baseAjax.pug
+badd +6 templates/base_test.pug
+badd +2 templates/head.pug
+badd +2 templates/header.pug
+badd +6 templates/footer.pug
 argglobal
 silent! argdel *
 argadd templates/base.pug
 set stal=2
-edit quantanalyst/urls.py
+edit templates/navigation_desktop_tablet.pug
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd _ | wincmd |
 vsplit
 1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
 wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 41 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe '2resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
+exe '1resize ' . ((&lines * 27 + 42) / 85)
+exe '2resize ' . ((&lines * 27 + 42) / 85)
+exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
+exe '3resize ' . ((&lines * 27 + 42) / 85)
+exe 'vert 3resize ' . ((&columns * 181 + 136) / 272)
+exe '4resize ' . ((&lines * 26 + 42) / 85)
 argglobal
-nnoremap <buffer> <silent> ,b :call pymode#breakpoint#operate(line('.'))
-onoremap <buffer> C :call pymode#motion#select('^\s*class\s', 0)
-onoremap <buffer> M :call pymode#motion#select('^\s*def\s', 0)
-nnoremap <buffer> [C :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
-onoremap <buffer> [C :call pymode#motion#move('\v^(class|def)\s', 'b')
-onoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
-vnoremap <buffer> [M :call pymode#motion#vmove('^\s*def\s', 'b')
-vnoremap <buffer> [[ :call pymode#motion#vmove('\v^(class|def)\s', 'b')
-onoremap <buffer> [[ :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> [[ :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> ]C :call pymode#motion#move('\v^(class|def)\s', '')
-nnoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
-onoremap <buffer> ]C :call pymode#motion#move('\v^(class|def)\s', '')
-onoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
-vnoremap <buffer> ]M :call pymode#motion#vmove('^\s*def\s', '')
-vnoremap <buffer> ]] :call pymode#motion#vmove('\v^(class|def)\s', '')
-onoremap <buffer> ]] :call pymode#motion#move('\v^(class|def)\s', '')
-nnoremap <buffer> ]] :call pymode#motion#move('\v^(class|def)\s', '')
-onoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
-vnoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
-onoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
-vnoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
-onoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
-vnoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
-onoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
-vnoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=+1
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=^s*\\(def\\|class\\)
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=pymode#folding#expr(v:lnum)
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=expr
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=pymode#folding#text()
-setlocal formatexpr=
-setlocal formatoptions=cq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=pymode#indent#get_indent(v:lnum)
-setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=80
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal nowrap
-setlocal wrapmargin=0
-let s:l = 6 - ((5 * winheight(0) + 20) / 41)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-6
-normal! 016|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/quantanalyst/settings/base.py
-nnoremap <buffer> <silent> ,b :call pymode#breakpoint#operate(line('.'))
-onoremap <buffer> C :call pymode#motion#select('^\s*class\s', 0)
-onoremap <buffer> M :call pymode#motion#select('^\s*def\s', 0)
-nnoremap <buffer> [C :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
-onoremap <buffer> [C :call pymode#motion#move('\v^(class|def)\s', 'b')
-onoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
-vnoremap <buffer> [M :call pymode#motion#vmove('^\s*def\s', 'b')
-vnoremap <buffer> [[ :call pymode#motion#vmove('\v^(class|def)\s', 'b')
-onoremap <buffer> [[ :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> [[ :call pymode#motion#move('\v^(class|def)\s', 'b')
-nnoremap <buffer> ]C :call pymode#motion#move('\v^(class|def)\s', '')
-nnoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
-onoremap <buffer> ]C :call pymode#motion#move('\v^(class|def)\s', '')
-onoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
-vnoremap <buffer> ]M :call pymode#motion#vmove('^\s*def\s', '')
-vnoremap <buffer> ]] :call pymode#motion#vmove('\v^(class|def)\s', '')
-onoremap <buffer> ]] :call pymode#motion#move('\v^(class|def)\s', '')
-nnoremap <buffer> ]] :call pymode#motion#move('\v^(class|def)\s', '')
-onoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
-vnoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
-onoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
-vnoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
-onoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
-vnoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
-onoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
-vnoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=+1
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=^s*\\(def\\|class\\)
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=pymode#folding#expr(v:lnum)
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=expr
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=pymode#folding#text()
-setlocal formatexpr=
-setlocal formatoptions=cq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=pymode#indent#get_indent(v:lnum)
-setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=80
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal nowrap
-setlocal wrapmargin=0
-let s:l = 43 - ((6 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-43
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/base.pug
 let s:cpo_save=&cpo
 set cpo&vim
 imap <buffer>  <Plug>SparkupExecute
@@ -1081,7 +802,7 @@ endif
 setlocal fixendofline
 setlocal foldcolumn=0
 set nofoldenable
-setlocal foldenable
+setlocal nofoldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -1154,22 +875,669 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-26,40fold
-26
-normal! zo
-let s:l = 42 - ((41 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-42
-normal! 036|
+1
+normal! 020|
 lcd ~/quantanalyst/quantanalyst
 wincmd w
-exe '1resize ' . ((&lines * 41 + 42) / 85)
+argglobal
+edit ~/quantanalyst/quantanalyst/templates/BlogEintrag.pug
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer>  <Plug>SparkupExecute
+imap <buffer>  <Plug>SparkupNext
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://-,://,n:|
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'pug'
+setlocal filetype=pug
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcqr
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetPugIndent()
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.pug
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'pug'
+setlocal syntax=pug
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 020|
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
+edit ~/quantanalyst/quantanalyst/templates/BlogEintragAjax.pug
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer>  <Plug>SparkupExecute
+imap <buffer>  <Plug>SparkupNext
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://-,://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#manual_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'pug'
+setlocal filetype=pug
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetPugIndent()
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.pug
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'pug'
+setlocal syntax=pug
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
+edit ~/quantanalyst/quantanalyst/templates/BlogEintragList.pug
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer>  <Plug>SparkupExecute
+imap <buffer>  <Plug>SparkupNext
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://-,://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'pug'
+setlocal filetype=pug
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetPugIndent()
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.pug
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'pug'
+setlocal syntax=pug
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+exe '1resize ' . ((&lines * 27 + 42) / 85)
+exe '2resize ' . ((&lines * 27 + 42) / 85)
+exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
+exe '3resize ' . ((&lines * 27 + 42) / 85)
+exe 'vert 3resize ' . ((&columns * 181 + 136) / 272)
+exe '4resize ' . ((&lines * 26 + 42) / 85)
+tabedit ~/quantanalyst/quantanalyst/templates/baseAjax.pug
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe '2resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer>  <Plug>SparkupExecute
+imap <buffer>  <Plug>SparkupNext
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://-,://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'pug'
+setlocal filetype=pug
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=1
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetPugIndent()
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.pug
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'pug'
+setlocal syntax=pug
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+18,22fold
+let s:l = 5 - ((4 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 06|
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
+edit ~/quantanalyst/quantanalyst/templates/base.pug
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer>  <Plug>SparkupExecute
+imap <buffer>  <Plug>SparkupNext
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://-,://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'pug'
+setlocal filetype=pug
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=2
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetPugIndent()
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.pug
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'pug'
+setlocal syntax=pug
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 08|
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
 tabedit ~/quantanalyst/quantanalyst/apps/home/urls.py
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -1182,7 +1550,10 @@ wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -1194,8 +1565,10 @@ exe '2resize ' . ((&lines * 73 + 42) / 85)
 exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
 exe '3resize ' . ((&lines * 8 + 42) / 85)
 exe 'vert 3resize ' . ((&columns * 136 + 136) / 272)
-exe '4resize ' . ((&lines * 73 + 42) / 85)
+exe '4resize ' . ((&lines * 36 + 42) / 85)
 exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
+exe '5resize ' . ((&lines * 36 + 42) / 85)
+exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -1339,7 +1712,7 @@ setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
+setlocal completefunc=neocomplcache#complete#auto_complete
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -1561,6 +1934,127 @@ normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
+edit ~/quantanalyst/quantanalyst/project_templates/views.py
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=b:#,fb:-
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=pydoc
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 0
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
 edit ~/quantanalyst/quantanalyst/apps/modellsimulation/views.py
 setlocal keymap=
 setlocal noarabic
@@ -1673,11 +2167,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 36) / 73)
+let s:l = 6 - ((5 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
+6
 normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
@@ -1688,9 +2182,11 @@ exe '2resize ' . ((&lines * 73 + 42) / 85)
 exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
 exe '3resize ' . ((&lines * 8 + 42) / 85)
 exe 'vert 3resize ' . ((&columns * 136 + 136) / 272)
-exe '4resize ' . ((&lines * 73 + 42) / 85)
+exe '4resize ' . ((&lines * 36 + 42) / 85)
 exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-tabnext 2
+exe '5resize ' . ((&lines * 36 + 42) / 85)
+exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
