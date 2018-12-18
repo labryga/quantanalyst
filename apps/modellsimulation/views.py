@@ -8,8 +8,12 @@ from home.models import HomeMenuItems
 
 
 class ModellsimulationBlogEntries(ListView):
-    template_name = "BlogEintragList.pug"
+    template_name = "base_test.pug"
     model = models.ModellsimulationBlog
+    def get_context_data(self, **kwargs):
+        context = super(ModellsimulationBlogEntries, self).get_context_data(**kwargs)
+        context["menu_list"] = HomeMenuItems.objects.filter(active=True).order_by('order')
+        return context
 
 
 class ModellsimulationBlogPost(BlogPost):
