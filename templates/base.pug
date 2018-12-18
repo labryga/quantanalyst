@@ -3,14 +3,7 @@
 
 html
 
-	head
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		title= "quantanalyst.ch"
-		link(href="{% static 'css/production/quantanalyst.css' %}", rel="stylesheet")
-		script(src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML')
-		script(src='https://d3js.org/d3.v5.min.js')
-		script(src='https://d3js.org/d3-selection-multi.v1.min.js')
-		script(src='https://unpkg.com/axios/dist/axios.min.js')
+	{% include "head.pug" %}
 
 	body
 		header
@@ -26,6 +19,9 @@ html
 				//-  navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet") 
 					{% block navigaton_desktop_tablet %}
+					ul
+						for mnuitem in menu_list
+							li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
 					{% endblock navigaton_desktop_tablet %}
 							
 				//-  navigation phone <= 599px
@@ -36,8 +32,9 @@ html
 
 				div(id="inhalt", class="content")
 					{% block content %}
+					for blogitem in object_list
+						li: a(href="modellsimulation/{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
 					{% endblock content %}
-
 
 		footer
 			div(class="grid_row")
@@ -47,4 +44,5 @@ html
 						a(href="https://github.com/labryga", target="_blank")= footer_entry
 
 		script(src="{% static 'js/production/quantanalyst.js' %}")
+
 
