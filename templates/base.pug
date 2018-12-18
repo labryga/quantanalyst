@@ -31,13 +31,6 @@ html
 						li: a(href="modellsimulation/{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
 					{% endblock content %}
 
-		footer
-			div(class="grid_row")
-				footer_entries = ['GitHub', 'About', 'Copyright', 'Links']
-				each footer_entry in footer_entries
-					div(class="footer_entry")
-						a(href="https://github.com/labryga", target="_blank")= footer_entry
+		{% include "footer.pug" %}
 
 		script(src="{% static 'js/production/quantanalyst.js' %}")
-
-
