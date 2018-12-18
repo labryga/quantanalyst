@@ -1,3 +1,4 @@
+
 import sys
 sys.path.append("..")
 from project_templates.views import BlogPost
@@ -14,3 +15,5 @@ class ModellsimulationBlogEntries(ListView):
 
 class ModellsimulationBlogPost(BlogPost):
     model = models.ModellsimulationBlog
+
+
