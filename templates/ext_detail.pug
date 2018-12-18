@@ -1,0 +1,17 @@
+{% extends "baseAjax.pug" %}
+
+{% block navigaton_desktop_tablet %}
+ul
+	for mnuitem in menu_list
+		li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
+{% endblock navigaton_desktop_tablet %}
+
+{% block content %}
+p
+	| {{ object.datum | safe }}
+p
+	| {{ object.titel | safe }} 
+
+p
+	| {{ object.eintrag | safe }} 
+{% endblock content %}

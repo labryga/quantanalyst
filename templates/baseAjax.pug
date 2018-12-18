@@ -10,16 +10,17 @@ html
 		main
 			div(class="grid_row")	
 
-				//-  navigation desktop/tablet => 600px
+				// navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet") 
 					{% block navigaton_desktop_tablet %}
 					{% endblock navigaton_desktop_tablet %}
 							
-				//-  navigation phone <= 599px
-				//-  div(id="navigation-phone")
-				//-  	ul
-				//-  		for mnuitem in menu_list
-				//-  			li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
+
+				// navigation phone <= 599px
+				div(id="navigation-phone")
+					{% block navigation_phone %}
+					{% endblock navigation_phone %}
+
 
 				div(id="inhalt", class="content")
 					{% block content %}
