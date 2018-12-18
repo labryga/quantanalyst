@@ -25,22 +25,18 @@ html
 
 				//-  navigation desktop/tablet => 600px
 				div(id="navigation_desktop_tablet") 
-					ul
-						li: a(href="modellsimulation")= "modellsimulation"
-							for mnuitem in menu_list
-								li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
+					{% block navigaton_desktop_tablet %}
+					{% endblock navigaton_desktop_tablet %}
 							
-
 				//-  navigation phone <= 599px
 				//-  div(id="navigation-phone")
 				//-  	ul
 				//-  		for mnuitem in menu_list
 				//-  			li: a(href="{{ mnuitem.menu_title }}") {{ mnuitem.menu_title }}
-		
 
 				div(id="inhalt", class="content")
-					// {% block content %}
-					// {% endblock content %}
+					{% block content %}
+					{% endblock content %}
 
 
 		footer

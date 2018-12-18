@@ -140,11 +140,7 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   item.addEventListener("click", {
     handleEvent: function handleEvent(event) {
       event.preventDefault();
-      axios.get(event.target.pathname, {
-        data: {
-          csrfmiddlewaretoken: "{{ csrf_token }}"
-        }
-      }).then(function (response) {
+      axios.get(event.target.pathname).then(function (response) {
         inhalt.innerHTML = response.data;
       });
     }
