@@ -12,8 +12,8 @@ class BlogEntries(ListView):
         return context
 
     def get_template_names(self):
-        self.template_name = "BlogEintragList.pug" if self.request.is_ajax() \
-                else "ext_list.pug"
+        self.template_name = "BlogEntriesListAjax.pug" if self.request.is_ajax() \
+                else "BlogEntriesList.pug"
         return [self.template_name]
 
 
@@ -25,8 +25,8 @@ class BlogPost(DetailView):
         return context
 
     def get_template_names(self):
-        self.template_name = "BlogEintragAjax.pug" if self.request.is_ajax() \
-                else "ext_detail.pug"
+        self.template_name = "BlogEntryAjax.pug" if self.request.is_ajax() \
+                else "BlogEntry.pug"
         return [self.template_name]
 
 
