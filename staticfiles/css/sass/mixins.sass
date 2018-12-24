@@ -16,31 +16,27 @@
 
 
 // media queries
-$-phone: 599px
-$-tablet: 600px
-$-tablet-xl: 900px
-$-desktop: 1200px
 
 @mixin phone
-	@media (max-width: #{$-phone})
+	@media (max-width: 599px)
 		background-color: rgba(orange, 0.7)
 		border: 1px solid cyan
 		@content
 
 @mixin tablet
-	@media (min-width: #{$-tablet})
+	@media (min-width: 600px) and (max-width: 899px)
 		background-color: rgba(red, 0.2)
 		border: 1px solid cyan
 		@content
 
 @mixin tablet-xl
-	@media (min-width: #{$-tablet-xl})
+	@media (min-width: 900px) and (max-width: 1199px)
 		background-color: rgba(green, 0.5)
 		border: 1px solid cyan
 		@content
 
 @mixin desktop
-	@media (min-width: #{$-desktop})
+	@media (min-width: 1200px)
 		background-color: rgba(blue, 0.2)
 		border: 1px solid cyan
 		@content
