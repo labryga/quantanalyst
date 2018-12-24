@@ -5,3 +5,9 @@ ul
 	for mnuitem in menu_list
 		li: a(href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
 {% endblock navigaton_desktop_tablet %}
+
+{% block navigation_phone %}
+ul
+	for mnuitem in menu_list
+		li: a(href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
+{% endblock navigation_phone %}
