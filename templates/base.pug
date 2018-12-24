@@ -16,8 +16,10 @@ html
 
 				// navigation phone <= 599px
 				div(id="navigation-phone")
-					{% block navigation_phone %}
-					{% endblock navigation_phone %}
+					a(href="#")="menu"
+					div(id="menuitems")
+						{% block navigation_phone %}
+						{% endblock navigation_phone %}
 
 				div(id="inhalt", class="content")
 					{% block content %}
@@ -26,4 +28,5 @@ html
 		{% include "footer.pug" %}
 
 		script(src="{% static 'js/production/quantanalyst.js' %}")
+
 
