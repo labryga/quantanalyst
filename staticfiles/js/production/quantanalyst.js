@@ -152,3 +152,9 @@ menu.addEventListener("click", {
     menuitems.style.display = "block";
   }
 });
+schliessen.addEventListener("click", {
+  handleEvent: function handleEvent(event) {
+    event.preventDefault();
+    menuitems.style.display = "none";
+  }
+});
