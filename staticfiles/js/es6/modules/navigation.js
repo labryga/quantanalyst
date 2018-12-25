@@ -45,11 +45,8 @@ function tablet_screen() {
 		ul_elements.forEach( ul_item => {
 				[...Array(3).keys()].forEach( value => ul_item.appendChild( list_itemms.shift() ) )} );
 
-
-
 		ul_elements.forEach( item => navigation_desktop_tablet
 				.appendChild(item) );
-
 }
 
 tablet_query.addListener(tablet_screen);
