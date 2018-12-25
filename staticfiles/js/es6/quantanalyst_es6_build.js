@@ -169,14 +169,23 @@ function tablet_screen() {
 
 		alert("tablet match!");
 
+		let list_itemms = [...navigation_desktop_tablet
+				.getElementsByTagName("LI")];
+
 		[...navigation_desktop_tablet.getElementsByTagName("UL")]
 				.forEach( item => item.remove() );
 
-		let ul_elements = [...Array(2).keys()]
+		let ul_elements = [...Array(3).keys()]
 				.map(item => document.createElement('UL'));
+
+		ul_elements.forEach( ul_item => {
+				[...Array(3).keys()].forEach( value => ul_item.appendChild( list_itemms.shift() ) )} );
+
+
 
 		ul_elements.forEach( item => navigation_desktop_tablet
 				.appendChild(item) );
 
 }
+
 tablet_query.addListener(tablet_screen);

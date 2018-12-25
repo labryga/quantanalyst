@@ -174,14 +174,21 @@ var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)"
 function tablet_screen() {
   alert("tablet match!");
 
+  var list_itemms = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
   _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
     return item.remove();
   });
 
-  var ul_elements = _toConsumableArray(Array(2).keys()).map(function (item) {
+  var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
     return document.createElement('UL');
   });
 
+  ul_elements.forEach(function (ul_item) {
+    _toConsumableArray(Array(3).keys()).forEach(function (value) {
+      return ul_item.appendChild(list_itemms.shift());
+    });
+  });
   ul_elements.forEach(function (item) {
     return navigation_desktop_tablet.appendChild(item);
   });
