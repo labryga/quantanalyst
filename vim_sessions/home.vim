@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <Plug>(neocomplcache_start_omni_complete) 
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
-inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
 inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_complete) unite#sources#neocomplcache#start_complete()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
+inoremap <silent> <Plug>(neocomplcache_start_omni_complete) 
 imap <S-Tab> <Plug>snipMateBack
 inoremap <silent> <Plug>snipMateShow =snipMate#ShowAvailableSnips()
 inoremap <silent> <Plug>snipMateBack =snipMate#BackwardsSnippet()
@@ -43,16 +43,16 @@ nmap  :tabnext
 nmap  :tabprevious
 nmap  zk
 nmap  zj
-nmap 9 <Plug>TComment-9
-nmap 8 <Plug>TComment-8
-nmap 7 <Plug>TComment-7
-nmap 6 <Plug>TComment-6
-nmap 5 <Plug>TComment-5
-nmap 4 <Plug>TComment-4
-nmap 3 <Plug>TComment-3
-nmap 2 <Plug>TComment-2
-nmap 1 <Plug>TComment-1
 nmap  <Plug>TComment-
+nmap 1 <Plug>TComment-1
+nmap 2 <Plug>TComment-2
+nmap 3 <Plug>TComment-3
+nmap 4 <Plug>TComment-4
+nmap 5 <Plug>TComment-5
+nmap 6 <Plug>TComment-6
+nmap 7 <Plug>TComment-7
+nmap 8 <Plug>TComment-8
+nmap 9 <Plug>TComment-9
 vmap 9 <Plug>TComment-9
 omap 9 <Plug>TComment-9
 vmap 8 <Plug>TComment-8
@@ -84,8 +84,8 @@ map p <Plug>TComment-p
 vmap  <Plug>TComment-
 omap  <Plug>TComment-
 nmap   <Plug>(easymotion-s)
-nmap ,__ <Plug>TComment-,__
 smap ,__ <Plug>TComment-,__
+nmap ,__ <Plug>TComment-,__
 nnoremap ,l :call lesscss#toggle()
 map ,, <Plug>(easymotion-prefix)
 map ,_s <Plug>TComment-,_s
@@ -149,204 +149,204 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
-nnoremap <C-1> 1gt
-nnoremap <C-2> 2gt
-nnoremap <C-3> 3gt
-nnoremap <C-4> 4gt
-nnoremap <C-5> 5gt
-nnoremap <C-6> 6gt
-nnoremap <C-7> 7gt
-nnoremap <C-8> 8gt
-nnoremap <C-9> 9gt
-nnoremap <C-0> 10gt
-nnoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
-snoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
-nnoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
-snoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
-nnoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
-snoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
-nnoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
-snoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
-snoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
-nnoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
-snoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
-nnoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
-snoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
-snoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
-nnoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
-snoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
-nnoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
-snoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
-nnoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
-snoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
-nnoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
-snoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
-nnoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
-snoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
-nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
-snoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
-snoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
-nnoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
-snoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
-nnoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
-snoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
-nnoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
-snoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
-nnoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
-snoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
-nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
-snoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
-nnoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
-snoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
-nnoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
-snoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
-nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
-snoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
-nnoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
-snoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
-nnoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
-snoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
-snoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
-nnoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
-snoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
-nnoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
-snoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
-nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
-snoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
-nnoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
-snoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
-snoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
-nnoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
-snoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
-nnoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
-snoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
-snoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
-nnoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
-snoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
-nnoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
-snoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
-nnoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
-snoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
-nnoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
-snoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
-snoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
-nnoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
-snoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
-nnoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
-snoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
-nnoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
-snoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
-nnoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
-snoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
-nnoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
-snoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
-nnoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
-snoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
-snoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
-nnoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
-snoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
-nnoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
-snoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
-nnoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
-snoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
-snoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
-nnoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
-snoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
-snoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
-snoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
-snoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
-snoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
-snoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
-nnoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
-snoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
-nnoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
-snoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
-nnoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
-snoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
-snoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
-snoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
-nnoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
-snoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
-snoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
-nnoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
-snoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
-nnoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
-nnoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
-snoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
-snoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
-nnoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
-snoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
-nnoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
-snoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
-snoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
-snoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
-snoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
-nnoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
-snoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
-snoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
-nnoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
-nnoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
-snoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
-nnoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
-snoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
-nnoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
-snoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
-nnoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
-snoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
-nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
-nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
-nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
-nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
-nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
-nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
-nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
-nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
-nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
-nnoremap <Plug>TComment-,__ :TComment
-snoremap <Plug>TComment-,__ :TComment
 nnoremap <Plug>TComment- :TComment
+snoremap <Plug>TComment-,__ :TComment
+nnoremap <Plug>TComment-,__ :TComment
+nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
+nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
+nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
+nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
+nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
+nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
+nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
+nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
+nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
+snoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
+nnoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
+snoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
+nnoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
+snoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
+snoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
+nnoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
+snoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
+snoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
+nnoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
+snoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
+nnoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
+snoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
+nnoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
+snoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
+nnoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
+snoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
+nnoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
+snoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
+snoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
+nnoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
+snoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
+nnoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
+snoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
+nnoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
+snoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
+snoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
+nnoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
+snoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
+nnoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
+snoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
+snoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
+nnoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
+snoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
+nnoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
+snoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
+nnoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
+snoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
+nnoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
+snoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
+nnoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
+snoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
+nnoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
+snoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
+snoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
+nnoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
+snoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
+snoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
+nnoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
+snoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
+snoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
+nnoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
+snoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
+snoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
+nnoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
+snoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
+nnoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
+snoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
+nnoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
+snoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
+nnoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
+snoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
+nnoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
+snoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
+nnoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
+snoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
+nnoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
+snoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
+nnoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
+snoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
+nnoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
+snoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
+snoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
+nnoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
+snoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
+nnoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
+snoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
+snoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
+nnoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
+snoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
+nnoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
+snoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
+nnoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
+snoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
+nnoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
+snoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
+snoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
+nnoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
+snoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
+nnoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
+snoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
+snoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
+nnoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
+snoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
+nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
+snoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
+nnoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
+snoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
+nnoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
+snoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
+snoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
+nnoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
+snoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
+nnoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
+snoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
+nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
+snoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
+nnoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
+snoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
+nnoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
+snoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
+nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
+snoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
+nnoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
+snoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
+nnoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
+snoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
+nnoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
+snoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
+nnoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
+snoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
+nnoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
+snoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
+nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
+snoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
+nnoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
+snoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
+nnoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
+snoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
+nnoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
+snoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
+nnoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
+snoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
+nnoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
+snoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
+snoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
+nnoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
+snoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
+nnoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
+snoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
+nnoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
+snoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
+nnoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
+snoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
+nnoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
+snoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
+nnoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
+snoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
+nnoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
+nnoremap <C-0> 10gt
+nnoremap <C-9> 9gt
+nnoremap <C-8> 8gt
+nnoremap <C-7> 7gt
+nnoremap <C-6> 6gt
+nnoremap <C-5> 5gt
+nnoremap <C-4> 4gt
+nnoremap <C-3> 3gt
+nnoremap <C-2> 2gt
+nnoremap <C-1> 1gt
 smap <S-Tab> <Plug>snipMateBack
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
@@ -676,7 +676,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set background=dark
 set backspace=indent,eol,start
-set comments=://
+set comments=://-,://
 set commentstring=//\ %s
 set completefunc=neocomplcache#complete#manual_complete
 set completeopt=preview,menuone
@@ -684,14 +684,14 @@ set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=de
 set hlsearch
 set nomodeline
-set operatorfunc=tcomment#OperatorLine
+set operatorfunc=tcomment#Operator
 set printoptions=paper:a4
 set ruler
 set runtimepath=~/.vim,~/.vim/bundle/bracey.vim,~/.vim/bundle/codi.vim,~/.vim/bundle/colorizer,~/.vim/bundle/neocomplcache.vim,~/.vim/bundle/semantic-highlight.vim,~/.vim/bundle/sparkup,~/.vim/bundle/tagbar,~/.vim/bundle/tcomment_vim,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-css-color,~/.vim/bundle/vim-easymotion,~/.vim/bundle/vim-less,~/.vim/bundle/vim-lesscss,~/.vim/bundle/vim-multiple-cursors,~/.vim/bundle/vim-pug,~/.vim/bundle/vim-slim,~/.vim/bundle/vim-snipmate,~/.vim/bundle/vim-snippets,~/.vim/bundle/vim-surround,~/.vim/bundle/vim-virtualenv,~/.vim/bundle/vimshell.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/vim-snipmate/after,~/.vim/bundle/vim-less/after,~/.vim/bundle/vim-css-color/after,~/.vim/after
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set tabstop=4
+set tabstop=2
 set wildignore=*.pyc
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
@@ -703,7 +703,7 @@ endif
 set shortmess=aoO
 badd +28 templates/base.pug
 badd +1 staticfiles/css/sass/header.sass
-badd +24 staticfiles/css/sass/main.sass
+badd +20 staticfiles/css/sass/main.sass
 badd +46 staticfiles/css/sass/mixins.sass
 badd +11 templates/home.pug
 badd +1 home/urls.py
@@ -724,7 +724,7 @@ badd +1 templates/BlogEintragAjax.pug
 badd +3 templates/BlogEintrag.pug
 badd +1 templates/BlogEintragList.pug
 badd +1 staticfiles/js/production/quantanalyst.min.js
-badd +1 staticfiles/js/es6/modules/navigation.js
+badd +15 staticfiles/js/es6/modules/navigation.js
 badd +1 templates/navigation_desktop_tablet.pug
 badd +1 templates/baseAjax.pug
 badd +6 templates/base_test.pug
@@ -739,6 +739,8 @@ badd +1 templates/BlogEntryAjax.pug
 badd +1 templates/BlogEntriesList.pug
 badd +1 apps/modellsimulation/models.py
 badd +1 project_templates/models.py
+badd +0 ~/.vimrc
+badd +1 staticfiles/css/sass/navigation_tablet.sass
 argglobal
 silent! argdel *
 argadd templates/base.pug
@@ -1652,16 +1654,24 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-2wincmd h
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+4wincmd h
+wincmd w
+wincmd w
 wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 90 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 53 + 136) / 272)
+exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 5resize ' . ((&columns * 53 + 136) / 272)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -1783,6 +1793,248 @@ normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
+edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_tablet.sass
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*\\%(@mixin\\|=\\)
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'sass'
+setlocal filetype=sass
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
+setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
+setlocal indentexpr=GetSassIndent()
+setlocal indentkeys=o,O,*<Return>,<:>,!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.sass,.scss,.css
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sass'
+setlocal syntax=sass
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 0
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
+edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_phone.sass
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*\\%(@mixin\\|=\\)
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'sass'
+setlocal filetype=sass
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
+setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
+setlocal indentexpr=GetSassIndent()
+setlocal indentkeys=o,O,*<Return>,<:>,!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.sass,.scss,.css
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sass'
+setlocal syntax=sass
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 05|
+lcd ~/quantanalyst/quantanalyst
+wincmd w
+argglobal
 edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_desktop_tablet.sass
 setlocal keymap=
 setlocal noarabic
@@ -1895,11 +2147,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 41) / 82)
+let s:l = 25 - ((24 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
+25
 normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
@@ -2018,19 +2270,20 @@ setlocal wrapmargin=0
 silent! normal! zE
 2,9fold
 11,15fold
-17,45fold
 let s:l = 31 - ((30 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 31
-normal! 04|
+normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 3wincmd w
-exe 'vert 1resize ' . ((&columns * 90 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 53 + 136) / 272)
+exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 5resize ' . ((&columns * 53 + 136) / 272)
 tabedit ~/quantanalyst/quantanalyst/templates/navigation_desktop_tablet.pug
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -2186,11 +2439,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 14) / 29)
+let s:l = 9 - ((8 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
+9
 normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
@@ -2314,12 +2567,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 10,24fold
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 17 - ((13 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+17
+normal! 017|
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
@@ -2446,7 +2699,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 6
-normal! 0
+normal! 08|
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
@@ -2568,12 +2821,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 12) / 24)
+let s:l = 2 - ((1 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+2
+normal! 0140|
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
@@ -2604,7 +2857,7 @@ setlocal commentstring=//\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
+setlocal completefunc=neocomplcache#complete#auto_complete
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -2700,7 +2953,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 017|
+normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
@@ -2842,6 +3095,131 @@ exe '5resize ' . ((&lines * 27 + 42) / 85)
 exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
 exe '6resize ' . ((&lines * 27 + 42) / 85)
 exe 'vert 6resize ' . ((&columns * 135 + 136) / 272)
+tabedit ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules/navigation.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 16 - ((15 * winheight(0) + 41) / 83)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 010|
+lcd ~/quantanalyst/quantanalyst
 tabnext 2
 set stal=1
 if exists('s:wipebuf')
