@@ -1,9 +1,11 @@
 {% extends "base.pug" %}
 
 {% block navigaton_desktop_tablet %}
-for mnuitem in menu_list
-	li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
+ul
+	for mnuitem in menu_list
+		li: a(href="{{ mnuitem.menu_title | lower }}") {{ mnuitem.menu_title }}
 {% endblock navigaton_desktop_tablet %}
+
 
 {% block content %}
 p

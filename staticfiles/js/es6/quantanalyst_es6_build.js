@@ -149,17 +149,17 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
 
-menu.addEventListener("click", {
-		handleEvent(event) {
-				event.preventDefault(); 
-				menuitems.style.display = "block";
-		}
-})
-
-
-schliessen.addEventListener("click", {
-		handleEvent(event) {
-				event.preventDefault();
-				menuitems.style.display = "none";
-		}
-})
+// menu.addEventListener("click", {
+// 		handleEvent(event) {
+// 				event.preventDefault(); 
+// 				menuitems.style.display = "block";
+// 		}
+// })
+//
+//
+// schliessen.addEventListener("click", {
+// 		handleEvent(event) {
+// 				event.preventDefault();
+// 				menuitems.style.display = "none";
+// 		}
+// })

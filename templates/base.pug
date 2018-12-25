@@ -16,11 +16,8 @@ html
 
 				// navigation phone <= 599px
 				div(id="navigation-phone")
-					a(id="menu", href="#")="menu"
-					div(id="menuitems")
-						a(id="schliessen", href="#")="schliessen"
-						{% block navigation_phone %}
-						{% endblock navigation_phone %}
+					{% block navigation_phone %}
+					{% endblock navigation_phone %}
 
 				div(id="inhalt", class="content")
 					{% block content %}
