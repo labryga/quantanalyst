@@ -149,12 +149,34 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
 
-if (window.matchMedia("(min-width: 900px)").matches) {
-		alert("it matches");
+
+let desktop_query = window.matchMedia("(min-width: 900px)");
+function desktop_screen() {
+		alert("desktop match!");
 		let ul_list = document.createElement("UL");
 		let li_items = [...navigation_desktop_tablet.getElementsByTagName("LI")]
 		li_items.forEach( item => ul_list.appendChild(item) );
 		navigation_desktop_tablet.appendChild(ul_list);
-} else {
-		alert("does not match");
 }
+desktop_query.addListener(desktop_screen);
+
+
+
+let tablet_query = window
+		.matchMedia("(min-width: 600px) and (max-width: 899px)");
+
+function tablet_screen() {
+
+		alert("tablet match!");
+
+		[...navigation_desktop_tablet.getElementsByTagName("UL")]
+				.forEach( item => item.remove() );
+
+		let ul_elements = [...Array(2).keys()]
+				.map(item => document.createElement('UL'));
+
+		ul_elements.forEach( item => navigation_desktop_tablet
+				.appendChild(item) );
+
+}
+tablet_query.addListener(tablet_screen);

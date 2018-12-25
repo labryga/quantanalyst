@@ -154,9 +154,10 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     }
   });
 });
+var desktop_query = window.matchMedia("(min-width: 900px)");
 
-if (window.matchMedia("(min-width: 900px)").matches) {
-  alert("it matches");
+function desktop_screen() {
+  alert("desktop match!");
   var ul_list = document.createElement("UL");
 
   var li_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
@@ -165,6 +166,25 @@ if (window.matchMedia("(min-width: 900px)").matches) {
     return ul_list.appendChild(item);
   });
   navigation_desktop_tablet.appendChild(ul_list);
-} else {
-  alert("does not match");
 }
+
+desktop_query.addListener(desktop_screen);
+var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
+
+function tablet_screen() {
+  alert("tablet match!");
+
+  _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+    return item.remove();
+  });
+
+  var ul_elements = _toConsumableArray(Array(2).keys()).map(function (item) {
+    return document.createElement('UL');
+  });
+
+  ul_elements.forEach(function (item) {
+    return navigation_desktop_tablet.appendChild(item);
+  });
+}
+
+tablet_query.addListener(tablet_screen);
