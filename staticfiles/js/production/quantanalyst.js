@@ -1,5 +1,13 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 // chart 01
 // let daten = [[10,15], [80,15], [60,15], [35,15], [120,15]]
 // 	.map( item => new Item(item[0], item[1]) ); 
@@ -145,17 +153,18 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       });
     }
   });
-}); // menu.addEventListener("click", {
-// 		handleEvent(event) {
-// 				event.preventDefault(); 
-// 				menuitems.style.display = "block";
-// 		}
-// })
-//
-//
-// schliessen.addEventListener("click", {
-// 		handleEvent(event) {
-// 				event.preventDefault();
-// 				menuitems.style.display = "none";
-// 		}
-// })
+});
+
+if (window.matchMedia("(min-width: 900px)").matches) {
+  alert("it matches");
+  var ul_list = document.createElement("UL");
+
+  var li_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
+  li_items.forEach(function (item) {
+    return ul_list.appendChild(item);
+  });
+  navigation_desktop_tablet.appendChild(ul_list);
+} else {
+  alert("does not match");
+}

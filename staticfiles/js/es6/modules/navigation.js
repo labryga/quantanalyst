@@ -13,17 +13,12 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
 
-// menu.addEventListener("click", {
-// 		handleEvent(event) {
-// 				event.preventDefault(); 
-// 				menuitems.style.display = "block";
-// 		}
-// })
-//
-//
-// schliessen.addEventListener("click", {
-// 		handleEvent(event) {
-// 				event.preventDefault();
-// 				menuitems.style.display = "none";
-// 		}
-// })
+if (window.matchMedia("(min-width: 900px)").matches) {
+		alert("it matches");
+		let ul_list = document.createElement("UL");
+		let li_items = [...navigation_desktop_tablet.getElementsByTagName("LI")]
+		li_items.forEach( item => ul_list.appendChild(item) );
+		navigation_desktop_tablet.appendChild(ul_list);
+} else {
+		alert("does not match");
+}
