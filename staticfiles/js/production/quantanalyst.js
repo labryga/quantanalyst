@@ -155,18 +155,23 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   });
 });
 
+function getMenuListElements() {
+  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+}
+
+function removeUlElements() {
+  _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+    return item.remove();
+  });
+}
+
 (function () {
   var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
 
   function desktop_screen() {
     if (desktop_query.matches) {
-      // alert("desktop match!");
-      var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-      _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
-        return item.remove();
-      });
-
+      var list_items = getMenuListElements();
+      removeUlElements();
       var ul_element = document.createElement("UL");
       list_items.forEach(function (item) {
         return ul_element.appendChild(item);
@@ -187,17 +192,12 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
   function tablet_screen() {
     if (tablet_query.matches) {
-      // alert("tablet match!");
-      var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-      _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
-        return item.remove();
-      });
+      var list_items = getMenuListElements();
+      removeUlElements();
 
       var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
         return document.createElement('UL');
-      }); // ul_elements.forEach(item => item.classList.add("tablet"));
-
+      });
 
       ul_elements.forEach(function (ul_item) {
         _toConsumableArray(Array(3).keys()).forEach(function (value) {

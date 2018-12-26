@@ -13,6 +13,14 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
 
+function getMenuListElements() {
+		return [...navigation_desktop_tablet.getElementsByTagName("LI")]; }
+
+function removeUlElements() {
+						[...navigation_desktop_tablet.getElementsByTagName("UL")]
+								.forEach( item => item.remove() ); }
+
+
 (function() {
 
 		let desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
@@ -20,14 +28,9 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 		function desktop_screen() {
 
 				if (desktop_query.matches) {
-						
-						// alert("desktop match!");
+						let list_items = getMenuListElements();
 
-						let list_items = [...navigation_desktop_tablet
-								.getElementsByTagName("LI")];
-
-						[...navigation_desktop_tablet.getElementsByTagName("UL")]
-								.forEach( item => item.remove() );
+						removeUlElements();
 
 						let ul_element = document.createElement("UL");
 
@@ -53,18 +56,12 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 		function tablet_screen() {
 				if (tablet_query.matches) {
 
-						// alert("tablet match!");
+						let list_items = getMenuListElements();
 
-						let list_items = [...navigation_desktop_tablet
-								.getElementsByTagName("LI")];
-
-						[...navigation_desktop_tablet.getElementsByTagName("UL")]
-								.forEach( item => item.remove() );
+						removeUlElements();
 
 						let ul_elements = [...Array(3).keys()]
 								.map( item => document.createElement('UL') );
-
-						// ul_elements.forEach(item => item.classList.add("tablet"));
 
 						ul_elements.forEach( ul_item => {
 								[...Array(3).keys()]
@@ -84,9 +81,7 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 				}
 
 		}
-
 		tablet_screen();
 		tablet_query.addListener(tablet_screen);
 
 })();
-
