@@ -1,19 +1,11 @@
 @import 'mixins.sass'
 
-
-#navigation-phone
-  height: 200px
-  display: none
-
+@mixin navigation_phone
   ul
-    list-style-type: none
+    padding: 10px
     li
-      text-align: right
+      text-align: center
       a
         line-height: 1.7em
         &:hover
           color: cyan
-
-  @include phone
-    width: percentage(12/12)
-    display: none

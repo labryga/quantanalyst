@@ -307,7 +307,6 @@ header {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
-  background-color: rgba(240, 230, 140, 0.3);
   height: 150px; }
   header .grid_row:after {
     display: table;
@@ -328,35 +327,23 @@ header {
     float: right;
     height: 50px; }
   @media (max-width: 599px) {
-    header {
-      background-color: rgba(255, 165, 0, 0.7);
-      border: 1px solid cyan; }
-      header #container-logo {
-        width: 100%; } }
+    header #container-logo {
+      width: 100%; } }
   @media (min-width: 600px) and (max-width: 899px) {
-    header {
-      background-color: rgba(255, 0, 0, 0.2);
-      border: 1px solid cyan; }
-      header #container-logo {
-        width: 100%; }
-      header #container-logo-offset {
-        width: 0%; } }
+    header #container-logo {
+      width: 100%; }
+    header #container-logo-offset {
+      width: 0%; } }
   @media (min-width: 900px) and (max-width: 1199px) {
-    header {
-      background-color: rgba(0, 128, 0, 0.5);
-      border: 1px solid cyan; }
-      header #container-logo {
-        width: 33.33333%; }
-      header #container-logo-offset {
-        width: 0%; } }
+    header #container-logo {
+      width: 33.33333%; }
+    header #container-logo-offset {
+      width: 0%; } }
   @media (min-width: 1200px) {
-    header {
-      background-color: rgba(0, 0, 255, 0.2);
-      border: 1px solid cyan; }
-      header #container-logo {
-        width: 41.66667%; }
-      header #container-logo-offset {
-        width: 0%; } }
+    header #container-logo {
+      width: 41.66667%; }
+    header #container-logo-offset {
+      width: 0%; } }
 
 main {
   width: 100%;
@@ -369,7 +356,6 @@ main {
     clear: both; }
 
 #navigation_desktop_tablet {
-  background-color: green;
   height: 500px;
   float: left; }
   #navigation_desktop_tablet ul {
@@ -384,55 +370,38 @@ main {
           color: cyan; }
   @media (max-width: 599px) {
     #navigation_desktop_tablet {
-      background-color: rgba(255, 165, 0, 0.7);
-      border: 1px solid cyan;
       display: block;
-      width: 100%; } }
+      width: 100%; }
+      #navigation_desktop_tablet ul {
+        padding: 10px; }
+        #navigation_desktop_tablet ul li {
+          text-align: center; }
+          #navigation_desktop_tablet ul li a {
+            line-height: 1.7em; }
+            #navigation_desktop_tablet ul li a:hover {
+              color: cyan; } }
   @media (min-width: 600px) and (max-width: 899px) {
     #navigation_desktop_tablet {
-      background-color: rgba(255, 0, 0, 0.2);
-      border: 1px solid cyan;
       display: block;
       width: 100%;
-      height: 120px; }
+      height: 130px; }
       #navigation_desktop_tablet ul {
-        padding: 40px;
+        padding: 20px 0px 0px 30px;
         list-style-type: none; }
+        #navigation_desktop_tablet ul li {
+          text-align: left; }
       #navigation_desktop_tablet .tablet {
-        width: 25%;
+        width: 33.33333%;
         float: left; } }
   @media (min-width: 900px) and (max-width: 1199px) {
     #navigation_desktop_tablet {
-      background-color: rgba(0, 128, 0, 0.5);
-      border: 1px solid cyan;
-      width: 16.66667%; } }
+      width: 20%; } }
   @media (min-width: 1200px) {
     #navigation_desktop_tablet {
-      background-color: rgba(0, 0, 255, 0.2);
-      border: 1px solid cyan;
       width: 16.66667%; } }
 
-#navigation-phone {
-  height: 200px;
-  display: none; }
-  #navigation-phone ul {
-    list-style-type: none; }
-    #navigation-phone ul li {
-      text-align: right; }
-      #navigation-phone ul li a {
-        line-height: 1.7em; }
-        #navigation-phone ul li a:hover {
-          color: cyan; }
-  @media (max-width: 599px) {
-    #navigation-phone {
-      background-color: rgba(255, 165, 0, 0.7);
-      border: 1px solid cyan;
-      width: 100%;
-      display: none; } }
-
 .content {
-  background-color: rgba(255, 255, 0, 0.4);
-  padding: 20px;
+  padding: 20px 40px 20px 20px;
   height: 500px;
   float: right; }
   .content ul {
@@ -442,23 +411,17 @@ main {
       line-height: 1.5em; }
   @media (max-width: 599px) {
     .content {
-      background-color: rgba(255, 165, 0, 0.7);
-      border: 1px solid cyan;
-      width: 100%; } }
+      width: 100%;
+      padding: 30px; } }
   @media (min-width: 600px) and (max-width: 899px) {
     .content {
-      background-color: rgba(255, 0, 0, 0.2);
-      border: 1px solid cyan;
-      width: 100%; } }
+      width: 100%;
+      padding: 30px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
     .content {
-      background-color: rgba(0, 128, 0, 0.5);
-      border: 1px solid cyan;
-      width: 83.33333%; } }
+      width: 80%; } }
   @media (min-width: 1200px) {
     .content {
-      background-color: rgba(0, 0, 255, 0.2);
-      border: 1px solid cyan;
       width: 83.33333%; } }
 
 #chart {

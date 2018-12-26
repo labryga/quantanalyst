@@ -1,9 +1,11 @@
 @import 'mixins.sass'
+@import 'navigation_phone'
 @import 'navigation_tablet.sass'
 
 
+
 #navigation_desktop_tablet
-  background-color: green
+  // background-color: green
   height: 500px
   float: left
 
@@ -22,6 +24,7 @@
   @include phone
     display: block
     width: percentage(12/12)
+    @include navigation_phone
 
   @include tablet
     display: block
@@ -29,7 +32,7 @@
     @include navigation_tablet
 
   @include tablet-xl
-    width: percentage(2/12)
+    width: percentage(2.4/12)
 
   @include desktop
     width: percentage(2/12)
