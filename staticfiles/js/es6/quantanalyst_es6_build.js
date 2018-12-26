@@ -195,12 +195,17 @@ function tablet_screen() {
 				[...navigation_desktop_tablet.getElementsByTagName("UL")]
 						.forEach( item => item.remove() );
 
-				let ul_elements = [...Array(3).keys()]
+				let ul_elements = [...Array(4).keys()]
 						.map( item => document.createElement('UL') );
 
+				// ul_elements.forEach(item => item.classList.add("tablet"));
+
 				ul_elements.forEach( ul_item => {
-						[...Array(3).keys()]
-								.forEach( value => ul_item.appendChild(list_items.shift()) )} 
+						[...Array(2).keys()]
+								.forEach( value => { 
+										ul_item.appendChild(list_items.shift());
+										ul_item.classList.add("tablet"); } 
+								)} 
 				);
 
 				ul_elements.forEach( item => navigation_desktop_tablet

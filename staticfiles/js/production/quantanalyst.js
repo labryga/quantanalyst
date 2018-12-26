@@ -193,13 +193,15 @@ function tablet_screen() {
       return item.remove();
     });
 
-    var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
+    var ul_elements = _toConsumableArray(Array(4).keys()).map(function (item) {
       return document.createElement('UL');
-    });
+    }); // ul_elements.forEach(item => item.classList.add("tablet"));
+
 
     ul_elements.forEach(function (ul_item) {
-      _toConsumableArray(Array(3).keys()).forEach(function (value) {
-        return ul_item.appendChild(list_items.shift());
+      _toConsumableArray(Array(2).keys()).forEach(function (value) {
+        ul_item.appendChild(list_items.shift());
+        ul_item.classList.add("tablet");
       });
     });
     ul_elements.forEach(function (item) {
