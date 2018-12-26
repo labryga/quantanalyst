@@ -1,3 +1,7 @@
+window.onload = function() {
+		tablet_screen();
+		desktop_screen();
+};
 
 // crucial header settings for django "self.request.is_ajax()" returning "true"
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -13,14 +17,28 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
 
+let desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
 
-let desktop_query = window.matchMedia("(min-width: 900px)");
 function desktop_screen() {
-		alert("desktop match!");
-		let ul_list = document.createElement("UL");
-		let li_items = [...navigation_desktop_tablet.getElementsByTagName("LI")]
-		li_items.forEach( item => ul_list.appendChild(item) );
-		navigation_desktop_tablet.appendChild(ul_list);
+
+		if (desktop_query.matches) {
+				
+				// alert("desktop match!");
+
+				let list_items = [...navigation_desktop_tablet
+						.getElementsByTagName("LI")];
+
+				[...navigation_desktop_tablet.getElementsByTagName("UL")]
+						.forEach( item => item.remove() );
+
+				let ul_element = document.createElement("UL");
+
+				list_items.forEach( item => ul_element.appendChild(item) );
+
+				navigation_desktop_tablet.appendChild(ul_element);
+
+				list_items.forEach(item => item.style.display = "block");
+		}
 }
 desktop_query.addListener(desktop_screen);
 
@@ -31,22 +49,34 @@ let tablet_query = window
 
 function tablet_screen() {
 
-		alert("tablet match!");
+		if (tablet_query.matches) {
 
-		let list_itemms = [...navigation_desktop_tablet
-				.getElementsByTagName("LI")];
+				// alert("tablet match!");
 
-		[...navigation_desktop_tablet.getElementsByTagName("UL")]
-				.forEach( item => item.remove() );
+				let list_items = [...navigation_desktop_tablet
+						.getElementsByTagName("LI")];
 
-		let ul_elements = [...Array(3).keys()]
-				.map(item => document.createElement('UL'));
+				[...navigation_desktop_tablet.getElementsByTagName("UL")]
+						.forEach( item => item.remove() );
 
-		ul_elements.forEach( ul_item => {
-				[...Array(3).keys()].forEach( value => ul_item.appendChild( list_itemms.shift() ) )} );
+				let ul_elements = [...Array(3).keys()]
+						.map( item => document.createElement('UL') );
 
-		ul_elements.forEach( item => navigation_desktop_tablet
-				.appendChild(item) );
+				ul_elements.forEach( ul_item => {
+						[...Array(3).keys()]
+								.forEach( value => ul_item.appendChild(list_items.shift()) )} 
+				);
+
+				ul_elements.forEach( item => navigation_desktop_tablet
+						.appendChild(item) );
+
+				let list_items_appended = [...navigation_desktop_tablet
+						.getElementsByTagName("LI")];
+
+				list_items_appended.forEach(item => item.style.display = "block");
+		}
+
 }
-
 tablet_query.addListener(tablet_screen);
+
+
