@@ -1,20 +1,10 @@
 @import 'mixins.sass'
 
-
-#navigation-tablet
-  height: 200px
-  display: none
-
+@mixin navigation_tablet
+  height: 120px
   ul
+    padding: 40px
     list-style-type: none
-    li
-      text-align: right
-      a
-        line-height: 1.7em
-        &:hover
-          color: cyan
-
-
-  @include tablet
-    width: percentage(12/12)
-    display: none
+  .tablet
+      width: 25%
+      float: left

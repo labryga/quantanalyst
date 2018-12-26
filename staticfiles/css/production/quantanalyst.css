@@ -1,21 +1,9 @@
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers.
- */
 body {
   margin: 0; }
 
@@ -27,12 +15,6 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
-/* Grouping content
-   ========================================================================== */
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 hr {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -42,18 +24,12 @@ hr {
   overflow: visible;
   /* 2 */ }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 pre {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
 
-/* Text-level semantics
-   ========================================================================== */
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -115,8 +91,6 @@ sub {
 sup {
   top: -0.5em; }
 
-/* Embedded content
-   ========================================================================== */
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -322,7 +296,8 @@ body {
   margin: 0px; }
 
 ul {
-  margin: 0px; }
+  margin: 0px;
+  padding: 0px; }
 
 a {
   text-decoration: none;
@@ -420,6 +395,9 @@ main {
       display: block;
       width: 100%;
       height: 120px; }
+      #navigation_desktop_tablet ul {
+        padding: 40px;
+        list-style-type: none; }
       #navigation_desktop_tablet .tablet {
         width: 25%;
         float: left; } }
