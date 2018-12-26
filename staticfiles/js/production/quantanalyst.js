@@ -142,12 +142,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 // 			 'stroke-width': '2px',
 // 			 'fill': 'none'});
 //
-window.onload = function () {
-  tablet_screen();
-  desktop_screen();
-}; // crucial header settings for django "self.request.is_ajax()" returning "true"
-
-
+// crucial header settings for django "self.request.is_ajax()" returning "true"
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 [navigation_desktop_tablet, inhalt].forEach(function (item) {
   item.addEventListener("click", {
@@ -159,61 +154,69 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     }
   });
 });
-var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
 
-function desktop_screen() {
-  if (desktop_query.matches) {
-    // alert("desktop match!");
-    var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+(function () {
+  var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
 
-    _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
-      return item.remove();
-    });
+  function desktop_screen() {
+    if (desktop_query.matches) {
+      // alert("desktop match!");
+      var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
 
-    var ul_element = document.createElement("UL");
-    list_items.forEach(function (item) {
-      return ul_element.appendChild(item);
-    });
-    navigation_desktop_tablet.appendChild(ul_element);
-    list_items.forEach(function (item) {
-      return item.style.display = "block";
-    });
-  }
-}
-
-desktop_query.addListener(desktop_screen);
-var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
-
-function tablet_screen() {
-  if (tablet_query.matches) {
-    // alert("tablet match!");
-    var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-    _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
-      return item.remove();
-    });
-
-    var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
-      return document.createElement('UL');
-    }); // ul_elements.forEach(item => item.classList.add("tablet"));
-
-
-    ul_elements.forEach(function (ul_item) {
-      _toConsumableArray(Array(3).keys()).forEach(function (value) {
-        ul_item.appendChild(list_items.shift());
-        ul_item.classList.add("tablet");
+      _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+        return item.remove();
       });
-    });
-    ul_elements.forEach(function (item) {
-      return navigation_desktop_tablet.appendChild(item);
-    });
 
-    var list_items_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-    list_items_appended.forEach(function (item) {
-      return item.style.display = "block";
-    });
+      var ul_element = document.createElement("UL");
+      list_items.forEach(function (item) {
+        return ul_element.appendChild(item);
+      });
+      navigation_desktop_tablet.appendChild(ul_element);
+      list_items.forEach(function (item) {
+        return item.style.display = "block";
+      });
+    }
   }
-}
 
-tablet_query.addListener(tablet_screen);
+  desktop_screen();
+  desktop_query.addListener(desktop_screen);
+})();
+
+(function () {
+  var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
+
+  function tablet_screen() {
+    if (tablet_query.matches) {
+      // alert("tablet match!");
+      var list_items = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
+      _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+        return item.remove();
+      });
+
+      var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
+        return document.createElement('UL');
+      }); // ul_elements.forEach(item => item.classList.add("tablet"));
+
+
+      ul_elements.forEach(function (ul_item) {
+        _toConsumableArray(Array(3).keys()).forEach(function (value) {
+          ul_item.appendChild(list_items.shift());
+          ul_item.classList.add("tablet");
+        });
+      });
+      ul_elements.forEach(function (item) {
+        return navigation_desktop_tablet.appendChild(item);
+      });
+
+      var list_items_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
+      list_items_appended.forEach(function (item) {
+        return item.style.display = "block";
+      });
+    }
+  }
+
+  tablet_screen();
+  tablet_query.addListener(tablet_screen);
+})();
