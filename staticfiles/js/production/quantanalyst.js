@@ -152,26 +152,29 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       if (event.target.id == "menu") {
         var list_elements = getMenuListElements();
         list_elements.forEach(function (item) {
-          return item.classList.add("phone_screen");
+          return item.style.display = "block";
+        });
+        var menu_item = document.createElement("DIV");
+        menu_item.innerHTML = "zurück";
+        var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
+        ul_item.insertBefore(menu_item, ul_item.firstElementChild);
+        ul_item.classList.add("phone_screen");
+
+        ul_item.onclick = function () {
+          ul_item.classList.remove("phone_screen");
+          list_elements.forEach(function (item) {
+            return item.style.display = "none";
+          });
+          ul_item.firstElementChild.remove();
+        };
+      } else {
+        axios.get(event.target.pathname).then(function (response) {
+          inhalt.innerHTML = response.data;
         });
       }
-
-      axios.get(event.target.pathname).then(function (response) {
-        inhalt.innerHTML = response.data;
-      });
     }
   });
 });
-
-function getMenuListElements() {
-  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-}
-
-function removeUlElements() {
-  _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
-    return item.remove();
-  });
-}
 
 (function () {
   var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
@@ -253,3 +256,13 @@ function removeUlElements() {
   phone_screen();
   phone_query.addListener(phone_screen);
 })();
+
+function getMenuListElements() {
+  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+}
+
+function removeUlElements() {
+  _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+    return item.remove();
+  });
+}
