@@ -63,37 +63,6 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 })();
 
 
-
-(function() {
-
-		let phone_query = window.matchMedia("(max-width: 599px)");
-
-		function phone_screen() {
-
-			if (phone_query.matches) {
-
-					let list_elements = getMenuListElements();
-
-					removeUlElements();
-
-					let ul_element = document.createElement("UL");
-				
-					list_elements.forEach( item => ul_element.append(item) );
-
-					navigation_desktop_tablet.appendChild(ul_element);
-
-					let list_elements_appended = [...navigation_desktop_tablet
-							.getElementsByTagName("LI")];
-
-					list_elements_appended.forEach(item => item.style.display = "none");
-			}
-		}
-	phone_screen();	
-	phone_query.addListener(phone_screen);
-
-})();
-
-
 function getMenuListElements() {
 		return [...navigation_desktop_tablet.getElementsByTagName("LI")]; }
 
