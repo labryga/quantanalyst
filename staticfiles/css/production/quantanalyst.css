@@ -284,8 +284,7 @@ template {
           box-sizing: border-box; }
 
 html {
-  width: 100%;
-  height: 100%; }
+  width: 100%; }
 
 body {
   background-color: #400080;
@@ -313,8 +312,8 @@ header {
     content: "";
     clear: both; }
   header #container-logo {
-    height: 50px;
-    padding: 30px 30px 0px 0px;
+    height: 100%;
+    padding: 30px 40px 0px 0px;
     text-align: right;
     float: right; }
     header #container-logo #logo-title {
@@ -368,10 +367,13 @@ main {
         font-size: 1.0em; }
         #navigation_desktop_tablet ul li a:hover {
           color: cyan; }
+  #navigation_desktop_tablet #menu {
+    display: none; }
   @media (max-width: 599px) {
     #navigation_desktop_tablet {
       display: block;
-      width: 100%; }
+      width: 100%;
+      height: 10px; }
       #navigation_desktop_tablet ul {
         padding: 10px; }
         #navigation_desktop_tablet ul li {
@@ -379,7 +381,16 @@ main {
           #navigation_desktop_tablet ul li a {
             line-height: 1.7em; }
             #navigation_desktop_tablet ul li a:hover {
-              color: cyan; } }
+              color: cyan; }
+      #navigation_desktop_tablet #menu {
+        display: block;
+        text-align: center; }
+      #navigation_desktop_tablet .phone_screen {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px; } }
   @media (min-width: 600px) and (max-width: 899px) {
     #navigation_desktop_tablet {
       display: block;

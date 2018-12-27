@@ -148,6 +148,14 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   item.addEventListener("click", {
     handleEvent: function handleEvent(event) {
       event.preventDefault();
+
+      if (event.target.id == "menu") {
+        var list_elements = getMenuListElements();
+        list_elements.forEach(function (item) {
+          return item.classList.add("phone_screen");
+        });
+      }
+
       axios.get(event.target.pathname).then(function (response) {
         inhalt.innerHTML = response.data;
       });
@@ -237,7 +245,7 @@ function removeUlElements() {
       var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
 
       list_elements_appended.forEach(function (item) {
-        return item.style.display = "block";
+        return item.style.display = "none";
       });
     }
   }

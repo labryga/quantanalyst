@@ -143,6 +143,10 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 		item.addEventListener("click", {
 				handleEvent(event) {
 						event.preventDefault(); 
+						if (event.target.id == "menu") {
+								let list_elements = getMenuListElements();
+								list_elements.forEach(item => item.classList.add("phone_screen"));
+						}
 						axios.get(event.target.pathname)
 							.then(function (response) {
 									inhalt.innerHTML = response.data;}); }
@@ -236,7 +240,7 @@ function removeUlElements() {
 					let list_elements = getMenuListElements();
 
 					removeUlElements();
-					
+
 					let ul_element = document.createElement("UL");
 				
 					list_elements.forEach( item => ul_element.append(item) );
@@ -246,7 +250,7 @@ function removeUlElements() {
 					let list_elements_appended = [...navigation_desktop_tablet
 							.getElementsByTagName("LI")];
 
-					list_elements_appended.forEach(item => item.style.display = "block");
+					list_elements_appended.forEach(item => item.style.display = "none");
 			}
 		}
 	phone_screen();	
