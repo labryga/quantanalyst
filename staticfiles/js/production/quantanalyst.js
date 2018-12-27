@@ -153,14 +153,14 @@ var _f = function _f(item) {
 
       if (event.target.id == "menu") {
         var list_elements = getMenuListElements();
-        var _a12 = list_elements;
+        var _a18 = list_elements;
 
-        var _f12 = function _f12(item) {
+        var _f18 = function _f18(item) {
           return item.style.display = "block";
         };
 
-        for (var _i12 = 0; _i12 < _a12.length; _i12++) {
-          _f12(_a12[_i12], _i12, _a12);
+        for (var _i18 = 0; _i18 < _a18.length; _i18++) {
+          _f18(_a18[_i18], _i18, _a18);
         }
 
         undefined;
@@ -172,14 +172,14 @@ var _f = function _f(item) {
 
         ul_item.onclick = function () {
           ul_item.classList.remove("phone_screen");
-          var _a13 = list_elements;
+          var _a19 = list_elements;
 
-          var _f13 = function _f13(item) {
+          var _f19 = function _f19(item) {
             return item.style.display = "none";
           };
 
-          for (var _i13 = 0; _i13 < _a13.length; _i13++) {
-            _f13(_a13[_i13], _i13, _a13);
+          for (var _i19 = 0; _i19 < _a19.length; _i19++) {
+            _f19(_a19[_i19], _i19, _a19);
           }
 
           undefined;
@@ -367,6 +367,99 @@ function removeUlElements() {
 
   for (var _i11 = 0; _i11 < _a11.length; _i11++) {
     _f11(_a11[_i11], _i11, _a11);
+  }
+
+  undefined;
+}
+
+(function () {
+  var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
+
+  function tablet_screen() {
+    if (tablet_query.matches) {
+      var list_elements = getMenuListElements();
+      removeUlElements();
+
+      var _a12 = _toConsumableArray(Array(3).keys());
+
+      var _f12 = function _f12(item) {
+        return document.createElement('UL');
+      };
+
+      var _r12 = [];
+
+      for (var _i12 = 0; _i12 < _a12.length; _i12++) {
+        _r12.push(_f12(_a12[_i12], _i12, _a12));
+      }
+
+      var ul_elements = _r12;
+      var _a13 = ul_elements;
+
+      var _f13 = function _f13(ul_item) {
+        var _a16 = _toConsumableArray(Array(3).keys());
+
+        var _f16 = function _f16(value) {
+          ul_item.appendChild(list_elements.shift());
+          ul_item.classList.add("tablet");
+        };
+
+        for (var _i16 = 0; _i16 < _a16.length; _i16++) {
+          _f16(_a16[_i16], _i16, _a16);
+        }
+
+        undefined;
+      };
+
+      for (var _i13 = 0; _i13 < _a13.length; _i13++) {
+        _f13(_a13[_i13], _i13, _a13);
+      }
+
+      undefined;
+      var _a14 = ul_elements;
+
+      var _f14 = function _f14(item) {
+        return navigation_desktop_tablet.appendChild(item);
+      };
+
+      for (var _i14 = 0; _i14 < _a14.length; _i14++) {
+        _f14(_a14[_i14], _i14, _a14);
+      }
+
+      undefined;
+
+      var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
+      var _a15 = list_elements_appended;
+
+      var _f15 = function _f15(item) {
+        return item.style.display = "block";
+      };
+
+      for (var _i15 = 0; _i15 < _a15.length; _i15++) {
+        _f15(_a15[_i15], _i15, _a15);
+      }
+
+      undefined;
+    }
+  }
+
+  tablet_screen();
+  tablet_query.addListener(tablet_screen);
+})();
+
+function getMenuListElements() {
+  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+}
+
+function removeUlElements() {
+  var _a17 = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL"));
+
+  var _f17 = function _f17(item) {
+    return item.remove();
+  };
+
+  for (var _i17 = 0; _i17 < _a17.length; _i17++) {
+    _f17(_a17[_i17], _i17, _a17);
   }
 
   undefined;
