@@ -4,7 +4,7 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") { return Array.from(iter); } }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
@@ -144,16 +144,26 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 // crucial header settings for django "self.request.is_ajax()" returning "true"
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-[navigation_desktop_tablet, inhalt].forEach(function (item) {
+var _a = [navigation_desktop_tablet, inhalt];
+
+var _f = function _f(item) {
   item.addEventListener("click", {
     handleEvent: function handleEvent(event) {
       event.preventDefault();
 
       if (event.target.id == "menu") {
         var list_elements = getMenuListElements();
-        list_elements.forEach(function (item) {
+        var _a12 = list_elements;
+
+        var _f12 = function _f12(item) {
           return item.style.display = "block";
-        });
+        };
+
+        for (var _i12 = 0; _i12 < _a12.length; _i12++) {
+          _f12(_a12[_i12], _i12, _a12);
+        }
+
+        undefined;
         var menu_item = document.createElement("DIV");
         menu_item.innerHTML = "zurück";
         var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
@@ -162,9 +172,17 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
         ul_item.onclick = function () {
           ul_item.classList.remove("phone_screen");
-          list_elements.forEach(function (item) {
+          var _a13 = list_elements;
+
+          var _f13 = function _f13(item) {
             return item.style.display = "none";
-          });
+          };
+
+          for (var _i13 = 0; _i13 < _a13.length; _i13++) {
+            _f13(_a13[_i13], _i13, _a13);
+          }
+
+          undefined;
           ul_item.firstElementChild.remove();
         };
       } else {
@@ -174,7 +192,13 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       }
     }
   });
-});
+};
+
+for (var _i = 0; _i < _a.length; _i++) {
+  _f(_a[_i], _i, _a);
+}
+
+undefined;
 
 (function () {
   var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
@@ -184,13 +208,29 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       var list_elements = getMenuListElements();
       removeUlElements();
       var ul_element = document.createElement("UL");
-      list_elements.forEach(function (item) {
+      var _a2 = list_elements;
+
+      var _f2 = function _f2(item) {
         return ul_element.appendChild(item);
-      });
+      };
+
+      for (var _i2 = 0; _i2 < _a2.length; _i2++) {
+        _f2(_a2[_i2], _i2, _a2);
+      }
+
+      undefined;
       navigation_desktop_tablet.appendChild(ul_element);
-      list_elements.forEach(function (item) {
+      var _a3 = list_elements;
+
+      var _f3 = function _f3(item) {
         return item.style.display = "block";
-      });
+      };
+
+      for (var _i3 = 0; _i3 < _a3.length; _i3++) {
+        _f3(_a3[_i3], _i3, _a3);
+      }
+
+      undefined;
     }
   }
 
@@ -206,25 +246,66 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       var list_elements = getMenuListElements();
       removeUlElements();
 
-      var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
-        return document.createElement('UL');
-      });
+      var _a4 = _toConsumableArray(Array(3).keys());
 
-      ul_elements.forEach(function (ul_item) {
-        _toConsumableArray(Array(3).keys()).forEach(function (value) {
+      var _f4 = function _f4(item) {
+        return document.createElement('UL');
+      };
+
+      var _r4 = [];
+
+      for (var _i4 = 0; _i4 < _a4.length; _i4++) {
+        _r4.push(_f4(_a4[_i4], _i4, _a4));
+      }
+
+      var ul_elements = _r4;
+      var _a5 = ul_elements;
+
+      var _f5 = function _f5(ul_item) {
+        var _a8 = _toConsumableArray(Array(3).keys());
+
+        var _f8 = function _f8(value) {
           ul_item.appendChild(list_elements.shift());
           ul_item.classList.add("tablet");
-        });
-      });
-      ul_elements.forEach(function (item) {
+        };
+
+        for (var _i8 = 0; _i8 < _a8.length; _i8++) {
+          _f8(_a8[_i8], _i8, _a8);
+        }
+
+        undefined;
+      };
+
+      for (var _i5 = 0; _i5 < _a5.length; _i5++) {
+        _f5(_a5[_i5], _i5, _a5);
+      }
+
+      undefined;
+      var _a6 = ul_elements;
+
+      var _f6 = function _f6(item) {
         return navigation_desktop_tablet.appendChild(item);
-      });
+      };
+
+      for (var _i6 = 0; _i6 < _a6.length; _i6++) {
+        _f6(_a6[_i6], _i6, _a6);
+      }
+
+      undefined;
 
       var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
 
-      list_elements_appended.forEach(function (item) {
+      var _a7 = list_elements_appended;
+
+      var _f7 = function _f7(item) {
         return item.style.display = "block";
-      });
+      };
+
+      for (var _i7 = 0; _i7 < _a7.length; _i7++) {
+        _f7(_a7[_i7], _i7, _a7);
+      }
+
+      undefined;
     }
   }
 
@@ -240,16 +321,32 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       var list_elements = getMenuListElements();
       removeUlElements();
       var ul_element = document.createElement("UL");
-      list_elements.forEach(function (item) {
+      var _a9 = list_elements;
+
+      var _f9 = function _f9(item) {
         return ul_element.append(item);
-      });
+      };
+
+      for (var _i9 = 0; _i9 < _a9.length; _i9++) {
+        _f9(_a9[_i9], _i9, _a9);
+      }
+
+      undefined;
       navigation_desktop_tablet.appendChild(ul_element);
 
       var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
 
-      list_elements_appended.forEach(function (item) {
+      var _a10 = list_elements_appended;
+
+      var _f10 = function _f10(item) {
         return item.style.display = "none";
-      });
+      };
+
+      for (var _i10 = 0; _i10 < _a10.length; _i10++) {
+        _f10(_a10[_i10], _i10, _a10);
+      }
+
+      undefined;
     }
   }
 
@@ -262,7 +359,15 @@ function getMenuListElements() {
 }
 
 function removeUlElements() {
-  _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL")).forEach(function (item) {
+  var _a11 = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL"));
+
+  var _f11 = function _f11(item) {
     return item.remove();
-  });
+  };
+
+  for (var _i11 = 0; _i11 < _a11.length; _i11++) {
+    _f11(_a11[_i11], _i11, _a11);
+  }
+
+  undefined;
 }

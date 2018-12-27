@@ -1,4 +1,5 @@
 {
 	"presets": ["@babel/core"]	
 	"presets": ["@babel/preset-env"]	
+	"plugins": ["babel-plugin-loop-optimizer"]
 }

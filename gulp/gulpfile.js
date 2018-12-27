@@ -1,3 +1,4 @@
+
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -35,7 +36,8 @@ gulp.task('javascript', () => {
 			.pipe(concat('quantanalyst_es6_build.js'))
 			.pipe(gulp.dest('../staticfiles/js/es6/'))
 			.pipe(babel({
-				presets: ['@babel/env']
+				presets: ['@babel/env'],
+				plugins: ['babel-plugin-loop-optimizer']
 			}))
 			.pipe(rename('quantanalyst.js'))
 			.pipe(gulp.dest('../staticfiles/js/production/'))
