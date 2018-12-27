@@ -165,17 +165,17 @@ function removeUlElements() {
 		function desktop_screen() {
 
 				if (desktop_query.matches) {
-						let list_items = getMenuListElements();
+						let list_elements = getMenuListElements();
 
 						removeUlElements();
 
 						let ul_element = document.createElement("UL");
 
-						list_items.forEach( item => ul_element.appendChild(item) );
+						list_elements.forEach( item => ul_element.appendChild(item) );
 
 						navigation_desktop_tablet.appendChild(ul_element);
 
-						list_items.forEach(item => item.style.display = "block");
+						list_elements.forEach(item => item.style.display = "block");
 				}
 		}
 
@@ -191,9 +191,10 @@ function removeUlElements() {
 				.matchMedia("(min-width: 600px) and (max-width: 899px)");
 
 		function tablet_screen() {
+
 				if (tablet_query.matches) {
 
-						let list_items = getMenuListElements();
+						let list_elements = getMenuListElements();
 
 						removeUlElements();
 
@@ -203,7 +204,7 @@ function removeUlElements() {
 						ul_elements.forEach( ul_item => {
 								[...Array(3).keys()]
 										.forEach( value => { 
-												ul_item.appendChild(list_items.shift());
+												ul_item.appendChild(list_elements.shift());
 												ul_item.classList.add("tablet"); } 
 										)} 
 						);
@@ -211,14 +212,44 @@ function removeUlElements() {
 						ul_elements.forEach( item => navigation_desktop_tablet
 								.appendChild(item) );
 
-						let list_items_appended = [...navigation_desktop_tablet
+						let list_elements_appended = [...navigation_desktop_tablet
 								.getElementsByTagName("LI")];
 
-						list_items_appended.forEach(item => item.style.display = "block");
+						list_elements_appended.forEach(item => item.style.display = "block");
 				}
 
 		}
 		tablet_screen();
 		tablet_query.addListener(tablet_screen);
+
+})();
+
+
+(function() {
+
+		let phone_query = window.matchMedia("(max-width: 599px)");
+
+		function phone_screen() {
+
+			if (phone_query.matches) {
+
+					let list_elements = getMenuListElements();
+
+					removeUlElements();
+					
+					let ul_element = document.createElement("UL");
+				
+					list_elements.forEach( item => ul_element.append(item) );
+
+					navigation_desktop_tablet.appendChild(ul_element);
+
+					let list_elements_appended = [...navigation_desktop_tablet
+							.getElementsByTagName("LI")];
+
+					list_elements_appended.forEach(item => item.style.display = "block");
+			}
+		}
+	phone_screen();	
+	phone_query.addListener(phone_screen);
 
 })();

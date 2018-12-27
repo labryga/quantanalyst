@@ -170,14 +170,14 @@ function removeUlElements() {
 
   function desktop_screen() {
     if (desktop_query.matches) {
-      var list_items = getMenuListElements();
+      var list_elements = getMenuListElements();
       removeUlElements();
       var ul_element = document.createElement("UL");
-      list_items.forEach(function (item) {
+      list_elements.forEach(function (item) {
         return ul_element.appendChild(item);
       });
       navigation_desktop_tablet.appendChild(ul_element);
-      list_items.forEach(function (item) {
+      list_elements.forEach(function (item) {
         return item.style.display = "block";
       });
     }
@@ -192,7 +192,7 @@ function removeUlElements() {
 
   function tablet_screen() {
     if (tablet_query.matches) {
-      var list_items = getMenuListElements();
+      var list_elements = getMenuListElements();
       removeUlElements();
 
       var ul_elements = _toConsumableArray(Array(3).keys()).map(function (item) {
@@ -201,7 +201,7 @@ function removeUlElements() {
 
       ul_elements.forEach(function (ul_item) {
         _toConsumableArray(Array(3).keys()).forEach(function (value) {
-          ul_item.appendChild(list_items.shift());
+          ul_item.appendChild(list_elements.shift());
           ul_item.classList.add("tablet");
         });
       });
@@ -209,9 +209,9 @@ function removeUlElements() {
         return navigation_desktop_tablet.appendChild(item);
       });
 
-      var list_items_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+      var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
 
-      list_items_appended.forEach(function (item) {
+      list_elements_appended.forEach(function (item) {
         return item.style.display = "block";
       });
     }
@@ -219,4 +219,29 @@ function removeUlElements() {
 
   tablet_screen();
   tablet_query.addListener(tablet_screen);
+})();
+
+(function () {
+  var phone_query = window.matchMedia("(max-width: 599px)");
+
+  function phone_screen() {
+    if (phone_query.matches) {
+      var list_elements = getMenuListElements();
+      removeUlElements();
+      var ul_element = document.createElement("UL");
+      list_elements.forEach(function (item) {
+        return ul_element.append(item);
+      });
+      navigation_desktop_tablet.appendChild(ul_element);
+
+      var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
+
+      list_elements_appended.forEach(function (item) {
+        return item.style.display = "block";
+      });
+    }
+  }
+
+  phone_screen();
+  phone_query.addListener(phone_screen);
 })();
