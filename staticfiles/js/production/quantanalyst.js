@@ -1,12 +1,60 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+var _a = [navigation_desktop_tablet, inhalt];
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+var _f = function _f(item) {
+  item.addEventListener("click", {
+    handleEvent: function handleEvent(event) {
+      event.preventDefault();
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") { return Array.from(iter); } }
+      if (event.target.id == "menu") {
+        var list_elements = getMenuListElements();
+        var _a2 = list_elements;
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+        var _f2 = function _f2(item) {
+          return item.style.display = "block";
+        };
+
+        for (var _i2 = 0; _i2 < _a2.length; _i2++) {
+          _f2(_a2[_i2], _i2, _a2);
+        }
+
+        undefined;
+        var menu_item = document.createElement("DIV");
+        menu_item.innerHTML = "zurück";
+        var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
+        ul_item.insertBefore(menu_item, ul_item.firstElementChild);
+        ul_item.classList.add("phone_screen");
+
+        ul_item.onclick = function () {
+          ul_item.classList.remove("phone_screen");
+          var _a3 = list_elements;
+
+          var _f3 = function _f3(item) {
+            return item.style.display = "none";
+          };
+
+          for (var _i3 = 0; _i3 < _a3.length; _i3++) {
+            _f3(_a3[_i3], _i3, _a3);
+          }
+
+          undefined;
+          ul_item.firstElementChild.remove();
+        };
+      } else {
+        // crucial header settings for django "self.request.is_ajax()" returning "true"
+        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        axios.get(event.target.pathname).then(function (response) {
+          inhalt.innerHTML = response.data;
+        });
+      }
+    }
+  });
+};
+
+for (var _i = 0; _i < _a.length; _i++) {
+  _f(_a[_i], _i, _a);
+}
 
 // chart 01
 // let daten = [[10,15], [80,15], [60,15], [35,15], [120,15]]
@@ -142,364 +190,4 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 // 			 'stroke-width': '2px',
 // 			 'fill': 'none'});
 //
-// crucial header settings for django "self.request.is_ajax()" returning "true"
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-var _a = [navigation_desktop_tablet, inhalt];
-
-var _f = function _f(item) {
-  item.addEventListener("click", {
-    handleEvent: function handleEvent(event) {
-      event.preventDefault();
-
-      if (event.target.id == "menu") {
-        var list_elements = getMenuListElements();
-        var _a17 = list_elements;
-
-        var _f17 = function _f17(item) {
-          return item.style.display = "block";
-        };
-
-        for (var _i17 = 0; _i17 < _a17.length; _i17++) {
-          _f17(_a17[_i17], _i17, _a17);
-        }
-
-        undefined;
-        var menu_item = document.createElement("DIV");
-        menu_item.innerHTML = "zurück";
-        var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
-        ul_item.insertBefore(menu_item, ul_item.firstElementChild);
-        ul_item.classList.add("phone_screen");
-
-        ul_item.onclick = function () {
-          ul_item.classList.remove("phone_screen");
-          var _a18 = list_elements;
-
-          var _f18 = function _f18(item) {
-            return item.style.display = "none";
-          };
-
-          for (var _i18 = 0; _i18 < _a18.length; _i18++) {
-            _f18(_a18[_i18], _i18, _a18);
-          }
-
-          undefined;
-          ul_item.firstElementChild.remove();
-        };
-      } else {
-        axios.get(event.target.pathname).then(function (response) {
-          inhalt.innerHTML = response.data;
-        });
-      }
-    }
-  });
-};
-
-for (var _i = 0; _i < _a.length; _i++) {
-  _f(_a[_i], _i, _a);
-}
-
 undefined;
-
-(function () {
-  var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
-
-  function desktop_screen() {
-    if (desktop_query.matches) {
-      var list_elements = getMenuListElements();
-      removeUlElements();
-      var ul_element = document.createElement("UL");
-      var _a2 = list_elements;
-
-      var _f2 = function _f2(item) {
-        return ul_element.appendChild(item);
-      };
-
-      for (var _i2 = 0; _i2 < _a2.length; _i2++) {
-        _f2(_a2[_i2], _i2, _a2);
-      }
-
-      undefined;
-      navigation_desktop_tablet.appendChild(ul_element);
-      var _a3 = list_elements;
-
-      var _f3 = function _f3(item) {
-        return item.style.display = "block";
-      };
-
-      for (var _i3 = 0; _i3 < _a3.length; _i3++) {
-        _f3(_a3[_i3], _i3, _a3);
-      }
-
-      undefined;
-    }
-  }
-
-  desktop_screen();
-  desktop_query.addListener(desktop_screen);
-})();
-
-(function () {
-  var phone_query = window.matchMedia("(max-width: 599px)");
-
-  function phone_screen() {
-    if (phone_query.matches) {
-      var list_elements = getMenuListElements();
-      removeUlElements();
-      var ul_element = document.createElement("UL");
-      var _a4 = list_elements;
-
-      var _f4 = function _f4(item) {
-        return ul_element.append(item);
-      };
-
-      for (var _i4 = 0; _i4 < _a4.length; _i4++) {
-        _f4(_a4[_i4], _i4, _a4);
-      }
-
-      undefined;
-      navigation_desktop_tablet.appendChild(ul_element);
-
-      var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-      var _a5 = list_elements_appended;
-
-      var _f5 = function _f5(item) {
-        return item.style.display = "none";
-      };
-
-      for (var _i5 = 0; _i5 < _a5.length; _i5++) {
-        _f5(_a5[_i5], _i5, _a5);
-      }
-
-      undefined;
-    }
-  }
-
-  phone_screen();
-  phone_query.addListener(phone_screen);
-})();
-
-function getMenuListElements() {
-  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-}
-
-function removeUlElements() {
-  var _a6 = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL"));
-
-  var _f6 = function _f6(item) {
-    return item.remove();
-  };
-
-  for (var _i6 = 0; _i6 < _a6.length; _i6++) {
-    _f6(_a6[_i6], _i6, _a6);
-  }
-
-  undefined;
-} // crucial header settings for django "self.request.is_ajax()" returning "true"
-
-
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-var _a7 = [navigation_desktop_tablet, inhalt];
-
-var _f7 = function _f7(item) {
-  item.addEventListener("click", {
-    handleEvent: function handleEvent(event) {
-      event.preventDefault();
-
-      if (event.target.id == "menu") {
-        var list_elements = getMenuListElements();
-        var _a19 = list_elements;
-
-        var _f19 = function _f19(item) {
-          return item.style.display = "block";
-        };
-
-        for (var _i19 = 0; _i19 < _a19.length; _i19++) {
-          _f19(_a19[_i19], _i19, _a19);
-        }
-
-        undefined;
-        var menu_item = document.createElement("DIV");
-        menu_item.innerHTML = "zurück";
-        var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
-        ul_item.insertBefore(menu_item, ul_item.firstElementChild);
-        ul_item.classList.add("phone_screen");
-
-        ul_item.onclick = function () {
-          ul_item.classList.remove("phone_screen");
-          var _a20 = list_elements;
-
-          var _f20 = function _f20(item) {
-            return item.style.display = "none";
-          };
-
-          for (var _i20 = 0; _i20 < _a20.length; _i20++) {
-            _f20(_a20[_i20], _i20, _a20);
-          }
-
-          undefined;
-          ul_item.firstElementChild.remove();
-        };
-      } else {
-        axios.get(event.target.pathname).then(function (response) {
-          inhalt.innerHTML = response.data;
-        });
-      }
-    }
-  });
-};
-
-for (var _i7 = 0; _i7 < _a7.length; _i7++) {
-  _f7(_a7[_i7], _i7, _a7);
-}
-
-undefined;
-
-(function () {
-  var desktop_query = window.matchMedia("(min-width: 900px) and (max-width: 2000px)");
-
-  function desktop_screen() {
-    if (desktop_query.matches) {
-      var list_elements = getMenuListElements();
-      removeUlElements();
-      var ul_element = document.createElement("UL");
-      var _a8 = list_elements;
-
-      var _f8 = function _f8(item) {
-        return ul_element.appendChild(item);
-      };
-
-      for (var _i8 = 0; _i8 < _a8.length; _i8++) {
-        _f8(_a8[_i8], _i8, _a8);
-      }
-
-      undefined;
-      navigation_desktop_tablet.appendChild(ul_element);
-      var _a9 = list_elements;
-
-      var _f9 = function _f9(item) {
-        return item.style.display = "block";
-      };
-
-      for (var _i9 = 0; _i9 < _a9.length; _i9++) {
-        _f9(_a9[_i9], _i9, _a9);
-      }
-
-      undefined;
-    }
-  }
-
-  desktop_screen();
-  desktop_query.addListener(desktop_screen);
-})();
-
-function getMenuListElements() {
-  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-}
-
-function removeUlElements() {
-  var _a10 = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL"));
-
-  var _f10 = function _f10(item) {
-    return item.remove();
-  };
-
-  for (var _i10 = 0; _i10 < _a10.length; _i10++) {
-    _f10(_a10[_i10], _i10, _a10);
-  }
-
-  undefined;
-}
-
-(function () {
-  var tablet_query = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
-
-  function tablet_screen() {
-    if (tablet_query.matches) {
-      var list_elements = getMenuListElements();
-      removeUlElements();
-
-      var _a11 = _toConsumableArray(Array(3).keys());
-
-      var _f11 = function _f11(item) {
-        return document.createElement('UL');
-      };
-
-      var _r11 = [];
-
-      for (var _i11 = 0; _i11 < _a11.length; _i11++) {
-        _r11.push(_f11(_a11[_i11], _i11, _a11));
-      }
-
-      var ul_elements = _r11;
-      var _a12 = ul_elements;
-
-      var _f12 = function _f12(ul_item) {
-        var _a15 = _toConsumableArray(Array(3).keys());
-
-        var _f15 = function _f15(value) {
-          ul_item.appendChild(list_elements.shift());
-          ul_item.classList.add("tablet");
-        };
-
-        for (var _i15 = 0; _i15 < _a15.length; _i15++) {
-          _f15(_a15[_i15], _i15, _a15);
-        }
-
-        undefined;
-      };
-
-      for (var _i12 = 0; _i12 < _a12.length; _i12++) {
-        _f12(_a12[_i12], _i12, _a12);
-      }
-
-      undefined;
-      var _a13 = ul_elements;
-
-      var _f13 = function _f13(item) {
-        return navigation_desktop_tablet.appendChild(item);
-      };
-
-      for (var _i13 = 0; _i13 < _a13.length; _i13++) {
-        _f13(_a13[_i13], _i13, _a13);
-      }
-
-      undefined;
-
-      var list_elements_appended = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-
-      var _a14 = list_elements_appended;
-
-      var _f14 = function _f14(item) {
-        return item.style.display = "block";
-      };
-
-      for (var _i14 = 0; _i14 < _a14.length; _i14++) {
-        _f14(_a14[_i14], _i14, _a14);
-      }
-
-      undefined;
-    }
-  }
-
-  tablet_screen();
-  tablet_query.addListener(tablet_screen);
-})();
-
-function getMenuListElements() {
-  return _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-}
-
-function removeUlElements() {
-  var _a16 = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("UL"));
-
-  var _f16 = function _f16(item) {
-    return item.remove();
-  };
-
-  for (var _i16 = 0; _i16 < _a16.length; _i16++) {
-    _f16(_a16[_i16], _i16, _a16);
-  }
-
-  undefined;
-}
