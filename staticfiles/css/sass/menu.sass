@@ -1,5 +1,6 @@
 @import 'mixins.sass'
-@import 'navigation_desktop_tablet_xl.sass'
+@import 'navigation_desktop'
+@import 'navigation_tablet_xl.sass'
 @import 'navigation_tablet.sass'
 @import 'navigation_phone'
 
@@ -14,7 +15,8 @@
     @include navigation_tablet
 
   @include tablet-xl
-    width: percentage(2.4/12)
+    width: percentage(2.2/12)
+    @include navigation_tablet_xl
 
   @include desktop
     width: percentage(2/12)
