@@ -1,5 +1,13 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") { return Array.from(iter); } }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 var _a = [navigation_desktop_tablet, inhalt];
 
 var _f = function _f(item) {
@@ -8,39 +16,7 @@ var _f = function _f(item) {
       event.preventDefault();
 
       if (event.target.id == "menu") {
-        var list_elements = getMenuListElements();
-        var _a2 = list_elements;
-
-        var _f2 = function _f2(item) {
-          return item.style.display = "block";
-        };
-
-        for (var _i2 = 0; _i2 < _a2.length; _i2++) {
-          _f2(_a2[_i2], _i2, _a2);
-        }
-
-        undefined;
-        var menu_item = document.createElement("DIV");
-        menu_item.innerHTML = "zurück";
-        var ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
-        ul_item.insertBefore(menu_item, ul_item.firstElementChild);
-        ul_item.classList.add("phone_screen");
-
-        ul_item.onclick = function () {
-          ul_item.classList.remove("phone_screen");
-          var _a3 = list_elements;
-
-          var _f3 = function _f3(item) {
-            return item.style.display = "none";
-          };
-
-          for (var _i3 = 0; _i3 < _a3.length; _i3++) {
-            _f3(_a3[_i3], _i3, _a3);
-          }
-
-          undefined;
-          ul_item.firstElementChild.remove();
-        };
+        list_menu_elements = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
       } else {
         // crucial header settings for django "self.request.is_ajax()" returning "true"
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -191,3 +167,22 @@ for (var _i = 0; _i < _a.length; _i++) {
 // 			 'fill': 'none'});
 //
 undefined;
+var desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-width: 2500px)");
+get_deskotp_tablet_menu(desktop_tablet_xl_device);
+desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
+
+function get_deskotp_tablet_menu(device) {
+  if (device.matches) {
+    alert("desktop tablet-xl device!");
+  }
+}
+
+var tablet_device = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
+get_tablet_menu(tablet_device);
+tablet_device.addListener(get_tablet_menu);
+
+function get_tablet_menu(device) {
+  if (device.matches) {
+    alert(" tablet device!");
+  }
+}

@@ -136,28 +136,13 @@
 //
 
 
-
 [navigation_desktop_tablet, inhalt].forEach(function(item) {
 		item.addEventListener("click", {
 				handleEvent(event) {
 						event.preventDefault(); 
 						if (event.target.id == "menu") {
 
-								let list_elements = getMenuListElements();
-								list_elements.forEach(item => item.style.display = "block");
-								
-								let menu_item = document.createElement("DIV");
-								menu_item.innerHTML = "zurück";
-
-								let ul_item = navigation_desktop_tablet.getElementsByTagName("UL")[0];
-								ul_item.insertBefore(menu_item, ul_item.firstElementChild);
-								ul_item.classList.add("phone_screen");
-
-								ul_item.onclick = function() {
-										ul_item.classList.remove("phone_screen");
-										list_elements.forEach(item => item.style.display = "none");
-										ul_item.firstElementChild.remove();
-								};
+							list_menu_elements = [...navigation_desktop_tablet.getElementsByTagName("LI")]
 
 						} else {
 
@@ -172,3 +157,26 @@
 });
 
 
+
+
+let desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-width: 2500px)");
+get_deskotp_tablet_menu(desktop_tablet_xl_device);
+desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
+
+function get_deskotp_tablet_menu(device) {
+	if (device.matches) {
+		alert("desktop tablet-xl device!");
+	}
+}
+
+
+
+let tablet_device = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
+get_tablet_menu(tablet_device);
+tablet_device.addListener(get_tablet_menu);
+
+function get_tablet_menu(device) {
+	if (device.matches) {
+		alert(" tablet device!");
+	}
+}
