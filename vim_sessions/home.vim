@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_complete) unite#sources#neocomplcache#start_complete()
-inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
 inoremap <silent> <Plug>(neocomplcache_start_omni_complete) 
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_complete) unite#sources#neocomplcache#start_complete()
 imap <S-Tab> <Plug>snipMateBack
 inoremap <silent> <Plug>snipMateShow =snipMate#ShowAvailableSnips()
 inoremap <silent> <Plug>snipMateBack =snipMate#BackwardsSnippet()
@@ -43,33 +43,32 @@ nmap  :tabnext
 nmap  :tabprevious
 nmap  zk
 nmap  zj
-nmap  <Plug>TComment-
-nmap 1 <Plug>TComment-1
-nmap 2 <Plug>TComment-2
-nmap 3 <Plug>TComment-3
-nmap 4 <Plug>TComment-4
-nmap 5 <Plug>TComment-5
-nmap 6 <Plug>TComment-6
-nmap 7 <Plug>TComment-7
-nmap 8 <Plug>TComment-8
-nmap 9 <Plug>TComment-9
 vmap 9 <Plug>TComment-9
+nmap 9 <Plug>TComment-9
 omap 9 <Plug>TComment-9
 vmap 8 <Plug>TComment-8
+nmap 8 <Plug>TComment-8
 omap 8 <Plug>TComment-8
 vmap 7 <Plug>TComment-7
+nmap 7 <Plug>TComment-7
 omap 7 <Plug>TComment-7
 vmap 6 <Plug>TComment-6
+nmap 6 <Plug>TComment-6
 omap 6 <Plug>TComment-6
 vmap 5 <Plug>TComment-5
+nmap 5 <Plug>TComment-5
 omap 5 <Plug>TComment-5
 vmap 4 <Plug>TComment-4
+nmap 4 <Plug>TComment-4
 omap 4 <Plug>TComment-4
 vmap 3 <Plug>TComment-3
+nmap 3 <Plug>TComment-3
 omap 3 <Plug>TComment-3
 vmap 2 <Plug>TComment-2
+nmap 2 <Plug>TComment-2
 omap 2 <Plug>TComment-2
 vmap 1 <Plug>TComment-1
+nmap 1 <Plug>TComment-1
 omap 1 <Plug>TComment-1
 map ca <Plug>TComment-ca
 map cc <Plug>TComment-cc
@@ -82,10 +81,9 @@ map r <Plug>TComment-r
 map   <Plug>TComment- 
 map p <Plug>TComment-p
 vmap  <Plug>TComment-
+nmap  <Plug>TComment-
 omap  <Plug>TComment-
 nmap   <Plug>(easymotion-s)
-smap ,__ <Plug>TComment-,__
-nmap ,__ <Plug>TComment-,__
 nnoremap ,l :call lesscss#toggle()
 map ,, <Plug>(easymotion-prefix)
 map ,_s <Plug>TComment-,_s
@@ -97,21 +95,22 @@ xmap ,_i <Plug>TComment-,_i
 map ,_  <Plug>TComment-,_ 
 map ,_p <Plug>TComment-,_p
 xmap ,__ <Plug>TComment-,__
+nmap ,__ <Plug>TComment-,__
+smap ,__ <Plug>TComment-,__
 omap ,__ <Plug>TComment-,__
 nmap ,tc <Plug>Colorizer
 map ,k <Plug>(easymotion-k);
 map ,j <Plug>(easymotion-j) 
 inoremap · :source $MYVIMRC
-inoremap üee A: ''i
-inoremap üe A: 
+inoremap üe A;:w
 inoremap üss ("");2hi
 inoremap üs ("")hi
 inoremap üaa ('');2hi
 inoremap üa ('')hi
-inoremap üd 2li: 
-inoremap üdd 2li: ''i
+inoremap üd 2li: ''i
+inoremap üdd 2li: 
 inoremap üj A;
-inoremap üff 2li, ''i
+inoremap üff 2li, ""i
 inoremap üf 2li, 
 imap ö :w!
 imap ä :wq!
@@ -149,204 +148,6 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
-nnoremap <Plug>TComment- :TComment
-snoremap <Plug>TComment-,__ :TComment
-nnoremap <Plug>TComment-,__ :TComment
-nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
-nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
-nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
-nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
-nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
-nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
-nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
-nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
-nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
-snoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
-snoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
-nnoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
-snoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
-snoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
-nnoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
-snoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
-snoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
-nnoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
-snoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
-snoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
-nnoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
-snoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
-snoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
-snoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
-snoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
-nnoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
-snoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
-nnoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
-snoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
-snoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
-snoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
-nnoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
-snoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
-nnoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
-snoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
-snoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
-nnoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
-snoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
-snoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
-snoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
-snoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
-nnoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
-snoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
-nnoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
-snoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
-nnoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
-snoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
-snoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
-nnoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
-snoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
-snoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
-snoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
-nnoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
-snoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
-snoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
-snoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
-snoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
-nnoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
-snoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
-nnoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
-snoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
-nnoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
-snoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
-nnoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
-snoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
-nnoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
-snoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
-nnoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
-snoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
-nnoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
-snoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
-nnoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
-snoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
-nnoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
-snoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
-snoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
-nnoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
-snoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
-nnoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
-snoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
-snoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
-nnoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
-snoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
-nnoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
-snoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
-nnoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
-snoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
-nnoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
-snoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
-snoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
-nnoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
-snoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
-nnoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
-snoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
-snoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
-nnoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
-snoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
-nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
-snoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
-nnoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
-snoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
-nnoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
-snoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
-snoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
-nnoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
-snoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
-nnoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
-snoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
-nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
-snoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
-nnoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
-snoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
-nnoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
-snoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
-nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
-snoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
-nnoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
-snoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
-nnoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
-snoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
-nnoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
-snoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
-nnoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
-snoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
-nnoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
-snoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
-nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
-snoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
-nnoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
-snoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
-nnoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
-snoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
-nnoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
-snoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
-nnoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
-snoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
-nnoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
-snoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
-snoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
-nnoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
-snoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
-nnoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
-snoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
-nnoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
-snoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
-nnoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
-snoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
-nnoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
-snoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
-nnoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
-snoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
-nnoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
-nnoremap <C-0> 10gt
-nnoremap <C-9> 9gt
-nnoremap <C-8> 8gt
-nnoremap <C-7> 7gt
-nnoremap <C-6> 6gt
-nnoremap <C-5> 5gt
-nnoremap <C-4> 4gt
-nnoremap <C-3> 3gt
-nnoremap <C-2> 2gt
-nnoremap <C-1> 1gt
 smap <S-Tab> <Plug>snipMateBack
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
@@ -370,181 +171,357 @@ map <silent> <Plug>(easymotion-prefix)t <Plug>(easymotion-t)
 map <silent> <Plug>(easymotion-prefix)F <Plug>(easymotion-F)
 map <silent> <Plug>(easymotion-prefix)f <Plug>(easymotion-f)
 xnoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(1)
+nnoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
+snoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
 onoremap <silent> <Plug>(easymotion-activate) :call EasyMotion#activate(0)
 xnoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(1,2)
+nnoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
+snoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
 onoremap <silent> <Plug>(easymotion-lineanywhere) :call EasyMotion#LineAnywhere(0,2)
 xnoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(1,1)
+nnoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
+snoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
 onoremap <silent> <Plug>(easymotion-linebackward) :call EasyMotion#LineAnywhere(0,1)
 xnoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(1,0)
+nnoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
+snoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
 onoremap <silent> <Plug>(easymotion-lineforward) :call EasyMotion#LineAnywhere(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
+snoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
 onoremap <silent> <Plug>(easymotion-bd-el) :call EasyMotion#EL(0,2)
 xnoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(1,1)
+nnoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
+snoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
 onoremap <silent> <Plug>(easymotion-gel) :call EasyMotion#EL(0,1)
 xnoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(1,0)
+nnoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
+snoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
 onoremap <silent> <Plug>(easymotion-el) :call EasyMotion#EL(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
+snoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
 onoremap <silent> <Plug>(easymotion-bd-wl) :call EasyMotion#WBL(0,2)
 xnoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(1,1)
+nnoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
+snoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
 onoremap <silent> <Plug>(easymotion-bl) :call EasyMotion#WBL(0,1)
 xnoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(1,0)
+nnoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
+snoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
 onoremap <silent> <Plug>(easymotion-wl) :call EasyMotion#WBL(0,0)
 xnoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(1,1)
+nnoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
+snoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
 onoremap <silent> <Plug>(easymotion-prev) :call EasyMotion#NextPrevious(0,1)
 xnoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(1,0)
+nnoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
+snoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
 onoremap <silent> <Plug>(easymotion-next) :call EasyMotion#NextPrevious(0,0)
 noremap <silent> <Plug>(easymotion-dotrepeat) :call EasyMotion#DotRepeat()
 xnoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(1)
+nnoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
+snoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
 onoremap <silent> <Plug>(easymotion-repeat) :call EasyMotion#Repeat(0)
 xnoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(1,2)
+nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
+snoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
 onoremap <silent> <Plug>(easymotion-jumptoanywhere) :call EasyMotion#JumpToAnywhere(0,2)
 xnoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(1,2,0)
+nnoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
+snoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
 onoremap <silent> <Plug>(easymotion-bd-n) :call EasyMotion#Search(0,2,0)
 xnoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(1,1,1)
+nnoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
+snoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
 onoremap <silent> <Plug>(easymotion-vim-N) :call EasyMotion#Search(0,1,1)
 xnoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(1,0,1)
+nnoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
+snoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
 onoremap <silent> <Plug>(easymotion-vim-n) :call EasyMotion#Search(0,0,1)
 xnoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(1,1,0)
+nnoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
+snoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
 onoremap <silent> <Plug>(easymotion-N) :call EasyMotion#Search(0,1,0)
 xnoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(1,0,0)
+nnoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
+snoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
 onoremap <silent> <Plug>(easymotion-n) :call EasyMotion#Search(0,0,0)
 xnoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(1,2)
+nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
+snoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
 onoremap <silent> <Plug>(easymotion-eol-bd-jk) :call EasyMotion#Eol(0,2)
 xnoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(1,1)
+nnoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
+snoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
 onoremap <silent> <Plug>(easymotion-eol-k) :call EasyMotion#Eol(0,1)
 xnoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(1,0)
+nnoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
+snoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
 onoremap <silent> <Plug>(easymotion-eol-j) :call EasyMotion#Eol(0,0)
 xnoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(1,2)
+nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
+snoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
 onoremap <silent> <Plug>(easymotion-sol-bd-jk) :call EasyMotion#Sol(0,2)
 xnoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(1,1)
+nnoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
+snoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
 onoremap <silent> <Plug>(easymotion-sol-k) :call EasyMotion#Sol(0,1)
 xnoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(1,0)
+nnoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
+snoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
 onoremap <silent> <Plug>(easymotion-sol-j) :call EasyMotion#Sol(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
+snoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
 onoremap <silent> <Plug>(easymotion-bd-jk) :call EasyMotion#JK(0,2)
 xnoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(1,1)
+nnoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
+snoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
 onoremap <silent> <Plug>(easymotion-k) :call EasyMotion#JK(0,1)
 xnoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(1,0)
+nnoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
+snoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
 onoremap <silent> <Plug>(easymotion-j) :call EasyMotion#JK(0,0)
 xnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(1,2)
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
 onoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :call EasyMotion#EK(0,2)
 xnoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(1,1)
+nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
+snoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
 onoremap <silent> <Plug>(easymotion-iskeyword-ge) :call EasyMotion#EK(0,1)
 xnoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(1,0)
+nnoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
+snoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
 onoremap <silent> <Plug>(easymotion-iskeyword-e) :call EasyMotion#EK(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
+snoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
 onoremap <silent> <Plug>(easymotion-bd-E) :call EasyMotion#EW(0,2)
 xnoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(1,1)
+nnoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
+snoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
 onoremap <silent> <Plug>(easymotion-gE) :call EasyMotion#EW(0,1)
 xnoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(1,0)
+nnoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
+snoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
 onoremap <silent> <Plug>(easymotion-E) :call EasyMotion#EW(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
+snoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
 onoremap <silent> <Plug>(easymotion-bd-e) :call EasyMotion#E(0,2)
 xnoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(1,1)
+nnoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
+snoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
 onoremap <silent> <Plug>(easymotion-ge) :call EasyMotion#E(0,1)
 xnoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(1,0)
+nnoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
+snoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
 onoremap <silent> <Plug>(easymotion-e) :call EasyMotion#E(0,0)
 xnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(1,2)
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
 onoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :call EasyMotion#WBK(0,2)
 xnoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(1,1)
+nnoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
+snoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
 onoremap <silent> <Plug>(easymotion-iskeyword-b) :call EasyMotion#WBK(0,1)
 xnoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(1,0)
+nnoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
+snoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
 onoremap <silent> <Plug>(easymotion-iskeyword-w) :call EasyMotion#WBK(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
+snoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
 onoremap <silent> <Plug>(easymotion-bd-W) :call EasyMotion#WBW(0,2)
 xnoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(1,1)
+nnoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
+snoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
 onoremap <silent> <Plug>(easymotion-B) :call EasyMotion#WBW(0,1)
 xnoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(1,0)
+nnoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
+snoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
 onoremap <silent> <Plug>(easymotion-W) :call EasyMotion#WBW(0,0)
 xnoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(1,2)
+nnoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
+snoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
 onoremap <silent> <Plug>(easymotion-bd-w) :call EasyMotion#WB(0,2)
 xnoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(1,1)
+nnoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
+snoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
 onoremap <silent> <Plug>(easymotion-b) :call EasyMotion#WB(0,1)
 xnoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(1,0)
+nnoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
+snoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
 onoremap <silent> <Plug>(easymotion-w) :call EasyMotion#WB(0,0)
 xnoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,1,1)
+nnoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
+snoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
 onoremap <silent> <Plug>(easymotion-Tln) :call EasyMotion#TL(-1,0,1)
 xnoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,1,0)
+nnoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
+snoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
 onoremap <silent> <Plug>(easymotion-t2) :call EasyMotion#T(2,0,0)
 xnoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,1,0)
+nnoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
+snoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
 onoremap <silent> <Plug>(easymotion-t) :call EasyMotion#T(1,0,0)
 xnoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,1,2)
+nnoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
+snoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
 onoremap <silent> <Plug>(easymotion-s) :call EasyMotion#S(1,0,2)
 xnoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,1,0)
+nnoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
+snoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
 onoremap <silent> <Plug>(easymotion-tn) :call EasyMotion#T(-1,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
+snoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
 onoremap <silent> <Plug>(easymotion-bd-t2) :call EasyMotion#T(2,0,2)
 xnoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,1,0)
+nnoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
+snoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
 onoremap <silent> <Plug>(easymotion-tl) :call EasyMotion#TL(1,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-tn) :call EasyMotion#T(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,1,0)
+nnoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
+snoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
 onoremap <silent> <Plug>(easymotion-fn) :call EasyMotion#S(-1,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-tl) :call EasyMotion#TL(1,0,2)
 xnoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,1,0)
+nnoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
+snoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
 onoremap <silent> <Plug>(easymotion-fl) :call EasyMotion#SL(1,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
+snoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
 onoremap <silent> <Plug>(easymotion-bd-tl2) :call EasyMotion#TL(2,0,2)
 xnoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-fn) :call EasyMotion#S(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,1,0)
+nnoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
+snoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
 onoremap <silent> <Plug>(easymotion-f) :call EasyMotion#S(1,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-fl) :call EasyMotion#SL(1,0,2)
 xnoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,1,1)
+nnoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
+snoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
 onoremap <silent> <Plug>(easymotion-Fl2) :call EasyMotion#SL(2,0,1)
 xnoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,1,0)
+nnoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
+snoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
 onoremap <silent> <Plug>(easymotion-tl2) :call EasyMotion#TL(2,0,0)
 xnoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,1,0)
+nnoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
+snoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
 onoremap <silent> <Plug>(easymotion-f2) :call EasyMotion#S(2,0,0)
 xnoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,1,1)
+nnoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
+snoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
 onoremap <silent> <Plug>(easymotion-Fln) :call EasyMotion#SL(-1,0,1)
 xnoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
 onoremap <silent> <Plug>(easymotion-sln) :call EasyMotion#SL(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,1,0)
+nnoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
+snoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
 onoremap <silent> <Plug>(easymotion-tln) :call EasyMotion#TL(-1,0,0)
 xnoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,1,0)
+nnoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
+snoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
 onoremap <silent> <Plug>(easymotion-fl2) :call EasyMotion#SL(2,0,0)
 xnoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
+snoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
 onoremap <silent> <Plug>(easymotion-bd-fl2) :call EasyMotion#SL(2,0,2)
 xnoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,1,1)
+nnoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
+snoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
 onoremap <silent> <Plug>(easymotion-T2) :call EasyMotion#T(2,0,1)
 xnoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-tln) :call EasyMotion#TL(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,1,1)
+nnoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
+snoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
 onoremap <silent> <Plug>(easymotion-T) :call EasyMotion#T(1,0,1)
 xnoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-t) :call EasyMotion#T(1,0,2)
 xnoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,1,1)
+nnoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
+snoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
 onoremap <silent> <Plug>(easymotion-Tn) :call EasyMotion#T(-1,0,1)
 xnoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,1,2)
+nnoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
+snoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
 onoremap <silent> <Plug>(easymotion-s2) :call EasyMotion#S(2,0,2)
 xnoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,1,1)
+nnoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
+snoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
 onoremap <silent> <Plug>(easymotion-Tl) :call EasyMotion#TL(1,0,1)
 xnoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
+snoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
 onoremap <silent> <Plug>(easymotion-sn) :call EasyMotion#S(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,1,1)
+nnoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
+snoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
 onoremap <silent> <Plug>(easymotion-Fn) :call EasyMotion#S(-1,0,1)
 xnoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,1,2)
+nnoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
+snoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
 onoremap <silent> <Plug>(easymotion-sl) :call EasyMotion#SL(1,0,2)
 xnoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,1,1)
+nnoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
+snoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
 onoremap <silent> <Plug>(easymotion-Fl) :call EasyMotion#SL(1,0,1)
 xnoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,1,2)
+nnoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
+snoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
 onoremap <silent> <Plug>(easymotion-sl2) :call EasyMotion#SL(2,0,2)
 xnoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-fln) :call EasyMotion#SL(-1,0,2)
 xnoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,1,1)
+nnoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
+snoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
 onoremap <silent> <Plug>(easymotion-F) :call EasyMotion#S(1,0,1)
 xnoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
+snoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
 onoremap <silent> <Plug>(easymotion-bd-f) :call EasyMotion#S(1,0,2)
 xnoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,1,1)
+nnoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
+snoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
 onoremap <silent> <Plug>(easymotion-F2) :call EasyMotion#S(2,0,1)
 xnoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,1,2)
+nnoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
+snoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
 onoremap <silent> <Plug>(easymotion-bd-f2) :call EasyMotion#S(2,0,2)
 xnoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,1,1)
+nnoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
+snoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
 onoremap <silent> <Plug>(easymotion-Tl2) :call EasyMotion#TL(2,0,1)
 xnoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,1,0)
+nnoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
+snoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
 onoremap <silent> <Plug>(easymotion-fln) :call EasyMotion#SL(-1,0,0)
 nnoremap <silent> <Plug>TComment-gc9c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 9) | set opfunc=tcomment#Operatorg@
 nnoremap <silent> <Plug>TComment-gc8c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 8) | set opfunc=tcomment#Operatorg@
@@ -556,22 +533,31 @@ nnoremap <silent> <Plug>TComment-gc3c :let w:tcommentPos = getpos(".") | call t
 nnoremap <silent> <Plug>TComment-gc2c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 2) | set opfunc=tcomment#Operatorg@
 nnoremap <silent> <Plug>TComment-gc1c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 1) | set opfunc=tcomment#Operatorg@
 vnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
+nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
 onoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
 vnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
+nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
 onoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
 vnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
+nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
 onoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
 vnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
+nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
 onoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
 vnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
+nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
 onoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
 vnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
+nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
 onoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
 vnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
+nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
 onoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
 vnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
+nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
 onoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
 vnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
+nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
 onoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
 nnoremap <silent> <Plug>TComment-gc :if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") | set opfunc=tcomment#Operatorg@
 xnoremap <Plug>TComment-gc :TCommentMaybeInline
@@ -595,6 +581,8 @@ xnoremap <Plug>TComment-,_i :TCommentInline
 noremap <Plug>TComment-,_  :TComment 
 noremap <Plug>TComment-,_p vip:TComment
 xnoremap <Plug>TComment-,__ :TCommentMaybeInline
+nnoremap <Plug>TComment-,__ :TComment
+snoremap <Plug>TComment-,__ :TComment
 onoremap <Plug>TComment-,__ :TComment
 noremap <Plug>TComment-ca :call tcomment#SetOption("as", input("Comment as: ", &filetype, "customlist,tcomment#Complete"))
 noremap <Plug>TComment-cc :call tcomment#SetOption("count", v:count1)
@@ -607,6 +595,7 @@ noremap <Plug>TComment-r :TCommentRight
 noremap <Plug>TComment-  :TComment 
 noremap <Plug>TComment-p m`vip:TComment``
 vnoremap <Plug>TComment- :TCommentMaybeInline
+nnoremap <Plug>TComment- :TComment
 onoremap <Plug>TComment- :TComment
 nnoremap <silent> <Plug>Colorizer :ColorToggle
 imap S <Plug>ISurround
@@ -652,7 +641,7 @@ inoremap [[ []iO
 inoremap [ []i
 inoremap ` ``i
 imap iö A,
-imap jö 2li 
+imap jö 2li
 imap kö A
 imap llk jA
 imap lk o
@@ -663,7 +652,7 @@ imap mö A;
 imap nö A:
 inoremap {} {  }hi
 inoremap {{{ {}iO
-inoremap {{ {}ii
+inoremap {{ {}ii	 i
 inoremap { {}i
 inoremap }]] {{  }}2hi
 inoremap }] {%  %}2hi
@@ -676,990 +665,36 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set background=dark
 set backspace=indent,eol,start
-set comments=://
-set commentstring=//\ %s
 set completefunc=neocomplcache#complete#manual_complete
-set completeopt=preview,menuone
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=de
 set hlsearch
 set nomodeline
-set operatorfunc=tcomment#OperatorLine
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,~/.vim/bundle/bracey.vim,~/.vim/bundle/codi.vim,~/.vim/bundle/colorizer,~/.vim/bundle/neocomplcache.vim,~/.vim/bundle/semantic-highlight.vim,~/.vim/bundle/sparkup,~/.vim/bundle/tagbar,~/.vim/bundle/tcomment_vim,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-css-color,~/.vim/bundle/vim-easymotion,~/.vim/bundle/vim-less,~/.vim/bundle/vim-lesscss,~/.vim/bundle/vim-multiple-cursors,~/.vim/bundle/vim-pug,~/.vim/bundle/vim-slim,~/.vim/bundle/vim-snipmate,~/.vim/bundle/vim-snippets,~/.vim/bundle/vim-surround,~/.vim/bundle/vim-virtualenv,~/.vim/bundle/vimshell.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/vim-snipmate/after,~/.vim/bundle/vim-less/after,~/.vim/bundle/vim-css-color/after,~/.vim/after
-set shiftwidth=2
-set softtabstop=2
+set runtimepath=~/.vim,~/.vim/bundle/bracey.vim,~/.vim/bundle/codi.vim,~/.vim/bundle/colorizer,~/.vim/bundle/neocomplcache.vim,~/.vim/bundle/rainbow,~/.vim/bundle/semantic-highlight.vim,~/.vim/bundle/sparkup,~/.vim/bundle/tagbar,~/.vim/bundle/tcomment_vim,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-css-color,~/.vim/bundle/vim-easymotion,~/.vim/bundle/vim-less,~/.vim/bundle/vim-lesscss,~/.vim/bundle/vim-multiple-cursors,~/.vim/bundle/vim-pug,~/.vim/bundle/vim-slim,~/.vim/bundle/vim-snipmate,~/.vim/bundle/vim-snippets,~/.vim/bundle/vim-surround,~/.vim/bundle/vim-virtualenv,~/.vim/bundle/vimshell.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/vim-snipmate/after,~/.vim/bundle/vim-less/after,~/.vim/bundle/vim-css-color/after,~/.vim/after
+set shiftwidth=4
+set softtabstop=4
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set tabstop=2
-set wildignore=*.pyc
+set tabstop=4
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules
+cd ~/quantanalyst/quantanalyst
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +28 ~/quantanalyst/quantanalyst/templates/base.pug
-badd +5 ~/quantanalyst/quantanalyst/staticfiles/css/sass/header.sass
-badd +8 ~/quantanalyst/quantanalyst/staticfiles/css/sass/main.sass
-badd +1 ~/quantanalyst/quantanalyst/staticfiles/css/sass/mixins.sass
-badd +11 ~/quantanalyst/quantanalyst/templates/home.pug
-badd +1 home/urls.py
-badd +9 ~/quantanalyst/quantanalyst/quantanalyst/urls.py
-badd +1 ~/quantanalyst/quantanalyst/quantanalyst/settings/base.py
-badd +8 ~/quantanalyst/quantanalyst/quantanalyst/settings/production_local.py
-badd +5 ~/quantanalyst/quantanalyst/staticfiles/css/sass/html.sass
-badd +1 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_desktop_tablet.sass
-badd +14 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_phone.sass
-badd +1 home.js
-badd +1 ~/quantanalyst/quantanalyst/apps/home/views.py
-badd +1 ~/quantanalyst/quantanalyst/apps/home/urls.py
-badd +4 ~/quantanalyst/quantanalyst/apps/home/xurls.py
-badd +1 ~/quantanalyst/quantanalyst/apps/modellsimulation/views.py
-badd +1 ~/quantanalyst/quantanalyst/apps/modellsimulation/urls.py
-badd +1 ~/quantanalyst/quantanalyst/project_templates/views.py
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEintragAjax.pug
-badd +3 ~/quantanalyst/quantanalyst/templates/BlogEintrag.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEintragList.pug
-badd +1 ~/quantanalyst/quantanalyst/staticfiles/js/production/quantanalyst.min.js
-badd +8 navigation.js
-badd +8 ~/quantanalyst/quantanalyst/templates/navigation_desktop_tablet.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/baseAjax.pug
-badd +6 ~/quantanalyst/quantanalyst/templates/base_test.pug
-badd +2 ~/quantanalyst/quantanalyst/templates/head.pug
-badd +2 ~/quantanalyst/quantanalyst/templates/header.pug
-badd +6 ~/quantanalyst/quantanalyst/templates/footer.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/ext.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/ext_list.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEntriesListAjax.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEntry.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEntryAjax.pug
-badd +1 ~/quantanalyst/quantanalyst/templates/BlogEntriesList.pug
-badd +1 ~/quantanalyst/quantanalyst/apps/modellsimulation/models.py
-badd +1 ~/quantanalyst/quantanalyst/project_templates/models.py
-badd +1 ~/.vimrc
-badd +1 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_tablet.sass
-badd +299 ~/vimtime.txt
-badd +1 navigation_desktop.js
-badd +4 navigation_tablet_xl.js
-badd +2 navigation_tablet.js
-badd +1 navigation_phone.js
-badd +1 navigation_desktop_tablet_xl.js
-badd +3 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_desktop_tablet_xl.sass
-badd +0 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation.sass
-badd +0 ~/quantanalyst/quantanalyst/staticfiles/css/sass/menu.sass
-badd +0 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_desktop.sass
-badd +0 ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_tablet_xl.sass
+badd +0 staticfiles/css/sass/phone.sass
+badd +0 staticfiles/css/sass/tablet.sass
+badd +0 staticfiles/css/sass/tablet_xl.sass
+badd +0 staticfiles/css/sass/desktop.sass
+badd +0 staticfiles/css/sass/main.sass
+badd +0 staticfiles/css/sass/menu.sass
 argglobal
 silent! argdel *
-argadd ~/quantanalyst/quantanalyst/templates/base.pug
-set stal=2
-edit ~/quantanalyst/quantanalyst/apps/home/urls.py
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-2wincmd k
-wincmd w
-wincmd w
-wincmd w
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-3wincmd k
-wincmd w
-wincmd w
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 7 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe '2resize ' . ((&lines * 33 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
-exe '3resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
-exe '4resize ' . ((&lines * 6 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-exe '5resize ' . ((&lines * 30 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
-exe '6resize ' . ((&lines * 19 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 136 + 136) / 272)
-argglobal
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != ''
-setlocal filetype=
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != ''
-setlocal syntax=
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-1,2fold
-let s:l = 5 - ((4 * winheight(0) + 3) / 7)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-5
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/project_templates/models.py
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != ''
-setlocal filetype=
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != ''
-setlocal syntax=
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 7 - ((4 * winheight(0) + 16) / 33)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-7
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/apps/home/views.py
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/apps/modellsimulation/urls.py
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-1,2fold
-let s:l = 1 - ((0 * winheight(0) + 3) / 6)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/project_templates/views.py
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/apps/modellsimulation/models.py
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 9) / 19)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-9
-normal! 012|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/apps/modellsimulation/views.py
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=b:#,fb:-
-setlocal commentstring=#\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*\\(from\\|import\\)
-setlocal includeexpr=substitute(v:fname,'\\.','/','g')
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=pydoc
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=pythoncomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.py
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 6 - ((3 * winheight(0) + 12) / 24)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-6
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-exe '1resize ' . ((&lines * 7 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe '2resize ' . ((&lines * 33 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
-exe '3resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
-exe '4resize ' . ((&lines * 6 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-exe '5resize ' . ((&lines * 30 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
-exe '6resize ' . ((&lines * 19 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 136 + 136) / 272)
-tabedit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_desktop.sass
+argadd staticfiles/css/sass/phone.sass
+edit staticfiles/css/sass/desktop.sass
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -1670,10 +705,7 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-4wincmd h
-wincmd w
+3wincmd h
 wincmd w
 wincmd w
 wincmd w
@@ -1686,20 +718,18 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 54 + 136) / 272)
-exe '2resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
-exe '3resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 54 + 136) / 272)
-exe '4resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 53 + 136) / 272)
-exe '5resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 54 + 136) / 272)
+exe '1resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 1resize ' . ((&columns * 67 + 136) / 272)
+exe '2resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 2resize ' . ((&columns * 67 + 136) / 272)
+exe '3resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 3resize ' . ((&columns * 68 + 136) / 272)
+exe '4resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 4resize ' . ((&columns * 67 + 136) / 272)
+exe '5resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
 exe '6resize ' . ((&lines * 41 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 41 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 135 + 136) / 272)
+exe 'vert 6resize ' . ((&columns * 135 + 136) / 272)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -1788,7 +818,7 @@ setlocal shiftwidth=2
 setlocal noshortname
 setlocal signcolumn=auto
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -1800,7 +830,7 @@ setlocal synmaxcol=3000
 if &syntax != 'sass'
 setlocal syntax=sass
 endif
-setlocal tabstop=2
+setlocal tabstop=4
 setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
@@ -1812,16 +842,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_tablet_xl.sass
+edit staticfiles/css/sass/tablet_xl.sass
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -1842,7 +871,7 @@ setlocal commentstring=//\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
+setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -1909,7 +938,7 @@ setlocal shiftwidth=2
 setlocal noshortname
 setlocal signcolumn=auto
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -1921,7 +950,7 @@ setlocal synmaxcol=3000
 if &syntax != 'sass'
 setlocal syntax=sass
 endif
-setlocal tabstop=2
+setlocal tabstop=4
 setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
@@ -1933,16 +962,255 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_tablet.sass
+edit staticfiles/css/sass/tablet.sass
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*\\%(@mixin\\|=\\)
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'sass'
+setlocal filetype=sass
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
+setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
+setlocal indentexpr=GetSassIndent()
+setlocal indentkeys=o,O,*<Return>,<:>,!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.sass,.scss,.css
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sass'
+setlocal syntax=sass
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+edit staticfiles/css/sass/phone.sass
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=://
+setlocal commentstring=//\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*\\%(@mixin\\|=\\)
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'sass'
+setlocal filetype=sass
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
+setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
+setlocal indentexpr=GetSassIndent()
+setlocal indentkeys=o,O,*<Return>,<:>,!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.sass,.scss,.css
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sass'
+setlocal syntax=sass
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+edit staticfiles/css/sass/menu.sass
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -2054,254 +1322,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 18 - ((17 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/navigation_phone.sass
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=^\\s*\\%(@mixin\\|=\\)
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'sass'
-setlocal filetype=sass
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
-setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
-setlocal indentexpr=GetSassIndent()
-setlocal indentkeys=o,O,*<Return>,<:>,!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=csscomplete#CompleteCSS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.sass,.scss,.css
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sass'
-setlocal syntax=sass
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-23
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/menu.sass
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=^\\s*\\%(@mixin\\|=\\)
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'sass'
-setlocal filetype=sass
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
-setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
-setlocal indentexpr=GetSassIndent()
-setlocal indentkeys=o,O,*<Return>,<:>,!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=csscomplete#CompleteCSS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.sass,.scss,.css
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sass'
-setlocal syntax=sass
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 5 - ((2 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-5
-normal! 0
+18
+normal! 025|
 lcd ~/quantanalyst/quantanalyst
 wincmd w
 argglobal
@@ -2417,1615 +1443,27 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 20) / 41)
+let s:l = 11 - ((5 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 013|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/css/sass/html.sass
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal copyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=^\\s*\\%(@mixin\\|=\\)
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'sass'
-setlocal filetype=sass
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
-setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
-setlocal indentexpr=GetSassIndent()
-setlocal indentkeys=o,O,*<Return>,<:>,!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=csscomplete#CompleteCSS
-setlocal path=
-setlocal preserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.sass,.scss,.css
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sass'
-setlocal syntax=sass
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 41)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
+11
 normal! 0
 lcd ~/quantanalyst/quantanalyst
 wincmd w
-4wincmd w
-exe '1resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 54 + 136) / 272)
-exe '2resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
-exe '3resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 54 + 136) / 272)
-exe '4resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 53 + 136) / 272)
-exe '5resize ' . ((&lines * 40 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 54 + 136) / 272)
+exe '1resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 1resize ' . ((&columns * 67 + 136) / 272)
+exe '2resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 2resize ' . ((&columns * 67 + 136) / 272)
+exe '3resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 3resize ' . ((&columns * 68 + 136) / 272)
+exe '4resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 4resize ' . ((&columns * 67 + 136) / 272)
+exe '5resize ' . ((&lines * 41 + 42) / 85)
+exe 'vert 5resize ' . ((&columns * 136 + 136) / 272)
 exe '6resize ' . ((&lines * 41 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 41 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 135 + 136) / 272)
-tabedit ~/quantanalyst/quantanalyst/templates/header.pug
-set splitbelow splitright
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-2wincmd k
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-wincmd w
-wincmd w
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd w
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 19 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe '2resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe '3resize ' . ((&lines * 38 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
-exe '4resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-exe '5resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 135 + 136) / 272)
-exe '6resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 135 + 136) / 272)
-argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 9) / 19)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/navigation_desktop_tablet.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 9) / 18)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-5
-normal! 08|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/base.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=1
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-10,21fold
-let s:l = 14 - ((13 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 021|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/BlogEntriesList.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 9) / 18)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-6
-normal! 022|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/BlogEntriesListAjax.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 9) / 18)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 02|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/BlogEntry.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 12) / 24)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-6
-normal! 022|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/templates/BlogEntryAjax.pug
-let s:cpo_save=&cpo
-set cpo&vim
-imap <buffer>  <Plug>SparkupExecute
-imap <buffer>  <Plug>SparkupNext
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=://-,://
-setlocal commentstring=//\ %s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#manual_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'pug'
-setlocal filetype=pug
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPugIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=.pug
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'pug'
-setlocal syntax=pug
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 12) / 24)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-exe '1resize ' . ((&lines * 19 + 42) / 85)
-exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe '2resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe '3resize ' . ((&lines * 38 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 135 + 136) / 272)
-exe '4resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-exe '5resize ' . ((&lines * 18 + 42) / 85)
-exe 'vert 5resize ' . ((&columns * 135 + 136) / 272)
-exe '6resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 6resize ' . ((&columns * 136 + 136) / 272)
-exe '7resize ' . ((&lines * 24 + 42) / 85)
-exe 'vert 7resize ' . ((&columns * 135 + 136) / 272)
-tabedit ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules/navigation.js
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-2wincmd k
-wincmd w
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe '2resize ' . ((&lines * 27 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe '3resize ' . ((&lines * 22 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 136 + 136) / 272)
-exe '4resize ' . ((&lines * 31 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-argglobal
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 41) / 82)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-16
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules/navigation_phone.js
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-1,3fold
-let s:l = 12 - ((11 * winheight(0) + 13) / 27)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-12
-normal! 0
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules/navigation_tablet.js
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-1,3fold
-let s:l = 16 - ((15 * winheight(0) + 11) / 22)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-16
-normal! 044|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-argglobal
-edit ~/quantanalyst/quantanalyst/staticfiles/js/es6/modules/navigation_desktop_tablet_xl.js
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-set nofoldenable
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-1,3fold
-let s:l = 7 - ((6 * winheight(0) + 15) / 31)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-7
-normal! 05|
-lcd ~/quantanalyst/quantanalyst
-wincmd w
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe '2resize ' . ((&lines * 27 + 42) / 85)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
-exe '3resize ' . ((&lines * 22 + 42) / 85)
-exe 'vert 3resize ' . ((&columns * 136 + 136) / 272)
-exe '4resize ' . ((&lines * 31 + 42) / 85)
-exe 'vert 4resize ' . ((&columns * 136 + 136) / 272)
-tabnext 2
-set stal=1
+exe 'vert 6resize ' . ((&columns * 135 + 136) / 272)
+tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
