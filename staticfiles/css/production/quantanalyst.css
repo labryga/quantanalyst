@@ -326,23 +326,35 @@ header {
     float: right;
     height: 50px; }
   @media (max-width: 599px) {
-    header #container-logo {
-      width: 100%; } }
+    header {
+      background-color: rgba(255, 165, 0, 0.7);
+      border: 1px solid cyan; }
+      header #container-logo {
+        width: 100%; } }
   @media (min-width: 600px) and (max-width: 899px) {
-    header #container-logo {
-      width: 100%; }
-    header #container-logo-offset {
-      width: 0%; } }
+    header {
+      background-color: rgba(255, 0, 0, 0.2);
+      border: 1px solid cyan; }
+      header #container-logo {
+        width: 100%; }
+      header #container-logo-offset {
+        width: 0%; } }
   @media (min-width: 900px) and (max-width: 1199px) {
-    header #container-logo {
-      width: 33.33333%; }
-    header #container-logo-offset {
-      width: 0%; } }
+    header {
+      background-color: rgba(0, 128, 0, 0.5);
+      border: 1px solid cyan; }
+      header #container-logo {
+        width: 33.33333%; }
+      header #container-logo-offset {
+        width: 0%; } }
   @media (min-width: 1200px) {
-    header #container-logo {
-      width: 41.66667%; }
-    header #container-logo-offset {
-      width: 0%; } }
+    header {
+      background-color: rgba(0, 0, 255, 0.2);
+      border: 1px solid cyan; }
+      header #container-logo {
+        width: 41.66667%; }
+      header #container-logo-offset {
+        width: 0%; } }
 
 main {
   width: 100%;
@@ -354,124 +366,64 @@ main {
     content: "";
     clear: both; }
 
-@font-face {
-  font-family: Nunito-Regular;
-  src: url(../../fonts/Nunito-Regular.ttf); }
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
-html {
-  width: 100%; }
-
-body {
-  background-color: #400080;
-  color: mintcream;
-  font-family: Nunito-Regular;
-  width: 100%;
-  height: 100%;
-  margin: 0px; }
-
-ul {
-  margin: 0px;
-  padding: 0px; }
-
-a {
-  text-decoration: none;
-  color: mintcream; }
-
-#navigation_desktop_tablet {
-  height: 500px;
-  float: left; }
-  #navigation_desktop_tablet ul {
-    padding: 20px 20px 20px 0px;
-    list-style-type: none; }
-    #navigation_desktop_tablet ul li {
-      text-align: right; }
-      #navigation_desktop_tablet ul li a {
-        line-height: 1.7em;
-        font-size: 1.0em; }
-        #navigation_desktop_tablet ul li a:hover {
-          color: cyan; }
-  #navigation_desktop_tablet #menu {
-    display: none; }
-  @media (max-width: 599px) {
-    #navigation_desktop_tablet {
+@media (max-width: 599px) {
+  #menu {
+    background-color: rgba(255, 165, 0, 0.7);
+    border: 1px solid cyan;
+    width: 100%;
+    height: 30px; }
+    #menu ul {
+      padding: 10px; }
+      #menu ul li {
+        text-align: left; }
+        #menu ul li a {
+          line-height: 1.7em; }
+          #menu ul li a:hover {
+            color: cyan; }
+    #menu:first-child {
+      color: cyan;
+      cursor: pointer; }
+    #menu #menu_mobile {
       width: 100%;
-      height: 30px; }
-      #navigation_desktop_tablet ul {
-        padding: 10px; }
-        #navigation_desktop_tablet ul li {
-          text-align: left; }
-          #navigation_desktop_tablet ul li a {
-            line-height: 1.7em; }
-            #navigation_desktop_tablet ul li a:hover {
-              color: cyan; }
-      #navigation_desktop_tablet:first-child {
-        color: cyan;
-        cursor: pointer; }
-      #navigation_desktop_tablet #menu {
-        width: 100%;
-        height: 30px;
-        display: block;
-        text-align: center;
-        cursor: pointer; }
-      #navigation_desktop_tablet .phone_screen {
-        background-color: rgba(64, 0, 128, 0.8);
-        padding: 30px 0px 0px 30px;
-        display: block;
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px; } }
-  @media (min-width: 600px) and (max-width: 899px) {
-    #navigation_desktop_tablet {
+      height: 30px;
       display: block;
-      width: 100%;
-      height: 130px; }
-      #navigation_desktop_tablet ul {
-        padding: 20px 0px 0px 30px;
-        list-style-type: none; }
-        #navigation_desktop_tablet ul li {
-          text-align: left; }
-      #navigation_desktop_tablet .tablet {
+      text-align: center;
+      cursor: pointer; }
+    #menu .menu_phone {
+      background-color: rgba(255, 0, 0, 0.5);
+      padding: 30px 0px 0px 30px;
+      display: block;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px; } }
+
+@media (min-width: 600px) and (max-width: 899px) {
+  #menu {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid cyan;
+    width: 100%;
+    height: 130px; }
+    #menu .menu_tablet {
+      padding: 20px 0px 0px 30px;
+      list-style-type: none; }
+      #menu .menu_tablet li {
+        text-align: left;
         width: 33.33333%;
         float: left; } }
-  @media (min-width: 900px) and (max-width: 1199px) {
-    #navigation_desktop_tablet {
-      width: 20%; } }
-  @media (min-width: 1200px) {
-    #navigation_desktop_tablet {
-      width: 16.66667%; } }
 
-@font-face {
-  font-family: Nunito-Regular;
-  src: url(../../fonts/Nunito-Regular.ttf); }
+@media (min-width: 900px) and (max-width: 1199px) {
+  #menu {
+    background-color: rgba(0, 128, 0, 0.5);
+    border: 1px solid cyan;
+    width: 20%; } }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
-html {
-  width: 100%; }
-
-body {
-  background-color: #400080;
-  color: mintcream;
-  font-family: Nunito-Regular;
-  width: 100%;
-  height: 100%;
-  margin: 0px; }
-
-ul {
-  margin: 0px;
-  padding: 0px; }
-
-a {
-  text-decoration: none;
-  color: mintcream; }
+@media (min-width: 1200px) {
+  #menu {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 1px solid cyan;
+    width: 16.66667%; } }
 
 .content {
   padding: 20px 40px 20px 20px;
@@ -484,17 +436,25 @@ a {
       line-height: 1.5em; }
   @media (max-width: 599px) {
     .content {
+      background-color: rgba(255, 165, 0, 0.7);
+      border: 1px solid cyan;
       width: 100%;
       padding: 25px; } }
   @media (min-width: 600px) and (max-width: 899px) {
     .content {
+      background-color: rgba(255, 0, 0, 0.2);
+      border: 1px solid cyan;
       width: 100%;
       padding: 30px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
     .content {
+      background-color: rgba(0, 128, 0, 0.5);
+      border: 1px solid cyan;
       width: 80%; } }
   @media (min-width: 1200px) {
     .content {
+      background-color: rgba(0, 0, 255, 0.2);
+      border: 1px solid cyan;
       width: 83.33333%; } }
 
 #chart {

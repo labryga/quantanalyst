@@ -8,16 +8,14 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-var _a = [navigation_desktop_tablet, inhalt];
+var _a = [menu, inhalt];
 
 var _f = function _f(item) {
   item.addEventListener("click", {
     handleEvent: function handleEvent(event) {
       event.preventDefault();
 
-      if (event.target.id == "menu") {
-        list_menu_elements = _toConsumableArray(navigation_desktop_tablet.getElementsByTagName("LI"));
-      } else {
+      if (event.target.id == "menu") {} else {
         // crucial header settings for django "self.request.is_ajax()" returning "true"
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         axios.get(event.target.pathname).then(function (response) {
@@ -173,7 +171,49 @@ desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
 function get_deskotp_tablet_menu(device) {
   if (device.matches) {
-    alert("desktop tablet-xl device!");
+    var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
+
+    var ul_elements_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
+
+    var _a2 = ul_elements_remove;
+
+    var _f2 = function _f2(ul_element) {
+      return ul_element.remove();
+    };
+
+    for (var _i2 = 0; _i2 < _a2.length; _i2++) {
+      _f2(_a2[_i2], _i2, _a2);
+    }
+
+    undefined;
+    var ul_navigation = document.createDocumentFragment();
+    var ul_element = document.createElement("UL");
+    var _a3 = menu_li_elements;
+
+    var _f3 = function _f3(li_element) {
+      return ul_element.appendChild(li_element);
+    };
+
+    for (var _i3 = 0; _i3 < _a3.length; _i3++) {
+      _f3(_a3[_i3], _i3, _a3);
+    }
+
+    undefined;
+    ul_navigation.appendChild(ul_element);
+    menu.appendChild(ul_navigation);
+  }
+}
+
+var phone_device = window.matchMedia("(max-width: 599px)");
+get_phone_menu(phone_device);
+phone_device.addListener(get_phone_menu);
+
+function get_phone_menu(device) {
+  if (device.matches) {
+    var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
+
+    var ul_element = document.createElement("UL");
+    menu.appendChild(ul_element);
   }
 }
 
@@ -183,6 +223,47 @@ tablet_device.addListener(get_tablet_menu);
 
 function get_tablet_menu(device) {
   if (device.matches) {
-    alert(" tablet device!");
+    var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
+
+    var ul_elements_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
+
+    var _a4 = ul_elements_remove;
+
+    var _f4 = function _f4(ul_element) {
+      return ul_element.remove();
+    };
+
+    for (var _i4 = 0; _i4 < _a4.length; _i4++) {
+      _f4(_a4[_i4], _i4, _a4);
+    }
+
+    undefined;
+    var ul_navigation = document.createDocumentFragment();
+
+    var _a5 = _toConsumableArray(Array(3).keys());
+
+    var _f5 = function _f5(element) {
+      return document.createElement("UL");
+    };
+
+    var _r5 = [];
+
+    for (var _i5 = 0; _i5 < _a5.length; _i5++) {
+      _r5.push(_f5(_a5[_i5], _i5, _a5));
+    }
+
+    var ul_elements = _r5;
+    var _a6 = ul_elements;
+
+    var _f6 = function _f6(ul_element) {
+      return ul_navigation.appendChild(ul_element);
+    };
+
+    for (var _i6 = 0; _i6 < _a6.length; _i6++) {
+      _f6(_a6[_i6], _i6, _a6);
+    }
+
+    undefined;
+    menu.appendChild(ul_navigation);
   }
 }

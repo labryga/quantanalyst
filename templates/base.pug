@@ -10,10 +10,10 @@ html
 		main
 			div(class="grid_row")	
 				// navigation desktop/tablet => 600px
-				div(id="navigation_desktop_tablet") 
-					a(id="menu")= "Menu"
-					{% block navigaton_desktop_tablet %}
-					{% endblock navigaton_desktop_tablet %}
+				div(id="menu") 
+					a(id="menu_mobile", style="display: none")= "Menu"
+					{% block navigation %}
+					{% endblock navigation %}
 
 
 				div(id="inhalt", class="content")
@@ -23,5 +23,3 @@ html
 		{% include "footer.pug" %}
 
 		script(src="{% static 'js/production/quantanalyst.js' %}")
-
-

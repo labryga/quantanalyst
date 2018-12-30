@@ -136,16 +136,12 @@
 //
 
 
-[navigation_desktop_tablet, inhalt].forEach(function(item) {
+[menu, inhalt].forEach(function(item) {
 		item.addEventListener("click", {
 				handleEvent(event) {
 						event.preventDefault(); 
 						if (event.target.id == "menu") {
-
-							list_menu_elements = [...navigation_desktop_tablet.getElementsByTagName("LI")]
-
 						} else {
-
 							// crucial header settings for django "self.request.is_ajax()" returning "true"
 							axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 							axios.get(event.target.pathname)
@@ -158,18 +154,35 @@
 
 
 
-
 let desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-width: 2500px)");
 get_deskotp_tablet_menu(desktop_tablet_xl_device);
 desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
 function get_deskotp_tablet_menu(device) {
 	if (device.matches) {
-		alert("desktop tablet-xl device!");
+		let menu_li_elements = [...menu.getElementsByTagName("LI")]
+		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		let ul_navigation = document.createDocumentFragment();
+		let ul_element = document.createElement("UL");
+		menu_li_elements.forEach(li_element => ul_element.appendChild(li_element));
+		ul_navigation.appendChild(ul_element);
+		menu.appendChild(ul_navigation);
 	}
 }
 
+let phone_device = window.matchMedia("(max-width: 599px)");
+get_phone_menu(phone_device);
+phone_device.addListener(get_phone_menu);
 
+function get_phone_menu(device) {
+	if (device.matches) {
+
+		let menu_li_elements = [...menu.getElementsByTagName("LI")]
+		let ul_element = document.createElement("UL");
+		menu.appendChild(ul_element);
+	}
+}
 
 let tablet_device = window.matchMedia("(min-width: 600px) and (max-width: 899px)");
 get_tablet_menu(tablet_device);
@@ -177,6 +190,12 @@ tablet_device.addListener(get_tablet_menu);
 
 function get_tablet_menu(device) {
 	if (device.matches) {
-		alert(" tablet device!");
+		let menu_li_elements = [...menu.getElementsByTagName("LI")];
+		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		let ul_navigation = document.createDocumentFragment(); 
+		let ul_elements = [...Array(3).keys()].map(element => document.createElement("UL"));
+		ul_elements.forEach(ul_element => ul_navigation.appendChild(ul_element));
+		menu.appendChild(ul_navigation);
 	}
 }
