@@ -256,11 +256,32 @@ function get_tablet_menu(device) {
     var _a6 = ul_elements;
 
     var _f6 = function _f6(ul_element) {
-      return ul_navigation.appendChild(ul_element);
+      var _a8 = _toConsumableArray(Array(3).keys());
+
+      var _f8 = function _f8(value) {
+        ul_element.appendChild(menu_li_elements.shift());
+      };
+
+      for (var _i8 = 0; _i8 < _a8.length; _i8++) {
+        _f8(_a8[_i8], _i8, _a8);
+      }
+
+      undefined;
     };
 
     for (var _i6 = 0; _i6 < _a6.length; _i6++) {
       _f6(_a6[_i6], _i6, _a6);
+    }
+
+    undefined;
+    var _a7 = ul_elements;
+
+    var _f7 = function _f7(ul_element) {
+      return ul_navigation.appendChild(ul_element);
+    };
+
+    for (var _i7 = 0; _i7 < _a7.length; _i7++) {
+      _f7(_a7[_i7], _i7, _a7);
     }
 
     undefined;
