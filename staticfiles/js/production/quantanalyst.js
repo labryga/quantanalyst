@@ -173,7 +173,7 @@ var _f2 = function _f2(item) {
     handleEvent: function handleEvent(event) {
       event.preventDefault();
 
-      if (event.target.id == "menu") {} else if (event.target.nodeName == "A") {
+      if (event.target.id == "menu") {} else if (event.target.nodeName == "A" && event.target.closest("DIV").id == "menu") {
         // crucial header settings for django "self.request.is_ajax()" returning "true"
         var li_items = _toConsumableArray(menu.getElementsByTagName("A"));
 
@@ -194,6 +194,8 @@ var _f2 = function _f2(item) {
         axios.get(event.target.pathname).then(function (response) {
           inhalt.innerHTML = response.data;
         });
+      } else {
+        alert("none");
       }
     }
   });

@@ -159,7 +159,7 @@ function get_deskotp_tablet_menu(device) {
 						event.preventDefault(); 
 						if (event.target.id == "menu") {
 
-						} else if (event.target.nodeName == "A") {
+						} else if (event.target.nodeName == "A" && event.target.closest("DIV").id == "menu" ) {
 							// crucial header settings for django "self.request.is_ajax()" returning "true"
 							let li_items = [...menu.getElementsByTagName("A")];
 							li_items.forEach(li_item => li_item.style.color = "inherit");
@@ -169,6 +169,8 @@ function get_deskotp_tablet_menu(device) {
 							axios.get(event.target.pathname)
 								.then(function (response) {
 										inhalt.innerHTML = response.data;}); 
+						} else {
+							alert("none");
 						}
 				}
 		});
