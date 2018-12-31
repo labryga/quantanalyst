@@ -14,3 +14,13 @@
 				}
 		});
 });
+
+function reset_menu_list() {
+		let menu_li_elements = [...menu.getElementsByTagName("LI")];
+		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		menu_li_elements.forEach(li_item => li_item.style.display = "block");
+		let ul_navigation = document.createDocumentFragment(); 
+		return {menu_li_elements, ul_navigation}
+}
+

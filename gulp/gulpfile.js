@@ -12,7 +12,14 @@ var gulp = require('gulp'),
 	
 
 gulp.task('css', () => {
-	return gulp.src(['../staticfiles/css/sass/normalize.css', '../staticfiles/css/sass/*'])
+	return gulp.src([
+		'../staticfiles/css/sass/normalize.css',
+		'../staticfiles/css/sass/html.sass',
+		'../staticfiles/css/sass/header.sass',
+		'../staticfiles/css/sass/main.sass',
+		'../staticfiles/css/sass/footer.sass',
+
+	])
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('quantanalyst.css'))

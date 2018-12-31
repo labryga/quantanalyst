@@ -1,15 +1,19 @@
-let desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-width: 2500px)");
-get_deskotp_tablet_menu(desktop_tablet_xl_device);
-desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
+let phone_device = window.matchMedia("(max-width: 599px)");
+get_phone_menu(phone_device);
+phone_device.addListener(get_phone_menu);
 
-function get_deskotp_tablet_menu(device) {
+function get_phone_menu(device) {
 	if (device.matches) {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")]
 		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
+
 		ul_elements_remove.forEach(ul_element => ul_element.remove());
 		let ul_navigation = document.createDocumentFragment();
 		let ul_element = document.createElement("UL");
-		menu_li_elements.forEach(li_element => ul_element.appendChild(li_element));
+		menu_li_elements.forEach(li_element => {
+			li_element.style.display = "none";
+			ul_element.appendChild(li_element);
+		});
 		ul_navigation.appendChild(ul_element);
 		menu.appendChild(ul_navigation);
 	}
