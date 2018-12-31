@@ -180,7 +180,7 @@ var _f2 = function _f2(item) {
         var _a12 = li_items;
 
         var _f12 = function _f12(li_item) {
-          return li_item.style.color = "inherit";
+          return li_item.classList.remove("menu_item");
         };
 
         for (var _i12 = 0; _i12 < _a12.length; _i12++) {
@@ -188,14 +188,16 @@ var _f2 = function _f2(item) {
         }
 
         undefined;
-        event.target.style.onHover = "#ffff00";
-        event.target.style.color = "#00ff00";
+        event.target.classList.add("menu_item");
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         axios.get(event.target.pathname).then(function (response) {
           inhalt.innerHTML = response.data;
         });
       } else {
-        alert("none");
+        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        axios.get(event.target.pathname).then(function (response) {
+          inhalt.innerHTML = response.data;
+        });
       }
     }
   });
