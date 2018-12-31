@@ -384,7 +384,7 @@ main {
     padding: 0px; }
     #menu ul {
       width: 33.33333%;
-      padding: 0px 30px 0px 0px;
+      padding: 0px 0px 0px 0px;
       list-style-type: none;
       float: left; }
       #menu ul li {
@@ -413,9 +413,7 @@ main {
       #menu ul li {
         text-align: right;
         line-height: 1.8em;
-        font-size: 1.0em; }
-        #menu ul li a:hover {
-          color: yellow; } }
+        font-size: 1.0em; } }
 
 .content {
   padding: 20px 40px 20px 20px;

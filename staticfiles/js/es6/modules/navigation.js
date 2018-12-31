@@ -4,8 +4,13 @@
 				handleEvent(event) {
 						event.preventDefault(); 
 						if (event.target.id == "menu") {
-						} else {
+
+						} else if (event.target.nodeName == "A") {
 							// crucial header settings for django "self.request.is_ajax()" returning "true"
+							let li_items = [...menu.getElementsByTagName("A")];
+							li_items.forEach(li_item => li_item.style.color = "inherit");
+							event.target.style.onHover = "#ffff00";
+							event.target.style.color = "#00ff00";
 							axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 							axios.get(event.target.pathname)
 								.then(function (response) {
