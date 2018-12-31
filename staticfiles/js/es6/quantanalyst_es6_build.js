@@ -178,6 +178,15 @@ function reset_menu_list() {
 		return {menu_li_elements, ul_navigation}
 }
 
+function reset_raw() {
+	return {
+		menu_li_elements: [...menu.getElementsByTagName("LI")],
+		ul_elements: [...menu.getElementsByTagName("UL")],
+		ul_elements_remove() {this.ul_elements
+													.forEach(item => item.remove())},
+		ul_navigation: document.createDocumentFragment(),
+	};
+}
 
 let phone_device = window.matchMedia("(max-width: 599px)");
 get_phone_menu(phone_device);

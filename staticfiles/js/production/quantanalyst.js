@@ -224,6 +224,27 @@ function reset_menu_list() {
   };
 }
 
+function reset_raw() {
+  return {
+    menu_li_elements: _toConsumableArray(menu.getElementsByTagName("LI")),
+    ul_elements: _toConsumableArray(menu.getElementsByTagName("UL")),
+    ul_elements_remove: function ul_elements_remove() {
+      var _a5 = this.ul_elements;
+
+      var _f5 = function _f5(item) {
+        return item.remove();
+      };
+
+      for (var _i5 = 0; _i5 < _a5.length; _i5++) {
+        _f5(_a5[_i5], _i5, _a5);
+      }
+
+      undefined;
+    },
+    ul_navigation: document.createDocumentFragment()
+  };
+}
+
 var phone_device = window.matchMedia("(max-width: 599px)");
 get_phone_menu(phone_device);
 phone_device.addListener(get_phone_menu);
@@ -234,28 +255,28 @@ function get_phone_menu(device) {
 
     var ul_elements_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
 
-    var _a5 = ul_elements_remove;
+    var _a6 = ul_elements_remove;
 
-    var _f5 = function _f5(ul_element) {
+    var _f6 = function _f6(ul_element) {
       return ul_element.remove();
     };
 
-    for (var _i5 = 0; _i5 < _a5.length; _i5++) {
-      _f5(_a5[_i5], _i5, _a5);
+    for (var _i6 = 0; _i6 < _a6.length; _i6++) {
+      _f6(_a6[_i6], _i6, _a6);
     }
 
     undefined;
     var ul_navigation = document.createDocumentFragment();
     var ul_element = document.createElement("UL");
-    var _a6 = menu_li_elements;
+    var _a7 = menu_li_elements;
 
-    var _f6 = function _f6(li_element) {
+    var _f7 = function _f7(li_element) {
       li_element.style.display = "none";
       ul_element.appendChild(li_element);
     };
 
-    for (var _i6 = 0; _i6 < _a6.length; _i6++) {
-      _f6(_a6[_i6], _i6, _a6);
+    for (var _i7 = 0; _i7 < _a7.length; _i7++) {
+      _f7(_a7[_i7], _i7, _a7);
     }
 
     undefined;
@@ -272,48 +293,48 @@ function get_tablet_menu(device) {
   if (device.matches) {
     var menu_list_raw = reset_menu_list();
 
-    var _a7 = _toConsumableArray(Array(3).keys());
+    var _a8 = _toConsumableArray(Array(3).keys());
 
-    var _f7 = function _f7(element) {
+    var _f8 = function _f8(element) {
       return document.createElement("UL");
     };
 
-    var _r7 = [];
+    var _r8 = [];
 
-    for (var _i7 = 0; _i7 < _a7.length; _i7++) {
-      _r7.push(_f7(_a7[_i7], _i7, _a7));
+    for (var _i8 = 0; _i8 < _a8.length; _i8++) {
+      _r8.push(_f8(_a8[_i8], _i8, _a8));
     }
 
-    var ul_elements = _r7;
-    var _a8 = ul_elements;
+    var ul_elements = _r8;
+    var _a9 = ul_elements;
 
-    var _f8 = function _f8(ul_element) {
-      var _a10 = _toConsumableArray(Array(3).keys());
+    var _f9 = function _f9(ul_element) {
+      var _a11 = _toConsumableArray(Array(3).keys());
 
-      var _f10 = function _f10(value) {
+      var _f11 = function _f11(value) {
         ul_element.appendChild(menu_list_raw.menu_li_elements.shift());
       };
 
-      for (var _i10 = 0; _i10 < _a10.length; _i10++) {
-        _f10(_a10[_i10], _i10, _a10);
+      for (var _i11 = 0; _i11 < _a11.length; _i11++) {
+        _f11(_a11[_i11], _i11, _a11);
       }
 
       undefined;
     };
 
-    for (var _i8 = 0; _i8 < _a8.length; _i8++) {
-      _f8(_a8[_i8], _i8, _a8);
+    for (var _i9 = 0; _i9 < _a9.length; _i9++) {
+      _f9(_a9[_i9], _i9, _a9);
     }
 
     undefined;
-    var _a9 = ul_elements;
+    var _a10 = ul_elements;
 
-    var _f9 = function _f9(ul_element) {
+    var _f10 = function _f10(ul_element) {
       menu_list_raw.ul_navigation.appendChild(ul_element);
     };
 
-    for (var _i9 = 0; _i9 < _a9.length; _i9++) {
-      _f9(_a9[_i9], _i9, _a9);
+    for (var _i10 = 0; _i10 < _a10.length; _i10++) {
+      _f10(_a10[_i10], _i10, _a10);
     }
 
     undefined;
