@@ -319,8 +319,10 @@ header {
     header #container-logo #logo-title {
       margin: 0px; }
     header #container-logo #logo-subtitle {
-      color: cyan;
-      margin: 0px; }
+      margin: 0px;
+      line-height: 2.5em;
+      font-size: 0.9em;
+      color: cyan; }
   header #container-logo-offset {
     background-color: rgba(255, 0, 0, 0.3);
     float: right;
@@ -438,7 +440,7 @@ a {
       padding: 20px 20px 20px 0px; }
       #menu ul li {
         text-align: right;
-        line-height: 1.6em; } }
+        line-height: 2.0em; } }
 
 @media (min-width: 1200px) {
   #menu {
@@ -450,7 +452,7 @@ a {
       list-style-type: none; }
       #menu ul li {
         text-align: right;
-        line-height: 1.8em;
+        line-height: 1.9em;
         font-size: 1.0em; } }
 
 .content {
@@ -461,7 +463,7 @@ a {
     padding: 0px 0px 0px 0pX;
     list-style-type: none; }
     .content ul li {
-      line-height: 1.5em; }
+      line-height: 1.8em; }
   @media (max-width: 599px) {
     .content {
       width: 100%;
@@ -472,10 +474,18 @@ a {
       padding: 30px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
     .content {
-      width: 81.66667%; } }
+      width: 81.66667%; }
+      .content p:first-child {
+        padding: 0px;
+        line-height: 0em;
+        font-size: 0.8em; } }
   @media (min-width: 1200px) {
     .content {
-      width: 83.33333%; } }
+      width: 83.33333%; }
+      .content p:first-child {
+        padding: 0px;
+        line-height: 0em;
+        font-size: 0.8em; } }
 
 footer {
   width: 100%;
@@ -498,11 +508,11 @@ footer {
     footer .grid_row .footer_entry {
       margin: 0px;
       color: cyan;
-      width: 60px;
+      width: 70px;
       max-width: 100px;
       height: 100%;
       line-height: 35px;
-      font-size: 0.8em;
+      font-size: 0.9em;
       display: inline-block; }
       footer .grid_row .footer_entry a {
         color: cyan; }

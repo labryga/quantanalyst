@@ -1,4 +1,6 @@
 @import 'mixins.sass'
+@import 'desktop.sass'
+@import 'tablet_xl.sass'
 
 main
 	@include grid_container
@@ -15,7 +17,7 @@ main
 		padding: 0px 0px 0px 0pX
 		list-style-type: none
 		li
-			line-height: 1.5em
+			line-height: 1.8em
 
 	@include phone
   	width: percentage(12/12)
@@ -27,7 +29,8 @@ main
 
 	@include tablet-xl
   	width: percentage(9.8/12)
+  	@include content_tablet_xl
 
 	@include desktop
   	width: percentage(10/12)
-
+  	@include content_desktop
