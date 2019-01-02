@@ -162,6 +162,7 @@ function get_deskotp_tablet_menu(device) {
 								if (phone.style.display == "block") {
 									phone.style.display = "none";
 									phone.classList.remove("phone_list");
+
 								} else { 
 										phone.style.display = "block";
 										phone.classList.add("phone_list");
@@ -180,15 +181,16 @@ function get_deskotp_tablet_menu(device) {
 								alert("mobile!");
 					
 						} else {
-									alert("else done");
-									axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-									axios.get(event.target.pathname)
-										.then(function (response) {
-												inhalt.innerHTML = response.data;}); 
+								axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+								axios.get(event.target.pathname)
+									.then(function (response) {
+											inhalt.innerHTML = response.data;}); 
 						}
 				}
 		});
 });
+
+
 
 function reset_menu_list() {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")];

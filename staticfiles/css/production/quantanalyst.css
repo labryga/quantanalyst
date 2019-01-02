@@ -390,35 +390,29 @@ a {
 
 @media (max-width: 599px) {
   #menu {
-    width: 100%;
-    height: 30px; }
-    #menu ul {
-      padding: 10px; }
-      #menu ul li {
-        text-align: left; }
-        #menu ul li a {
-          line-height: 1.7em; }
-          #menu ul li a:hover {
-            color: cyan; }
-    #menu:first-child {
-      color: cyan;
-      cursor: pointer; }
+    width: 100%; }
     #menu #menu_phone {
       width: 100%;
       height: 30px;
       display: block;
       text-align: center;
-      font-size: 1.4em;
+      font-size: 1.2em;
       cursor: pointer; }
     #menu .phone_list {
       background-color: #001f3f;
       width: 100%;
       height: 100%;
+      list-style-type: none;
+      padding: 45px 0px 0px 0px;
       position: fixed;
       top: 0px;
       right: 0px;
       bottom: 0px;
-      left: 0px; } }
+      left: 0px; }
+      #menu .phone_list li {
+        text-align: center;
+        line-height: 2.2em;
+        font-size: 1.1em; } }
 
 @media (min-width: 600px) and (max-width: 899px) {
   #menu {

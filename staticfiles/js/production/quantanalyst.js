@@ -204,7 +204,6 @@ var _f2 = function _f2(item) {
       } else if (event.target.id == "menu_mobile") {
         alert("mobile!");
       } else {
-        alert("else done");
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         axios.get(event.target.pathname).then(function (response) {
           inhalt.innerHTML = response.data;
