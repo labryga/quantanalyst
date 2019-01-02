@@ -8,7 +8,7 @@ for mnuitem in menu_list
 
 
 {% block content %}
-ul
+ul(class="liste")
 	for blogitem in object_list
 		li: a(href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ blogitem.category }}/{{ blogitem.slug }}") {{ blogitem.titel | striptags }}
 {% endblock content %}

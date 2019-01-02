@@ -1,14 +1,14 @@
 @import 'mixins.sass'
 @import 'desktop.sass'
 @import 'tablet_xl.sass'
+@import 'menu.sass'
 
 main
 	@include grid_container
 	height: 1500px
 
-@import 'menu.sass'
-
 .content
+	padding: 20px
 
 	h2
 		color: $color-01
@@ -26,6 +26,12 @@ main
 		list-style-type: none
 		li
 			line-height: 1.8em
+	
+	.liste
+		list-style-type: decimal-leading-zero
+		list-style-position: inside
+		a
+			margin-left: 10px
 
 
 	@include phone

@@ -373,16 +373,6 @@ header {
     header #container-logo-offset {
       width: 0%; } }
 
-main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0px auto;
-  height: 1500px; }
-  main .grid_row:after {
-    display: table;
-    content: "";
-    clear: both; }
-
 @font-face {
   font-family: Nunito-Regular;
   src: url(../../fonts/Nunito-Regular.ttf); }
@@ -482,7 +472,18 @@ a {
         line-height: 1.9em;
         font-size: 1.0em; } }
 
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  height: 1500px; }
+  main .grid_row:after {
+    display: table;
+    content: "";
+    clear: both; }
+
 .content {
+  padding: 20px;
   padding: 20px 40px 20px 20px;
   height: 500px;
   float: right; }
@@ -496,6 +497,11 @@ a {
     list-style-type: none; }
     .content ul li {
       line-height: 1.8em; }
+  .content .liste {
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside; }
+    .content .liste a {
+      margin-left: 10px; }
   @media (max-width: 599px) {
     .content {
       width: 100%;
