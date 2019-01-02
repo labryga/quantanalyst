@@ -174,7 +174,13 @@ var _f2 = function _f2(item) {
       event.preventDefault();
 
       if (event.target.id == "menu_phone") {
-        alert("menu mobile clicked!");
+        if (phone.style.display == "block") {
+          phone.style.display = "none";
+          phone.classList.remove("phone_list");
+        } else {
+          phone.style.display = "block";
+          phone.classList.add("phone_list");
+        }
       } else if (event.target.nodeName == "A" && event.target.closest("DIV").id == "menu") {
         // crucial header settings for django "self.request.is_ajax()" returning "true"
         var li_items = _toConsumableArray(menu.getElementsByTagName("A"));
@@ -292,10 +298,11 @@ function get_phone_menu(device) {
     undefined;
     var ul_navigation = document.createDocumentFragment();
     var ul_element = document.createElement("UL");
+    ul_element.style.display = "none";
+    ul_element.id = "phone";
     var _a7 = menu_li_elements;
 
     var _f7 = function _f7(li_element) {
-      li_element.style.display = "none";
       ul_element.appendChild(li_element);
     };
 

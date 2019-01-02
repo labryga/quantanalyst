@@ -1,3 +1,4 @@
+@import  'html.sass'
 @import 'mixins.sass'
 
 @mixin navigation_phone
@@ -8,7 +9,6 @@
       text-align: left
       a
         line-height: 1.7em
-        color: green
         &:hover
           color: cyan
   &:first-child
@@ -16,9 +16,21 @@
     cursor: pointer
 
   #menu_phone
-      width: 100%
-      height: 30px
-      display: block
-      text-align: center
-      font-size: 1.4em
-      cursor: pointer
+    width: 100%
+    height: 30px
+    display: block
+    text-align: center
+    font-size: 1.4em
+    cursor: pointer
+
+  .phone_list
+    background-color: $color-background
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0px
+    right: 0px
+    bottom: 0px
+    left: 0px
+
+

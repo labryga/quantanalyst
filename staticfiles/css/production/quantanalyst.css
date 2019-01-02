@@ -354,6 +354,33 @@ main {
     content: "";
     clear: both; }
 
+@font-face {
+  font-family: Nunito-Regular;
+  src: url(../../fonts/Nunito-Regular.ttf); }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html {
+  width: 100%; }
+
+body {
+  background-color: #001f3f;
+  color: mintcream;
+  font-family: Nunito-Regular;
+  width: 100%;
+  height: 100%;
+  margin: 0px; }
+
+ul {
+  margin: 0px;
+  padding: 0px; }
+
+a {
+  text-decoration: none;
+  color: mintcream; }
+
 #menu_phone {
   display: none;
   color: #00ff00; }
@@ -370,8 +397,7 @@ main {
       #menu ul li {
         text-align: left; }
         #menu ul li a {
-          line-height: 1.7em;
-          color: green; }
+          line-height: 1.7em; }
           #menu ul li a:hover {
             color: cyan; }
     #menu:first-child {
@@ -383,7 +409,16 @@ main {
       display: block;
       text-align: center;
       font-size: 1.4em;
-      cursor: pointer; } }
+      cursor: pointer; }
+    #menu .phone_list {
+      background-color: #001f3f;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px; } }
 
 @media (min-width: 600px) and (max-width: 899px) {
   #menu {

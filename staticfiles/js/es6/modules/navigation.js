@@ -4,7 +4,14 @@
 				handleEvent(event) {
 						event.preventDefault(); 
 						if (event.target.id == "menu_phone") {
-								alert("menu mobile clicked!");
+
+								if (phone.style.display == "block") {
+									phone.style.display = "none";
+									phone.classList.remove("phone_list");
+								} else { 
+										phone.style.display = "block";
+										phone.classList.add("phone_list");
+								}
 
 						} else if (event.target.nodeName == "A" && event.target.closest("DIV").id == "menu" ) {
 								// crucial header settings for django "self.request.is_ajax()" returning "true"
