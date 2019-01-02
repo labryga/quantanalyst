@@ -408,7 +408,8 @@ a {
       top: 0px;
       right: 0px;
       bottom: 0px;
-      left: 0px; }
+      left: 0px;
+      overflow-y: scroll; }
       #menu .phone_list li {
         text-align: center;
         line-height: 2.2em;
