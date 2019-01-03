@@ -8,18 +8,18 @@ main
 	height: 1500px
 
 .content
-	padding: 20px
+	height: 500px
+	float: right
 
 	h2
 		color: $color-01
+		line-height: 1.2em
 	// background-color: rgba(yellow, 0.4)
-	padding: 20px 40px 20px 20px
-	height: 500px
-	float: right
 
 	p:first-child
 		line-height: 0em
 		font-size: 0.8em
+		font-weight: bold
 
 	ul
 		padding: 0px 0px 0px 0pX
@@ -43,7 +43,7 @@ main
   	padding: 30px
 
 	@include tablet-xl
-  	width: percentage(9.8/12)
+  	width: percentage(9.6/12)
   	@include content_tablet_xl
 
 	@include desktop
