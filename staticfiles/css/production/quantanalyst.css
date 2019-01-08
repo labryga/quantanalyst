@@ -457,7 +457,7 @@ a {
       padding: 20px 20px 20px 0px; }
       #menu ul li {
         text-align: right;
-        line-height: 1.7em;
+        line-height: 1.8em;
         font-size: 1.0em; } }
 
 @media (min-width: 1200px) {
@@ -518,7 +518,7 @@ main {
   @media (min-width: 1200px) {
     .content {
       width: 83.33333%;
-      padding: 40px; } }
+      padding: 20px; } }
 
 footer {
   width: 100%;

@@ -55,4 +55,3 @@ function reset_raw() {
 													.forEach(item => item.remove())},
 		ul_navigation: document.createDocumentFragment(),
 	};
-}
