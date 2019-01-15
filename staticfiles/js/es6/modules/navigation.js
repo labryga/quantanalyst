@@ -40,8 +40,8 @@
 
 function reset_menu_list() {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")];
-		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
-		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
 		menu_li_elements.forEach(li_item => li_item.style.display = "block");
 		let ul_navigation = document.createDocumentFragment(); 
 		return {menu_li_elements, ul_navigation}
@@ -51,7 +51,7 @@ function reset_raw() {
 	return {
 		menu_li_elements: [...menu.getElementsByTagName("LI")],
 		ul_elements: [...menu.getElementsByTagName("UL")],
-		ul_elements_remove() {this.ul_elements
+		ul_elements_to_remove() {this.ul_elements
 													.forEach(item => item.remove())},
 		ul_navigation: document.createDocumentFragment(),
 	};
