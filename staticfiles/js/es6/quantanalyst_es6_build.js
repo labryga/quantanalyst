@@ -2,8 +2,8 @@ let desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-wi
 get_deskotp_tablet_menu(desktop_tablet_xl_device);
 desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
-function get_deskotp_tablet_menu(device) {
-	if (device.matches) {
+function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
+	if (desktop_tablet_xl_device.matches) {
 
 		let menu_list_raw = reset_menu_list();
 		let ul_element = document.createElement("UL");
@@ -194,40 +194,44 @@ function get_deskotp_tablet_menu(device) {
 
 function reset_menu_list() {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")];
-		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
-		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
 		menu_li_elements.forEach(li_item => li_item.style.display = "block");
 		let ul_navigation = document.createDocumentFragment(); 
 		return {menu_li_elements, ul_navigation}
 }
 
+
 function reset_raw() {
 	return {
 		menu_li_elements: [...menu.getElementsByTagName("LI")],
 		ul_elements: [...menu.getElementsByTagName("UL")],
-		ul_elements_remove() {this.ul_elements
+		ul_elements_to_remove() {this.ul_elements
 													.forEach(item => item.remove())},
 		ul_navigation: document.createDocumentFragment(),
-	};
+	}
 }
 
 let phone_device = window.matchMedia("(max-width: 599px)");
 get_phone_menu(phone_device);
 phone_device.addListener(get_phone_menu);
 
-function get_phone_menu(device) {
-	if (device.matches) {
+function get_phone_menu(phone_device) {
+	if (phone_device.matches) {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")]
-		let ul_elements_remove = [...menu.getElementsByTagName("UL")];
 
-		ul_elements_remove.forEach(ul_element => ul_element.remove());
+		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
+		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
+
 		let ul_navigation = document.createDocumentFragment();
 		let ul_element = document.createElement("UL");
 		ul_element.style.display = "none";
 		ul_element.id = "phone";
+
 		menu_li_elements.forEach(li_element => {
 			ul_element.appendChild(li_element);
 		});
+
 		ul_navigation.appendChild(ul_element);
 		menu.appendChild(ul_navigation);
 	}
@@ -237,8 +241,8 @@ let tablet_device = window.matchMedia("(min-width: 600px) and (max-width: 899px)
 get_tablet_menu(tablet_device);
 tablet_device.addListener(get_tablet_menu);
 
-function get_tablet_menu(device) {
-	if (device.matches) {
+function get_tablet_menu(tablet_device) {
+	if (tablet_device.matches) {
 
 		let menu_list_raw = reset_menu_list();
 

@@ -2,8 +2,8 @@ let desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-wi
 get_deskotp_tablet_menu(desktop_tablet_xl_device);
 desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
-function get_deskotp_tablet_menu(device) {
-	if (device.matches) {
+function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
+	if (desktop_tablet_xl_device.matches) {
 
 		let menu_list_raw = reset_menu_list();
 		let ul_element = document.createElement("UL");

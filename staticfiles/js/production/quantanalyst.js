@@ -12,8 +12,8 @@ var desktop_tablet_xl_device = window.matchMedia("(min-width: 900px) and (max-wi
 get_deskotp_tablet_menu(desktop_tablet_xl_device);
 desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
-function get_deskotp_tablet_menu(device) {
-  if (device.matches) {
+function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
+  if (desktop_tablet_xl_device.matches) {
     var menu_list_raw = reset_menu_list();
     var ul_element = document.createElement("UL");
     var _a = menu_list_raw.menu_li_elements;
@@ -222,9 +222,9 @@ undefined;
 function reset_menu_list() {
   var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
 
-  var ul_elements_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
+  var ul_elements_to_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
 
-  var _a3 = ul_elements_remove;
+  var _a3 = ul_elements_to_remove;
 
   var _f3 = function _f3(ul_element) {
     return ul_element.remove();
@@ -257,7 +257,7 @@ function reset_raw() {
   return {
     menu_li_elements: _toConsumableArray(menu.getElementsByTagName("LI")),
     ul_elements: _toConsumableArray(menu.getElementsByTagName("UL")),
-    ul_elements_remove: function ul_elements_remove() {
+    ul_elements_to_remove: function ul_elements_to_remove() {
       var _a5 = this.ul_elements;
 
       var _f5 = function _f5(item) {
@@ -278,13 +278,13 @@ var phone_device = window.matchMedia("(max-width: 599px)");
 get_phone_menu(phone_device);
 phone_device.addListener(get_phone_menu);
 
-function get_phone_menu(device) {
-  if (device.matches) {
+function get_phone_menu(phone_device) {
+  if (phone_device.matches) {
     var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
 
-    var ul_elements_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
+    var ul_elements_to_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
 
-    var _a6 = ul_elements_remove;
+    var _a6 = ul_elements_to_remove;
 
     var _f6 = function _f6(ul_element) {
       return ul_element.remove();
@@ -319,8 +319,8 @@ var tablet_device = window.matchMedia("(min-width: 600px) and (max-width: 899px)
 get_tablet_menu(tablet_device);
 tablet_device.addListener(get_tablet_menu);
 
-function get_tablet_menu(device) {
-  if (device.matches) {
+function get_tablet_menu(tablet_device) {
+  if (tablet_device.matches) {
     var menu_list_raw = reset_menu_list();
 
     var _a8 = _toConsumableArray(Array(3).keys());
