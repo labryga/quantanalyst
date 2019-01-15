@@ -14,9 +14,10 @@ desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
 function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
   if (desktop_tablet_xl_device.matches) {
-    var menu_list_raw = reset_menu_list();
+    var menu_li_elements = get_menu_li_elements();
+    var ul_navigation = document.createDocumentFragment();
     var ul_element = document.createElement("UL");
-    var _a = menu_list_raw.menu_li_elements;
+    var _a = menu_li_elements;
 
     var _f = function _f(li_element) {
       return ul_element.appendChild(li_element);
@@ -27,8 +28,8 @@ function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
     }
 
     undefined;
-    menu_list_raw.ul_navigation.appendChild(ul_element);
-    menu.appendChild(menu_list_raw.ul_navigation);
+    ul_navigation.appendChild(ul_element);
+    menu.appendChild(ul_navigation);
   }
 } // chart 01
 // let daten = [[10,15], [80,15], [60,15], [35,15], [120,15]]
@@ -185,14 +186,14 @@ var _f2 = function _f2(item) {
         // crucial header settings for django "self.request.is_ajax()" returning "true"
         var li_items = _toConsumableArray(menu.getElementsByTagName("A"));
 
-        var _a12 = li_items;
+        var _a11 = li_items;
 
-        var _f12 = function _f12(li_item) {
+        var _f11 = function _f11(li_item) {
           return li_item.classList.remove("menu_item");
         };
 
-        for (var _i12 = 0; _i12 < _a12.length; _i12++) {
-          _f12(_a12[_i12], _i12, _a12);
+        for (var _i11 = 0; _i11 < _a11.length; _i11++) {
+          _f11(_a11[_i11], _i11, _a11);
         }
 
         undefined;
@@ -219,7 +220,7 @@ for (var _i2 = 0; _i2 < _a2.length; _i2++) {
 
 undefined;
 
-function reset_menu_list() {
+function get_menu_li_elements() {
   var menu_li_elements = _toConsumableArray(menu.getElementsByTagName("LI"));
 
   var ul_elements_to_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
@@ -235,22 +236,7 @@ function reset_menu_list() {
   }
 
   undefined;
-  var _a4 = menu_li_elements;
-
-  var _f4 = function _f4(li_item) {
-    return li_item.style.display = "block";
-  };
-
-  for (var _i4 = 0; _i4 < _a4.length; _i4++) {
-    _f4(_a4[_i4], _i4, _a4);
-  }
-
-  undefined;
-  var ul_navigation = document.createDocumentFragment();
-  return {
-    menu_li_elements: menu_li_elements,
-    ul_navigation: ul_navigation
-  };
+  return menu_li_elements;
 }
 
 function reset_raw() {
@@ -258,14 +244,14 @@ function reset_raw() {
     menu_li_elements: _toConsumableArray(menu.getElementsByTagName("LI")),
     ul_elements: _toConsumableArray(menu.getElementsByTagName("UL")),
     ul_elements_to_remove: function ul_elements_to_remove() {
-      var _a5 = this.ul_elements;
+      var _a4 = this.ul_elements;
 
-      var _f5 = function _f5(item) {
+      var _f4 = function _f4(item) {
         return item.remove();
       };
 
-      for (var _i5 = 0; _i5 < _a5.length; _i5++) {
-        _f5(_a5[_i5], _i5, _a5);
+      for (var _i4 = 0; _i4 < _a4.length; _i4++) {
+        _f4(_a4[_i4], _i4, _a4);
       }
 
       undefined;
@@ -284,14 +270,14 @@ function get_phone_menu(phone_device) {
 
     var ul_elements_to_remove = _toConsumableArray(menu.getElementsByTagName("UL"));
 
-    var _a6 = ul_elements_to_remove;
+    var _a5 = ul_elements_to_remove;
 
-    var _f6 = function _f6(ul_element) {
+    var _f5 = function _f5(ul_element) {
       return ul_element.remove();
     };
 
-    for (var _i6 = 0; _i6 < _a6.length; _i6++) {
-      _f6(_a6[_i6], _i6, _a6);
+    for (var _i5 = 0; _i5 < _a5.length; _i5++) {
+      _f5(_a5[_i5], _i5, _a5);
     }
 
     undefined;
@@ -299,14 +285,14 @@ function get_phone_menu(phone_device) {
     var ul_element = document.createElement("UL");
     ul_element.style.display = "none";
     ul_element.id = "phone";
-    var _a7 = menu_li_elements;
+    var _a6 = menu_li_elements;
 
-    var _f7 = function _f7(li_element) {
+    var _f6 = function _f6(li_element) {
       ul_element.appendChild(li_element);
     };
 
-    for (var _i7 = 0; _i7 < _a7.length; _i7++) {
-      _f7(_a7[_i7], _i7, _a7);
+    for (var _i6 = 0; _i6 < _a6.length; _i6++) {
+      _f6(_a6[_i6], _i6, _a6);
     }
 
     undefined;
@@ -321,35 +307,47 @@ tablet_device.addListener(get_tablet_menu);
 
 function get_tablet_menu(tablet_device) {
   if (tablet_device.matches) {
-    var menu_list_raw = reset_menu_list();
+    var menu_li_elements = get_menu_li_elements();
+    var ul_navigation = document.createDocumentFragment();
 
-    var _a8 = _toConsumableArray(Array(3).keys());
+    var _a7 = _toConsumableArray(Array(3).keys());
 
-    var _f8 = function _f8(element) {
+    var _f7 = function _f7(element) {
       return document.createElement("UL");
     };
 
-    var _r8 = [];
+    var _r7 = [];
 
-    for (var _i8 = 0; _i8 < _a8.length; _i8++) {
-      _r8.push(_f8(_a8[_i8], _i8, _a8));
+    for (var _i7 = 0; _i7 < _a7.length; _i7++) {
+      _r7.push(_f7(_a7[_i7], _i7, _a7));
     }
 
-    var ul_elements = _r8;
-    var _a9 = ul_elements;
+    var ul_elements = _r7;
+    var _a8 = ul_elements;
 
-    var _f9 = function _f9(ul_element) {
-      var _a11 = _toConsumableArray(Array(3).keys());
+    var _f8 = function _f8(ul_element) {
+      var _a10 = _toConsumableArray(Array(3).keys());
 
-      var _f11 = function _f11(value) {
-        ul_element.appendChild(menu_list_raw.menu_li_elements.shift());
+      var _f10 = function _f10(value) {
+        ul_element.appendChild(menu_li_elements.shift());
       };
 
-      for (var _i11 = 0; _i11 < _a11.length; _i11++) {
-        _f11(_a11[_i11], _i11, _a11);
+      for (var _i10 = 0; _i10 < _a10.length; _i10++) {
+        _f10(_a10[_i10], _i10, _a10);
       }
 
       undefined;
+    };
+
+    for (var _i8 = 0; _i8 < _a8.length; _i8++) {
+      _f8(_a8[_i8], _i8, _a8);
+    }
+
+    undefined;
+    var _a9 = ul_elements;
+
+    var _f9 = function _f9(ul_element) {
+      ul_navigation.appendChild(ul_element);
     };
 
     for (var _i9 = 0; _i9 < _a9.length; _i9++) {
@@ -357,17 +355,6 @@ function get_tablet_menu(tablet_device) {
     }
 
     undefined;
-    var _a10 = ul_elements;
-
-    var _f10 = function _f10(ul_element) {
-      menu_list_raw.ul_navigation.appendChild(ul_element);
-    };
-
-    for (var _i10 = 0; _i10 < _a10.length; _i10++) {
-      _f10(_a10[_i10], _i10, _a10);
-    }
-
-    undefined;
-    menu.appendChild(menu_list_raw.ul_navigation);
+    menu.appendChild(ul_navigation);
   }
 }

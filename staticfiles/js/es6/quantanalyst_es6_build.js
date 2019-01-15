@@ -5,13 +5,14 @@ desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
 	if (desktop_tablet_xl_device.matches) {
 
-		let menu_list_raw = reset_menu_list();
+		let menu_li_elements = get_menu_li_elements();
+		let ul_navigation = document.createDocumentFragment();
 		let ul_element = document.createElement("UL");
 
-		menu_list_raw.menu_li_elements
+		menu_li_elements
 			.forEach(li_element => ul_element.appendChild(li_element));
-		menu_list_raw.ul_navigation.appendChild(ul_element);
-		menu.appendChild(menu_list_raw.ul_navigation);
+		ul_navigation.appendChild(ul_element);
+		menu.appendChild(ul_navigation);
 	}
 }
 
@@ -192,15 +193,12 @@ function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
 
 
 
-function reset_menu_list() {
+function get_menu_li_elements() {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")];
 		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
 		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
-		menu_li_elements.forEach(li_item => li_item.style.display = "block");
-		let ul_navigation = document.createDocumentFragment(); 
-		return {menu_li_elements, ul_navigation}
+		return menu_li_elements
 }
-
 
 function reset_raw() {
 	return {
@@ -244,18 +242,19 @@ tablet_device.addListener(get_tablet_menu);
 function get_tablet_menu(tablet_device) {
 	if (tablet_device.matches) {
 
-		let menu_list_raw = reset_menu_list();
+		let menu_li_elements = get_menu_li_elements();
 
+		let ul_navigation = document.createDocumentFragment();
 		let ul_elements = [...Array(3).keys()].map(element => document.createElement("UL"));
 
 		ul_elements.forEach(ul_element => {
 			[...Array(3).keys()].forEach(value => {
-				ul_element.appendChild(menu_list_raw.menu_li_elements.shift())
+				ul_element.appendChild(menu_li_elements.shift())
 			})
 		});
 
-		ul_elements.forEach(ul_element => {menu_list_raw.ul_navigation
+		ul_elements.forEach(ul_element => {ul_navigation
 				.appendChild(ul_element)});
-		menu.appendChild(menu_list_raw.ul_navigation);
+		menu.appendChild(ul_navigation);
 	}
 }

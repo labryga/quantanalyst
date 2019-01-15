@@ -38,15 +38,12 @@
 
 
 
-function reset_menu_list() {
+function get_menu_li_elements() {
 		let menu_li_elements = [...menu.getElementsByTagName("LI")];
 		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
 		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
-		menu_li_elements.forEach(li_item => li_item.style.display = "block");
-		let ul_navigation = document.createDocumentFragment(); 
-		return {menu_li_elements, ul_navigation}
+		return menu_li_elements
 }
-
 
 function reset_raw() {
 	return {

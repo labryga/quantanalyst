@@ -5,12 +5,13 @@ desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
 	if (desktop_tablet_xl_device.matches) {
 
-		let menu_list_raw = reset_menu_list();
+		let menu_li_elements = get_menu_li_elements();
+		let ul_navigation = document.createDocumentFragment();
 		let ul_element = document.createElement("UL");
 
-		menu_list_raw.menu_li_elements
+		menu_li_elements
 			.forEach(li_element => ul_element.appendChild(li_element));
-		menu_list_raw.ul_navigation.appendChild(ul_element);
-		menu.appendChild(menu_list_raw.ul_navigation);
+		ul_navigation.appendChild(ul_element);
+		menu.appendChild(ul_navigation);
 	}
 }
