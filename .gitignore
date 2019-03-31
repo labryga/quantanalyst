@@ -1,4 +1,5 @@
 DEADJOE
+database01_env
 *.pyc
 .env
 node_modules/
@@ -9,3 +10,4 @@ package-lock.json
 /home/migrations/
 /staticfiles/django_tinymce/
 /staticfiles/ckeditor/
+./.ropeproject

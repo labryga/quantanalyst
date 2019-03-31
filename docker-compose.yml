@@ -5,7 +5,7 @@ services:
     quantanalyst:
         build: .
         volumes:
-            - .:/opt/quantanayst
+            - .:/opt/quantanalyst
         networks:
             - nginx_network
 

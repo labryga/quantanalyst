@@ -1,7 +1,6 @@
-FROM python:3.6
-
+FROM python:3.6-alpine
 RUN mkdir -p /opt/quantanalyst
-
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 COPY . /opt/quantanalyst
 
 RUN pip install -r /opt/quantanalyst/req.txt
