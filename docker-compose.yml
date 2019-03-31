@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+    quantanalyst:
+        build: .
+        volumes:
+            - .:/opt/quantanayst
+        networks:
+            - nginx_network
+
+    nginx:
+        image: nginx:1.14
+        ports:
+            - 8000:80
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+        depends_on:
+            - quantanalyst
+        networks:
+            - nginx_network
+
+networks:
+    nginx_network:
+        driver: bridge
