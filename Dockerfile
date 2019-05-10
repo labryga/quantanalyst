@@ -1,1 +1,3 @@
 FROM python:3.6-alpine
+
+ENV PYTHONDONTWRITEBYTECODE 1 
