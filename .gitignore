@@ -1,6 +1,6 @@
-./
-!./docker/
-!./quantanalyst/
+/*
+!/docker/
+!/quantanalyst/
 
 database01_env
 *.pyc
