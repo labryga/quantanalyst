@@ -1,4 +1,7 @@
-DEADJOE
+./
+!./docker/
+!./quantanalyst/
+
 database01_env
 *.pyc
 .env
