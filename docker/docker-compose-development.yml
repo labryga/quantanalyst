@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  quantanalyst:
+    build:
+      context: /quantanalyst
+      dockerfile: /quantanalyst/dockerfile-development
+    image: python:3.6-alpine
