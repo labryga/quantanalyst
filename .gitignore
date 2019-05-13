@@ -3,6 +3,8 @@
 !/quantanalyst/
 !/nginx
 
+!/requierments.txt
+
 database01_env
 *.pyc
 .env
