@@ -1,6 +1,7 @@
 /*
 !/docker/
 !/quantanalyst/
+!/nginx
 
 database01_env
 *.pyc
