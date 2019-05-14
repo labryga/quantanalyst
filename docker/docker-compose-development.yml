@@ -5,3 +5,9 @@ services:
     build:
       context: ../quantanalyst
       dockerfile: dockerfile-django-development
+    volumes:
+      - ../quantanalyst/:/quantanalyst/
+      - ../staticfiles/:/staticfiles/
+
+
+
