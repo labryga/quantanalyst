@@ -4,4 +4,5 @@ services:
   quantanalyst:
     build:
       context: ../quantanalyst
-      dockerfile: dockerfile-django-development
+      dockerfile: dockerfile-django-production
+
