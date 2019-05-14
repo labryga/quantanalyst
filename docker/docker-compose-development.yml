@@ -4,5 +4,6 @@ services:
   quantanalyst:
     build:
       context: ../quantanalyst
-      dockerfile: ../quantanalyst/Dockerfile-development
-    image: python:3.6-alpine
+      dockerfile: Dockerfile-development
+    volumes:
+      - ../quantanalyst/:/quantanalyst/
