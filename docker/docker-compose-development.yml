@@ -5,5 +5,3 @@ services:
     build:
       context: ../quantanalyst
       dockerfile: Dockerfile-development
-    volumes:
-      - ../quantanalyst/:/quantanalyst/

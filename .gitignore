@@ -17,3 +17,4 @@ package-lock.json
 /staticfiles/django_tinymce/
 /staticfiles/ckeditor/
 ./.ropeproject
+pip-selfcheck.json
