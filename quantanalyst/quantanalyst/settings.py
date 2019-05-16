@@ -25,7 +25,7 @@ SECRET_KEY = 'fyh-b6fcd9ug0xo4d@+%l2qm9f(=l=(*z^gy*3b1ho*d17$8%k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["quant.ch"]
 
 
 # Application definition

@@ -1,13 +1,16 @@
 version: "3"
 
 services:
-  quantanalyst:
+  quant:
     build:
       context: ../quantanalyst
       dockerfile: dockerfile-django-development
     volumes:
       - ../quantanalyst/:/quantanalyst/
       - ../staticfiles/:/staticfiles/
+    command: gunicorn quantanalyst.wsgi:application -b 0.0.0.0:8000
 
-
-
+  ngnx:
+    image: nginx:1.15-alpine
+    volumes:
+      - ../nginx/conf.d/:/etc/nginx/conf.d/
