@@ -1,13 +1,18 @@
 version: "3"
 
 services:
-  quantanalyst:
+  quantanalyst_django:
     build:
       context: ../quantanalyst
       dockerfile: dockerfile-django-production
 
+  quantanalyst_nginx:
+    networks:
+      quantanalyst_network:
+        ipv4_address: 172.16.99.10
+
 networks:
-  network_quantanalyst:
+  quantanalyst_network:
     ipam:
       driver: default
       config:
