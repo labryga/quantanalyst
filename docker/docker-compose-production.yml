@@ -6,3 +6,5 @@ services:
       context: ../quantanalyst
       dockerfile: dockerfile-django-production
 
+networks:
+
