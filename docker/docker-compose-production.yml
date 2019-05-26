@@ -7,4 +7,9 @@ services:
       dockerfile: dockerfile-django-production
 
 networks:
+  network_quantanalyst:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.99.0/24
 
