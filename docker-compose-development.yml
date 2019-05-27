@@ -2,12 +2,21 @@ version: "3"
 
 services:
   quantanalyst_django:
-
+    build:
+      context: ./
+      dockerfile: ./quantanalyst/django.development.Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./quantanalyst/:/quantanalyst/
+      - ./apps/:/apps/
+    networks:
+      quantanalyst_network:
+        ipv4_address: 172.16.99.11
 
   quantanalyst_nginx:
     build:
       context: ./
-      dockerfile: ./nginx/production.Dockerfile
+      dockerfile: ./nginx/nginx.development.Dockerfile
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.10
@@ -16,5 +25,5 @@ networks:
   quantanalyst_network:
     ipam:
       driver: default
-      subnet:
-        - 172.16.99.0/24
+      config:
+        - subnet: 172.16.99.0/24

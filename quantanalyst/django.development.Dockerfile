@@ -6,4 +6,3 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1 
 
 RUN pip install django==1.11.20
-CMD ["python", "manage.py", "runserver"]
