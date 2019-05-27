@@ -2,6 +2,7 @@
 !/docker/
 !/quantanalyst/
 !/nginx
+!*.yml
 
 !/requierments.txt
 

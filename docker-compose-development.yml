@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  quantanalyst_django:
+    image: python:3.5-alpine
+
+  quantanalyst_nginx:
+    networks:
+      quantanalyst_network:
+        ipv4_address: 171.16.99.10
+    depends_on:
+      - quantanalyst_django
+
+networks:
+  quantanalyst_network:
+    driver: default
+    config:
+      - subnet 171.16.99.0/24
