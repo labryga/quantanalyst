@@ -4,10 +4,10 @@ services:
   quantanalyst_django:
     build:
       context: ./
-      dockerfile: ./quantanalyst/django.development.Dockerfile
+      dockerfile: ./quantanalyst/django-develoopment.Dockerfile
     volumes:
-      - ./quantanalyst/:/quantanalyst/
-      - ./apps/:/apps/
+      - ./quantanalyst/quantanalyst/:/quantanalyst/quantanalyst/
+      - ./quantanalyst/requierments/:/quantanalyst/requierments/
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.11

@@ -6,7 +6,7 @@
 
 !/requierments.txt
 
-database01_env
+*.env*
 *.pyc
 .env
 node_modules/
