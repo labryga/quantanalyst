@@ -6,5 +6,4 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1 
 
 RUN pip install django==1.11.20
-RUN django-admin.py startproject xeon
-CMD ["python", "xeon/manage.py", "runserver"]
+CMD ["python", "manage.py", "runserver"]
