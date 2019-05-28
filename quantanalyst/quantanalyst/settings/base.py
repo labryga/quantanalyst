@@ -1,6 +1,5 @@
 import os, sys
-from decouple import config
-from . external_app_settings.ckeditor_settings import CKEDITOR_CONFIGS
+# from . external_app_settings.ckeditor_settings import CKEDITOR_CONFIGS
 
 BASE_DIR = os.path.dirname(
     os.path.dirname(
@@ -10,7 +9,7 @@ BASE_DIR = os.path.dirname(
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
 DEBUG = True
 
 INSTALLED_APPS = [
@@ -76,9 +75,11 @@ WSGI_APPLICATION = 'quantanalyst.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
+        'NAME': os.environ.get('SQL_NAME'),
+        'USER': os.environ.get('SQL_USER'),
+        'PASSWORD': os.environ.get('SQL_PASSWORD'),
+        'HOST': os.environ.get('SQL_HOST'),
+        'PORT': os.environ.get('SQL_PORT'),
     }
 }
 
