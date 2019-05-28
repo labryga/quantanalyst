@@ -3,6 +3,5 @@ from . base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['affe', '192.168.1.81', '192.168.56.81',\
-                 '192.168.219.128', 'localhost']
+ALLOWED_HOSTS = ['172.16.99.10', 'quantanalyst.ch']
 
