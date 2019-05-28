@@ -1,6 +1,6 @@
 FROM python:3.6-alpine
 
-WORKDIR /
+WORKDIR /quantanalyst
 
 ENV PYTHONDONTWRITEBYTECODE 1 
 ENV PYTHONBUFFERED 1 
@@ -12,3 +12,4 @@ RUN apk update \
 
 RUN mkdir /requierments
 COPY ./quantanalyst/requierments/ /requierments
+RUN pip install -r /requierments/requierments.txt

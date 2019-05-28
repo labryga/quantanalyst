@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(
         )
 )
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(os.path.dirname(BASE_DIR), 'apps'))
 
 SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
 DEBUG = True

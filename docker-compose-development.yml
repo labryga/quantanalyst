@@ -7,8 +7,10 @@ services:
       dockerfile: ./quantanalyst/django-develoopment.Dockerfile
     volumes:
       - ./quantanalyst/quantanalyst/:/quantanalyst/
+      - ./apps/:/apps/
     env_file:
       - ./.env.quantanalyst_django
+    command: python manage.py runserver 0.0.0.0:8000
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.11
