@@ -6,8 +6,7 @@ services:
       context: ./
       dockerfile: ./quantanalyst/django-develoopment.Dockerfile
     volumes:
-      - ./quantanalyst/quantanalyst/:/quantanalyst/quantanalyst/
-      - ./quantanalyst/requierments/:/quantanalyst/requierments/
+      - ./quantanalyst/quantanalyst/:/quantanalyst/
     env_file:
       - ./.env.quantanalyst_django
     networks:
