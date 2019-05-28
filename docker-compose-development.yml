@@ -4,24 +4,38 @@ services:
   quantanalyst_django:
     build:
       context: ./
-      dockerfile: ./quantanalyst/django-develoopment.Dockerfile
+      dockerfile: ./django/development.Dockerfile
     volumes:
-      - ./quantanalyst/quantanalyst/:/quantanalyst/
-      - ./apps/:/apps/
+      - ./django/quantanalyst/:/quantanalyst/
+      - ./django/apps/:/apps/
+      - ./django/templates/:/templates/
+      - ./django/modules/:/modules/
     env_file:
       - ./.env.quantanalyst_django
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn quantanalyst.wsgi:application -b 0.0.0.0:8000
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.11
+    depends_on:
+      - quantanalyst_postgres
+
+
+  quantanalyst_postgres:
+    image: postgres:11.3-alpine
+    env_file:
+      - ./.env.quantanalyst_postgres
+    networks:
+      quantanalyst_network:
+        ipv4_address: 172.16.99.12
+
 
   quantanalyst_nginx:
-    build:
-      context: ./
-      dockerfile: ./nginx/nginx.development.Dockerfile
+    image: nginx:1.15.12-alpine
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.10
+    depends_on:
+      - quantanalyst_django
 
 networks:
   quantanalyst_network:

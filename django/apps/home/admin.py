@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from project_templates.admin import BlogEntryAdmin
+from modules.admin import BlogEntryAdmin
 from django.contrib import admin
 from . import models
 

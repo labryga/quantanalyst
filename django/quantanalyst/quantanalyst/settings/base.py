@@ -20,14 +20,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'portfoliotheorie',
-    'modellsimulation',
-    'optionen',
-    'stochastik',
-    'statistik',
-    'djangoblog',
-    'pythonblog',
-    'javascriptblog',
     'home',
 ]
 
