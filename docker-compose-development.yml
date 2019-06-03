@@ -33,6 +33,7 @@ services:
     image: nginx:1.15.12-alpine
     volumes:
       - ./nginx/developmenent.conf.d/:/etc/nginx/conf.d/
+      - ./staticfiles/:/staticfiles/
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.10
