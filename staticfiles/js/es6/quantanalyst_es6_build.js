@@ -4,17 +4,17 @@ get_deskotp_tablet_menu(desktop_tablet_xl_device);
 desktop_tablet_xl_device.addListener(get_deskotp_tablet_menu);
 
 function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
-	if (desktop_tablet_xl_device.matches) {
+  if (desktop_tablet_xl_device.matches) {
 
-		let menu_li_elements = get_menu_li_elements();
-		let ul_navigation = document.createDocumentFragment();
-		let ul_element = document.createElement("UL");
+	  let menu_li_elements = get_menu_li_elements();
+	  let ul_navigation = document.createDocumentFragment();
+	  let ul_element = document.createElement("UL");
 
-		menu_li_elements
-			.forEach(li_element => ul_element.appendChild(li_element));
-		ul_navigation.appendChild(ul_element);
-		menu.appendChild(ul_navigation);
-	}
+	  menu_li_elements
+		  .forEach(li_element => ul_element.appendChild(li_element));
+	  ul_navigation.appendChild(ul_element);
+	  menu.appendChild(ul_navigation);
+  }
 }
 
 
@@ -195,19 +195,19 @@ function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
 
 
 function get_menu_li_elements() {
-		let menu_li_elements = [...menu.getElementsByTagName("LI")];
-		let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
-		ul_elements_to_remove.forEach(ul_element => ul_element.remove());
-		return menu_li_elements
+	let menu_li_elements = [...menu.getElementsByTagName("LI")];
+	let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
+	ul_elements_to_remove.forEach(ul_element => ul_element.remove());
+	return menu_li_elements
 }
 
 function reset_raw() {
-	return {
-		menu_li_elements: [...menu.getElementsByTagName("LI")],
-		ul_elements: [...menu.getElementsByTagName("UL")],
-		ul_elements_to_remove() {this.ul_elements
-													.forEach(item => item.remove())},
-		ul_navigation: document.createDocumentFragment(),
+  return {
+	menu_li_elements: [...menu.getElementsByTagName("LI")],
+	ul_elements: [...menu.getElementsByTagName("UL")],
+	ul_elements_to_remove() {this.ul_elements
+												.forEach(item => item.remove())},
+	ul_navigation: document.createDocumentFragment(),
 	}
 }
 
