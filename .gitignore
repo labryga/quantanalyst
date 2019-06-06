@@ -1,6 +1,5 @@
 /*
-!/docker-compose/
-!/quantanalyst/
+!/django/
 !/nginx
 !*.yml
 
