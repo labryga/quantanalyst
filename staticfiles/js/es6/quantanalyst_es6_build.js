@@ -193,7 +193,6 @@ function get_deskotp_tablet_menu(desktop_tablet_xl_device) {
 });
 
 
-
 function get_menu_li_elements() {
 	let menu_li_elements = [...menu.getElementsByTagName("LI")];
 	let ul_elements_to_remove = [...menu.getElementsByTagName("UL")];
