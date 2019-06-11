@@ -28,7 +28,7 @@ services:
     env_file:
       - ./.env.quantanalyst_postgres
     volumes:
-      - ../quantanalyst_database/:/var/lib/postgresql/data/
+      - ../quantanalyst_database_01/:/var/lib/postgresql/data/
     networks:
       quantanalyst_network:
         ipv4_address: 172.16.99.12
