@@ -9,10 +9,8 @@ RUN apk update \
 	&& apk add --virtual build-deps gcc python3-dev musl-dev \
 	&& apk add postgresql-dev && pip install psycopg2
 
-RUN apk del build-deps
 COPY ./django/requierments /requierments
-
-RUN addgroup -S -g 5432 topos && adduser -S -g topos -h /quantanalyst/ -u topos
-WORKDIR /quantanalyst/
-USER topos
 RUN pip install -r /requierments/requierments.txt
+RUN apk del build-deps
+RUN addgroup -S -g 5432 topos && adduser -S -G topos -h /quantanalyst/ -u 5432 topos
+USER topos
