@@ -1,6 +1,7 @@
 /*
 !/django/
-!/nginx
+!/nginx/
+!/postgresql/
 !*.yml
 
 !/requierments.txt
